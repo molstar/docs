@@ -1,0 +1,156 @@
+# Creating Plugin Instance
+
+There are 4 basic ways of instantiating the Mol* plugin.
+
+## ``Viewer`` wrapper
+
+- The most basic usage is to use the ``Viewer`` wrapper. This is best suited for use cases that do not require much custom behavior and are mostly about just displaying a structure.
+- See ``Viewer`` class is defined in [src/apps/viewer/index.ts](https://github.com/molstar/molstar/blob/master/src/apps/viewer/index.ts) for available methods and options.
+
+Example usage without using WebPack:
+
+```HTML
+<style>
+    #app {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+        width: 800px;
+        height: 600px;
+    }
+</style>
+
+<div id="app"></div>
+
+<!-- 
+    molstar.js script is obtained from
+    - the folder build/viewer after cloning and building the molstar package 
+    - from the build/viewer folder in the Mol* NPM package
+-->
+<script type="text/javascript" src="./molstar.js"></script>
+<script type="text/javascript">
+    var viewer = new molstar.Viewer('app', {
+        layoutIsExpanded: false,
+        layoutShowControls: false,
+        layoutShowRemoteState: false,
+        layoutShowSequence: true,
+        layoutShowLog: false,
+        layoutShowLeftPanel: true,
+
+        viewportShowExpand: true,
+        viewportShowSelectionMode: false,
+        viewportShowAnimation: false,
+
+        pdbProvider: 'rcsb',
+        emdbProvider: 'rcsb',
+    });
+    viewer.loadPdb('7bv2');
+    viewer.loadEmdb('EMD-30210', { detail: 6 });
+</script>
+```
+
+When using WebPack (or possibly other build tool) with the Mol* NPM package installed, the viewer class can be imported using 
+
+```ts
+import { Viewer } from 'molstar/build/viewer/molstar'
+
+function initViewer(target: string | HTMLElement) {
+    return new Viewer(target, { /* options */})
+}
+```
+
+## ``PluginContext`` with build-in React UI
+
+- For more customization options it is possible to use the [``PluginContext``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts) directly.
+- When creating the plugin instance it is possible to customize the [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts).
+- The default [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts) is available [here](https://github.com/molstar/molstar/blob/master/src/mol-plugin/index.ts).
+- [``PluginConfig``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/config.ts) object provides additional customization options.
+- See the [Viewer State Management](viewer-state.md) section for more information on customizing things like background.
+- See the [Data State Management](data-state.md) section for more information on build the state.
+
+```ts
+import { DefaultPluginSpec, createPluginAsync } from 'molstar/lib/mol-plugin/index';
+import { PluginConfig } from 'molstar/lib/mol-plugin/config';
+
+const MySpec = {
+    ...DefaultPluginSpec,
+    config: [
+        [PluginConfig.VolumeStreaming.Enabled, false]
+    ]
+}
+
+async function createPlugin(parent: HTMLElement) {
+    const plugin = await createPluginAsync(parent, MySpec);
+
+    const data = await plugin.builders.data.download({ url: '...' }, { state: { isGhost: true } });
+    const trajectory = await plugin.builders.structure.parseTrajectory(data, format);
+    await this.plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default');
+
+    return plugin;
+}
+
+createPlugin(document.getElementById('app')!); // app is a <div> element
+```
+
+To use the plugin (with the React UI) inside another React app:
+
+```ts
+function MolStarWrapper() {
+    const parent = React.createRef<HTMLDivElement | null>();
+
+    useEffect(() => {
+        let plugin: PluginContext | undefined = undefined;
+        async function init() {
+            plugin = createPlugin(parent.current);
+        }
+        init();
+        return () => { plugin?.dispose(); };
+    }, []);
+
+    return <div ref={parent} style={{ width: 640, height: 480 }} />;
+}
+```
+
+## ``PluginContext`` without built-in React UI
+
+- The [``PluginContext``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts) can be instantiated without using the default React UI.
+
+```HTML
+<div id='molstar-parent' style='position: absolute; top: 0; left: 0; right: 0; bottom: 0'>
+    <canvas id='molstar-canvas' style='position: absolute; top: 0; left: 0; right: 0; bottom: 0'></canvas>
+</div>
+```
+
+```ts
+import { PluginContext  } from 'molstar/lib/mol-plugin/context';
+
+async function init() {
+    const plugin = new PluginContext(Spec);
+    await plugin.init();
+
+    const canvas = document.getElementById('molstar-canvas');
+    const parent = document.getElementById('molstar-parent');
+
+    if (!plugin.initViewer(canvas, parent)) {
+        console.error('Failed to init Mol*');
+        return;
+    }
+
+    const data = await plugin.builders.data.download({ url: '...' }, { state: { isGhost: true } });
+    const trajectory = await plugin.builders.structure.parseTrajectory(data, format);
+    await this.plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default');
+}
+
+```
+
+## ``Canvas3D`` without built-in state management
+
+- The ``PluginContext`` object from the above examples can be completely omitted.
+- See [Browser Tests](https://github.com/molstar/molstar/tree/master/src/tests/browser) for example usage.
+
+```ts
+const canvas = document.getElementById('canvas'); // parent <canvas> element
+const canvas3d = Canvas3D.create(Canvas3DContext.fromCanvas(canvas));
+canvas3d.animate();
+// use the canvas3d object here
+```

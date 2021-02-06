@@ -22,3 +22,10 @@ theme:
 markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
+nav:
+  - 'index.md'
+  - 'examples.md'
+  - 'plugin.md'
+  - 'data-state.md'
+  - 'viewer-state.md'
+  - 'selections.md'
