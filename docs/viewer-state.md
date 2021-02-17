@@ -5,7 +5,7 @@ Properties of the [``Canvas3D``](https://github.com/molstar/molstar/blob/master/
 changed using [``PluginCommands``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/commands.ts).  
 
 
-### Change background, select, or highlight color
+### Change background, highlight, or select color
 ```ts
 import { ColorNames } from 'molstar/lib/mol-util/color/names';
 import { PluginCommands } from 'molstar/lib/mol-plugin/commands';
@@ -21,7 +21,7 @@ TODO some high-level/introductory text here...
 
 
 A ``Loci`` references a collection of objects and can be created by a [``Selection``](selections.md). For example, the
-``Loci`` captures all atoms in chain 'B' of a protein:
+``Loci`` captures all atoms in the chain with label_asym_id B of a protein:
 ```ts
 import { Script } from 'molstar/lib/mol-script/script';
 import { StructureSelection } from 'molstar/lib/mol-model/structure/query';
