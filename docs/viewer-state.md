@@ -34,7 +34,7 @@ const selection = Script.getStructureSelection(Q => Q.struct.generator.atomGroup
 }), data);
 const loci = StructureSelection.toLociWithSourceUnits(selection);
 ```
-A ``Loci`` can be used to achieve custom [behaviors](#behaviors).
+A ``Loci`` can be used to trigger custom [``Behaviors``](#behaviors).
 
 
 ### Log message to Mol* console
