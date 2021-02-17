@@ -16,7 +16,7 @@ PluginCommands.Canvas3D.SetSettings(plugin, { settings: { renderer: { ...rendere
 Similarly, `highlightColor` and `selectColor` can be updated.
 
 
-## Interactivity
+##Interactivity
 TODO some high-level/introductory text here...
 
 
@@ -34,32 +34,7 @@ const selection = Script.getStructureSelection(Q => Q.struct.generator.atomGroup
 }), data);
 const loci = StructureSelection.toLociWithSourceUnits(selection);
 ```
-
-
-### Highlight on ``Loci``
-Highlights can be applied to a previously defined ``Loci`` by:
-```ts
-plugin.managers.interactivity.lociHighlights.highlightOnly({ loci });
-```
-Reset all highlights by:
-```ts
-plugin.managers.interactivity.clearHighlights();
-```
-
-
-### Select on ``Loci``
-Selecting a ``Loci`` can be used to change its representation and is done by:
-```ts
-plugin.managers.interactivity.lociSelects.select({ loci });
-```
-Deselect a specific ``Loci`` by:
-```ts
-plugin.managers.interactivity.lociSelects.deselect({ loci });
-```
-To deselect everything:
-```ts
-plugin.managers.interactivity.lociSelects.deselectAll();
-```
+A ``Loci`` can be used to achieve custom [behaviors](#behaviors).
 
 
 ### Log message to Mol* console
@@ -84,3 +59,60 @@ PluginCommands.Toast.Show(plugin, {
 ```
 
 ## Behaviors
+TODO some high-level/introductory text here...
+
+
+### Highlight ``Loci``
+Highlighting adds a transient overpaint to a representation that will linger until the mouse enters hovers over another 
+object. Highlights can be applied to a previously defined ``Loci`` by:
+```ts
+plugin.managers.interactivity.lociHighlights.highlightOnly({ loci });
+```
+Reset all highlights by:
+```ts
+plugin.managers.interactivity.clearHighlights();
+```
+
+
+### Select ``Loci``
+Selected elements will appear with distinct visuals and, if applicable, the corresponding sequence positions will be 
+shown in the Sequence Viewer panel. Selections persist until removed, for example by clicking the background. A ``Loci``
+is selected by:
+```ts
+plugin.managers.interactivity.lociSelects.select({ loci });
+```
+Deselect a specific ``Loci`` by:
+```ts
+plugin.managers.interactivity.lociSelects.deselect({ loci });
+```
+To deselect everything:
+```ts
+plugin.managers.interactivity.lociSelects.deselectAll();
+```
+
+
+### Focus ``Loci``
+The focus representation shows a ``Loci`` in ball-and-stick representation and, additionally, visualizes non-covalent
+interactions between atoms of the ``Loci`` as well as interactions with surrounding residues (default: 5 Å).
+```ts
+plugin.managers.structure.focus.setFromLoci(loci);
+```
+Extend an existing focus representation by:
+```ts
+plugin.managers.structure.focus.addFromLoci(loci);
+```
+Reset by:
+```ts
+plugin.managers.structure.focus.clear();
+```
+
+
+### Zoom ``Loci``
+A ``Loci`` can also be used to manipulate the camera. Zoom in by:
+```ts
+plugin.managers.camera.focusLoci(loci);
+```
+Restore the default camera position by:
+```ts
+plugin.managers.camera.reset();
+```
