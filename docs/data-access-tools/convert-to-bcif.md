@@ -1,11 +1,13 @@
 # Convert CIF to BinaryCIF
-BinaryCIF is an efficient, binary flavor of the CIF format.
+BinaryCIF is an efficient, binary flavor of the CIF format. See [specification](https://github.com/molstar/BinaryCIF) and [publication](https://doi.org/10.1371/journal.pcbi.1008247) for further details.
 
 This script reads data in CIF format and converts it lossless to a BinaryCIF file that can be read by Mol* or other 
 applications.
 
 ## Example
-    node lib/commonjs/cli/cif2bcif/index.js file.cif file.bcif
+```sh
+node lib/commonjs/cli/cif2bcif/index.js file.cif file.bcif
+```
 
 ## Usage
 | Argument | Description |
@@ -14,8 +16,9 @@ applications.
 | `out` | Generated BinaryCIF output path |
 | `-c` | Path to optional config file |
 | `-f` | Path to optional filter file |
-
-    index.js [-h] [-c CONFIG] [-f FILTER] src out
+```sh
+index.js [-h] [-c CONFIG] [-f FILTER] src out
+```
 
 ### Config file
 Controls how certain columns will be encoded. This is a JSON array of instructions:

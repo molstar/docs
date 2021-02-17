@@ -29,3 +29,11 @@ nav:
   - 'data-state.md'
   - 'viewer-state.md'
   - 'selections.md'
+  - Data Access Tools:
+    - 'data-access-tools/index.md'
+    - 'data-access-tools/model-server.md'
+    - 'data-access-tools/volume-server.md'
+    - 'data-access-tools/plugin-state-server.md'
+    - 'data-access-tools/convert-to-bcif.md'
+    - 'data-access-tools/create-ccd-table.md'
+    - 'data-access-tools/extract-ccd-ions.md'
