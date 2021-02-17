@@ -14,6 +14,7 @@ node --max-old-space-size=4096 lib/commonjs/cli/chem-comp-dict/create-ions.js sr
 | --- | --- |
 | `out` | Generated file output path |
 | `--forceDownload`, `-f` | Force download of CCD |
+
 ```sh
 create-ions.js [-h] [--forceDownload] out
 ```

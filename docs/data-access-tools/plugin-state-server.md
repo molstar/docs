@@ -16,6 +16,7 @@ node lib/commonjs/servers/plugin-state --workding-folder ~
 | `--port` | Server port. Alternatively, use ENV variable PORT. |
 | `--api-prefix` | Server API prefix |
 | `--max-states` | Maximum number of states to save |
+
 ```sh
 node lib/commonjs/servers/plugin-state [-h] --working-folder WORKING_FOLDER [--port PORT] [--api-prefix API_PREFIX] [--max-states MAX_STATES]
 ```

@@ -16,6 +16,7 @@ node lib/commonjs/cli/cif2bcif/index.js file.cif file.bcif
 | `out` | Generated BinaryCIF output path |
 | `-c` | Path to optional config file |
 | `-f` | Path to optional filter file |
+
 ```sh
 index.js [-h] [-c CONFIG] [-f FILTER] src out
 ```

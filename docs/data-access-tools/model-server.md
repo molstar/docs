@@ -18,7 +18,7 @@ node lib/commonjs/servers/model/server --sourceMap pdb-bcif '/opt/data/bcif/${id
 | `--cfg` | JSON config file path. If a property is not specified, cmd line param/OS variable/default value are used. |
 | `--printCfg` | Print current config for validation and exit. |
 | `--cfgTemplate` | Prints default JSON config template to be modified and exit. |
-| `--apiPrefix` | Specify the prefix of the API, i.e. <host>/<apiPrefix>/<API queries> |
+| `--apiPrefix` | Specify the prefix of the API, i.e. &lt;host&gt;/&lt;apiPrefix&gt;/&lt;API queries&gt; |
 | `--defaultPort` | Specify the port the server is running on |
 | `--cacheMaxSizeInBytes` | Read structures are cached, this specifies the cache size, 0 for off. |
 | `--cacheEntryTimeoutMs` | Specify in ms how long to keep entries in cache. |
@@ -53,7 +53,7 @@ node lib/commonjs/servers/model/server [-h] [-v]
 ### Production Use
 In production, it is required to use a service that will keep the server running, such as [forever.js](https://github.com/foreverjs/forever).
 
-### Memory issues
+### Memory Issues
 Sometimes nodejs might run into problems with memory. This is usually resolved by adding the ``--max-old-space-size=8192`` parameter.
 
 ### Preprocessor Example

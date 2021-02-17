@@ -30,7 +30,6 @@ nav:
   - 'viewer-state.md'
   - 'selections.md'
   - Data Access Tools:
-    - 'data-access-tools/index.md'
     - 'data-access-tools/model-server.md'
     - 'data-access-tools/volume-server.md'
     - 'data-access-tools/plugin-state-server.md'
