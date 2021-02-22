@@ -36,3 +36,4 @@ nav:
     - 'data-access-tools/convert-to-bcif.md'
     - 'data-access-tools/create-ccd-table.md'
     - 'data-access-tools/extract-ccd-ions.md'
+repo_url: https://github.com/molstar/docs
