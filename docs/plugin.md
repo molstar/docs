@@ -69,11 +69,12 @@ function initViewer(target: string | HTMLElement) {
 - See the [Data State Management](data-state.md) section for more information on build the state.
 
 ```ts
-import { DefaultPluginSpec, createPluginAsync } from 'molstar/lib/mol-plugin/index';
+import { DefaultPluginUISpec, PluginUISpec } from 'molstar/lib/mol-plugin-ui/spec';
+import { createPluginAsync } from 'molstar/lib/mol-plugin-ui/index';
 import { PluginConfig } from 'molstar/lib/mol-plugin/config';
 
-const MySpec = {
-    ...DefaultPluginSpec,
+const MySpec: PluginUISpec = {
+    ...DefaultPluginUISpec(),
     config: [
         [PluginConfig.VolumeStreaming.Enabled, false]
     ]
@@ -122,10 +123,18 @@ function MolStarWrapper() {
 ```
 
 ```ts
+import { DefaultPluginSpec, PluginSpec } from 'molstar/lib/mol-plugin/spec';
 import { PluginContext  } from 'molstar/lib/mol-plugin/context';
 
+const MySpec: PluginSpec = {
+    ...DefaultPluginSpec(),
+    config: [
+        [PluginConfig.VolumeStreaming.Enabled, false]
+    ]
+}
+
 async function init() {
-    const plugin = new PluginContext(Spec);
+    const plugin = new PluginContext(MySpec);
     await plugin.init();
 
     const canvas = document.getElementById('molstar-canvas');

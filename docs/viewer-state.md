@@ -16,11 +16,9 @@ PluginCommands.Canvas3D.SetSettings(plugin, { settings: { renderer: { ...rendere
 Similarly, `highlightColor` and `selectColor` can be updated.
 
 
-##Interactivity
-TODO some high-level/introductory text here...
+## Interactivity
 
-
-A ``Loci`` references a collection of objects and can be created by a [``Selection``](selections.md). For example, the
+Interactivity in Mol* is based on the concept of ``Loci``. A ``Loci`` usually references a collection of objects and can be created by a [``Selection``](selections.md). For example, the
 ``Loci`` captures all atoms in the chain with label_asym_id B of a protein:
 ```ts
 import { Script } from 'molstar/lib/mol-script/script';
@@ -59,7 +57,8 @@ PluginCommands.Toast.Show(plugin, {
 ```
 
 ## Behaviors
-TODO some high-level/introductory text here...
+
+The state of the Mol* plugin is usually governed by dynamics behaviors which can be set up in initial plugin specification or updated during the plugin runtime. This allows for high modularity and customizability of individual plugin instances.
 
 
 ### Highlight ``Loci``
