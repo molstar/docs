@@ -19,15 +19,16 @@ Example usage without using WebPack:
         height: 600px;
     }
 </style>
-
-<div id="app"></div>
-
 <!-- 
-    molstar.js script is obtained from
+    molstar.js and .css are obtained from
     - the folder build/viewer after cloning and building the molstar package 
     - from the build/viewer folder in the Mol* NPM package
 -->
+<link rel="stylesheet" type="text/css" href="molstar.css" />
 <script type="text/javascript" src="./molstar.js"></script>
+
+<div id="app"></div>
+
 <script type="text/javascript">
     var viewer = new molstar.Viewer('app', {
         layoutIsExpanded: false,
