@@ -29,6 +29,8 @@ nav:
   - 'data-state.md'
   - 'viewer-state.md'
   - 'selections.md'
+  - Transforms:
+    - 'transforms/custom-trajectory.md'
   - Data Access Tools:
     - 'data-access-tools/model-server.md'
     - 'data-access-tools/volume-server.md'
