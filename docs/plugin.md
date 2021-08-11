@@ -64,7 +64,7 @@ function initViewer(target: string | HTMLElement) {
 
 - For more customization options it is possible to use the [``PluginContext``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts) directly.
 - When creating the plugin instance it is possible to customize the [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts).
-- The default [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts) is available [here](https://github.com/molstar/molstar/blob/master/src/mol-plugin/index.ts).
+- The default [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts) is available [here](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts).
 - [``PluginConfig``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/config.ts) object provides additional customization options.
 - See the [Viewer State Management](viewer-state.md) section for more information on customizing things like background.
 - See the [Data State Management](data-state.md) section for more information on build the state.
