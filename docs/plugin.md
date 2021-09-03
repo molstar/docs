@@ -126,6 +126,7 @@ function MolStarWrapper() {
 ```ts
 import { DefaultPluginSpec, PluginSpec } from 'molstar/lib/mol-plugin/spec';
 import { PluginContext  } from 'molstar/lib/mol-plugin/context';
+import { PluginConfig } from 'molstar/lib/mol-plugin/config';
 
 const MySpec: PluginSpec = {
     ...DefaultPluginSpec(),
@@ -138,8 +139,8 @@ async function init() {
     const plugin = new PluginContext(MySpec);
     await plugin.init();
 
-    const canvas = document.getElementById('molstar-canvas');
-    const parent = document.getElementById('molstar-parent');
+    const canvas = <HTMLCanvasElement> document.getElementById('molstar-canvas');
+    const parent = <HTMLDivElement> document.getElementById('molstar-parent');
 
     if (!plugin.initViewer(canvas, parent)) {
         console.error('Failed to init Mol*');
@@ -148,7 +149,7 @@ async function init() {
 
     const data = await plugin.builders.data.download({ url: '...' }, { state: { isGhost: true } });
     const trajectory = await plugin.builders.structure.parseTrajectory(data, format);
-    await this.plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default');
+    await plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default');
 }
 
 ```
