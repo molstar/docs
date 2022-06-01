@@ -104,20 +104,19 @@ import "molstar/build/viewer/molstar.css";
 
 declare global {
   interface Window {
-    molstar: PluginUIContext;
+    molstar?: PluginUIContext | undefined;
   }
 }
 
-window.molstar = window.molstar || {};
+window.molstar = window.molstar || undefined;
 
 export function MolStarWrapper() {
   const parent = createRef<HTMLDivElement>();
 
   useEffect(() => {
     async function init() {
-      window.molstar = await createPluginUI(parent.current as HTMLDivElement);
+        window.molstar = await createPluginUI(parent.current as HTMLDivElement);
 
-      if (window.molstar) {
         const data = await window.molstar.builders.data.download(
           { url: "https://files.rcsb.org/download/3PTB.pdb" }, /* replace with your URL */
           { state: { isGhost: true } }
@@ -128,11 +127,11 @@ export function MolStarWrapper() {
           trajectory,
           "default"
         );
-      }
     }
     init();
     return () => {
       window.molstar?.dispose();
+      window.molstar = undefined;
     };
   }, []);
 
