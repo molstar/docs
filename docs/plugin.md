@@ -4,7 +4,7 @@ There are 4 basic ways of instantiating the Mol* plugin.
 
 ## ``Viewer`` wrapper
 
-- The most basic usage is to use the ``Viewer`` wrapper.This is best suited for use cases that do not require much custom behavior and are mostly about just displaying a structure.
+- The most basic usage is to use the ``Viewer`` wrapper. This is best suited for use cases that do not require much custom behavior and are mostly about just displaying a structure.
 - See ``Viewer`` class is defined in [src/apps/viewer/app.ts](https://github.com/molstar/molstar/blob/master/src/apps/viewer/app.ts) for available methods and options.
 
 Example usage without using WebPack:
