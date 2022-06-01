@@ -4,7 +4,7 @@ There are 4 basic ways of instantiating the Mol* plugin.
 
 ## ``Viewer`` wrapper
 
-- The most basic usage is to use the ``Viewer`` wrapper. This is best suited for use cases that do not require much custom behavior and are mostly about just displaying a structure.
+- The most basic usage is to use the ``Viewer`` wrapper.This is best suited for use cases that do not require much custom behavior and are mostly about just displaying a structure.
 - See ``Viewer`` class is defined in [src/apps/viewer/app.ts](https://github.com/molstar/molstar/blob/master/src/apps/viewer/app.ts) for available methods and options.
 
 Example usage without using WebPack:
@@ -60,7 +60,7 @@ function initViewer(target: string | HTMLElement) {
 }
 ```
 
-## ``PluginContext`` with build-in React UI
+## ``PluginContext`` with built-in React UI
 
 - For more customization options it is possible to use the [``PluginContext``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts) directly.
 - When creating the plugin instance it is possible to customize the [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts).
@@ -97,20 +97,48 @@ createPlugin(document.getElementById('app')!); // app is a <div> element
 To use the plugin (with the React UI) inside another React app:
 
 ```ts
-function MolStarWrapper() {
-    const parent = React.createRef<HTMLDivElement | null>();
+import { useEffect, createRef } from "react";
+import { createPluginUI } from "molstar/lib/mol-plugin-ui";
+import { PluginUIContext } from "molstar/lib/mol-plugin-ui/context";
+import "molstar/build/viewer/molstar.css";
 
-    useEffect(() => {
-        let plugin: PluginContext | undefined = undefined;
-        async function init() {
-            plugin = createPlugin(parent.current);
-        }
-        init();
-        return () => { plugin?.dispose(); };
-    }, []);
-
-    return <div ref={parent} style={{ width: 640, height: 480 }} />;
+declare global {
+  interface Window {
+    molstar: PluginUIContext;
+  }
 }
+
+window.molstar = window.molstar || {};
+
+export function MolStarWrapper() {
+  const parent = createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    async function init() {
+      window.molstar = await createPluginUI(parent.current as HTMLDivElement);
+
+      if (window.molstar) {
+        const data = await window.molstar.builders.data.download(
+          { url: "https://files.rcsb.org/download/3PTB.pdb" }, /* replace with your URL */
+          { state: { isGhost: true } }
+        );
+        const trajectory =
+          await window.molstar.builders.structure.parseTrajectory(data, "pdb");
+        await window.molstar.builders.structure.hierarchy.applyPreset(
+          trajectory,
+          "default"
+        );
+      }
+    }
+    init();
+    return () => {
+      window.molstar?.dispose();
+    };
+  }, []);
+
+  return <div ref={parent} style={{ width: 640, height: 480 }}/>;
+}
+
 ```
 
 ## ``PluginContext`` without built-in React UI
