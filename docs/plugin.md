@@ -96,6 +96,9 @@ createPlugin(document.getElementById('app')!); // app is a <div> element
 
 To use the plugin (with the React UI) inside another React app:
 
+A single-plugin setup is shown the example below. In order to initialize multiple
+plugins, each with its own context and viewport, some extra steps are required (docs section to be added).
+
 ```ts
 import { useEffect, createRef } from "react";
 import { createPluginUI } from "molstar/lib/mol-plugin-ui";
