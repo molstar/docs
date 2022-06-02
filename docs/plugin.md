@@ -100,7 +100,9 @@ To use the plugin (with the React UI) inside another React app:
 import { useEffect, createRef } from "react";
 import { createPluginUI } from "molstar/lib/mol-plugin-ui";
 import { PluginUIContext } from "molstar/lib/mol-plugin-ui/context";
-/* Requires sass package, "npm install sass" or "yarn add sass" */
+/*  Might require extra configuration,
+see https://webpack.js.org/loaders/sass-loader/ for example.
+create-react-app should support this natively. */
 import "molstar/lib/mol-plugin-ui/skin/light.scss";
 
 declare global {
