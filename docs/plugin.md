@@ -105,7 +105,7 @@ import "molstar/lib/mol-plugin-ui/skin/light.scss";
 
 declare global {
   interface Window {
-    molstar?: PluginUIContext | undefined;
+    molstar?: PluginUIContext;
   }
 }
 
