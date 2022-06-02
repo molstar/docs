@@ -60,7 +60,7 @@ function initViewer(target: string | HTMLElement) {
 }
 ```
 
-## ``PluginContext`` with build-in React UI
+## ``PluginContext`` with built-in React UI
 
 - For more customization options it is possible to use the [``PluginContext``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts) directly.
 - When creating the plugin instance it is possible to customize the [``PluginSpec``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts).
@@ -96,21 +96,53 @@ createPlugin(document.getElementById('app')!); // app is a <div> element
 
 To use the plugin (with the React UI) inside another React app:
 
+A single-plugin setup is shown the example below. In order to initialize multiple
+plugins, each with its own context and viewport, some extra steps are required (docs section to be added).
+
 ```ts
-function MolStarWrapper() {
-    const parent = React.createRef<HTMLDivElement | null>();
+import { useEffect, createRef } from "react";
+import { createPluginUI } from "molstar/lib/mol-plugin-ui";
+import { PluginUIContext } from "molstar/lib/mol-plugin-ui/context";
+/*  Might require extra configuration,
+see https://webpack.js.org/loaders/sass-loader/ for example.
+create-react-app should support this natively. */
+import "molstar/lib/mol-plugin-ui/skin/light.scss";
 
-    useEffect(() => {
-        let plugin: PluginContext | undefined = undefined;
-        async function init() {
-            plugin = createPlugin(parent.current);
-        }
-        init();
-        return () => { plugin?.dispose(); };
-    }, []);
-
-    return <div ref={parent} style={{ width: 640, height: 480 }} />;
+declare global {
+  interface Window {
+    molstar?: PluginUIContext;
+  }
 }
+
+
+export function MolStarWrapper() {
+  const parent = createRef<HTMLDivElement>();
+
+  useEffect(() => {
+    async function init() {
+        window.molstar = await createPluginUI(parent.current as HTMLDivElement);
+
+        const data = await window.molstar.builders.data.download(
+          { url: "https://files.rcsb.org/download/3PTB.pdb" }, /* replace with your URL */
+          { state: { isGhost: true } }
+        );
+        const trajectory =
+          await window.molstar.builders.structure.parseTrajectory(data, "pdb");
+        await window.molstar.builders.structure.hierarchy.applyPreset(
+          trajectory,
+          "default"
+        );
+    }
+    init();
+    return () => {
+      window.molstar?.dispose();
+      window.molstar = undefined;
+    };
+  }, []);
+
+  return <div ref={parent} style={{ width: 640, height: 480 }}/>;
+}
+
 ```
 
 ## ``PluginContext`` without built-in React UI
