@@ -109,7 +109,6 @@ declare global {
   }
 }
 
-window.molstar = window.molstar || undefined;
 
 export function MolStarWrapper() {
   const parent = createRef<HTMLDivElement>();
