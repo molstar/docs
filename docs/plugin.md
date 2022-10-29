@@ -30,7 +30,7 @@ Example usage without using WebPack:
 <div id="app"></div>
 
 <script type="text/javascript">
-    var viewer = new molstar.Viewer('app', {
+    var viewer = new molstar.Viewer.create('app', {
         layoutIsExpanded: false,
         layoutShowControls: false,
         layoutShowRemoteState: false,
