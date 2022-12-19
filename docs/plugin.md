@@ -30,7 +30,7 @@ Example usage without using WebPack:
 <div id="app"></div>
 
 <script type="text/javascript">
-    var viewer = new molstar.Viewer.create('app', {
+    molstar.Viewer.create('app', {
         layoutIsExpanded: false,
         layoutShowControls: false,
         layoutShowRemoteState: false,
@@ -44,9 +44,10 @@ Example usage without using WebPack:
 
         pdbProvider: 'rcsb',
         emdbProvider: 'rcsb',
+    }).then(viewer => {
+      viewer.loadPdb('7bv2');
+      viewer.loadEmdb('EMD-30210', { detail: 6 });
     });
-    viewer.loadPdb('7bv2');
-    viewer.loadEmdb('EMD-30210', { detail: 6 });
 </script>
 ```
 
