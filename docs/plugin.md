@@ -56,8 +56,8 @@ Example usage without using WebPack:
         pdbProvider: 'rcsb',
         emdbProvider: 'rcsb',
     }).then(viewer => {
-      viewer.loadPdb('7bv2');
-      viewer.loadEmdb('EMD-30210', { detail: 6 });
+        viewer.loadPdb('7bv2');
+        viewer.loadEmdb('EMD-30210', { detail: 6 });
     });
 </script>
 ```
