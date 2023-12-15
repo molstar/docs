@@ -1,5 +1,16 @@
 # Creating Plugin Instance
 
+
+## Intro
+
+What is a plugin? A plugin is a collection of modules that provide functionality to the `Mol*` UI. The plugin is responsible for managing the state of the viewer, internal and user interactions. It has been a previous point of confusion for new users of `Mol*` to associate the __viewer__ part of the library with what is further referred to as the __plugin__. These two are closely connected in the `molstar-plugin-ui` module, which is the user-facing part of the library and ultimately provides the viewer, but they are ultimately distinct. 
+
+
+It is recommended that you inspect the general class structure of [`PluginInitWrapper`](https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/plugin.tsx#L41), [`PluginUIContext`](https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin/context.ts#L71) and [`PluginUIComponent`](https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16) to better understand the flow of data and events in the plugin. 
+A passing analogy is that a [ `PluginContext` ](https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin/context.ts#L71) is the engine that powers computation, rendering, events and subscriptions inside the molstar UI. All UI components depend on `PluginContext`. 
+
+
+
 There are 4 basic ways of instantiating the Mol* plugin.
 
 ## ``Viewer`` wrapper
@@ -146,6 +157,23 @@ export function MolStarWrapper() {
 
 ```
 
+
+Furthermore, if it is desirable in your project to use the `molstar`'s React UI components, but you wish to alter or rearrange the layout, you should take a look at the signatures of [ `PluginUIComponent` ](https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16) which every "control" subclasses. 
+
+
+[ `SequenceView` ](https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/sequence.tsx#L221C4-L221C4), for example, can be used separately from the `PluginUI`. Yet you would need to pass the `PluginUIContext` to it in order for it to observe the changes in the state of the plugin. This can be done via a `PluginContextContainer`:
+```typescript
+// your_app.plugin: PluginUIContext
+...
+<div className="your_custom_ui">
+<PluginContextContainer plugin={your_app.plugin}>
+        <SequenceView />
+</PluginContextContainer>
+</div>
+```
+
+
+
 ## ``PluginContext`` without built-in React UI
 
 - The [``PluginContext``](https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts) can be instantiated without using the default React UI.
@@ -180,8 +208,10 @@ async function init() {
         return;
     }
 
+    // Example url:"https://files.rcsb.org/download/3j7z.pdb" 
+    // Example url:"https://files.rcsb.org/download/5AFI.cif" 
     const data = await plugin.builders.data.download({ url: '...' }, { state: { isGhost: true } });
-    const trajectory = await plugin.builders.structure.parseTrajectory(data, format);
+    const trajectory = await plugin.builders.structure.parseTrajectory(data, format); //format is 'mmcif' or 'pdb' etc.
     await plugin.builders.structure.hierarchy.applyPreset(trajectory, 'default');
 }
 
