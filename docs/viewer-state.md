@@ -58,14 +58,14 @@ PluginCommands.Toast.Show(plugin, {
 
 ## Behaviors
 
-The state of the Mol* plugin is usually governed by dynamics behaviors which can be set up in initial plugin specification or updated during the plugin runtime. This allows for high modularity and customizability of individual plugin instances.
+The state of the Mol* plugin is usually governed by dynamic behaviors which can be set up in initial plugin specification or updated during the plugin runtime. This allows for high modularity and customizability of individual plugin instances.
 
 
 ### Highlight ``Loci``
 Highlighting adds a transient overpaint to a representation that will linger until the mouse enters hovers over another 
 object. Highlights can be applied to a previously defined ``Loci`` by:
 ```ts
-plugin.managers.interactivity.lociHighlights.highlightOnly({ loci });
+plugin.managers.interactivity.lociHighlights.highlightOnly({ loci }); // loci: Loci
 ```
 Reset all highlights by:
 ```ts
@@ -74,15 +74,17 @@ plugin.managers.interactivity.clearHighlights();
 
 
 ### Select ``Loci``
+
 Selected elements will appear with distinct visuals and, if applicable, the corresponding sequence positions will be 
 shown in the Sequence Viewer panel. Selections persist until removed, for example by clicking the background. A ``Loci``
 is selected by:
 ```ts
-plugin.managers.interactivity.lociSelects.select({ loci });
+plugin.managers.interactivity.lociSelects.select({ loci }); // loci: Loci
 ```
+
 Deselect a specific ``Loci`` by:
 ```ts
-plugin.managers.interactivity.lociSelects.deselect({ loci });
+plugin.managers.interactivity.lociSelects.deselect({ loci }); // loci: Loci
 ```
 To deselect everything:
 ```ts
@@ -98,7 +100,7 @@ plugin.managers.structure.focus.setFromLoci(loci);
 ```
 Extend an existing focus representation by:
 ```ts
-plugin.managers.structure.focus.addFromLoci(loci);
+plugin.managers.structure.focus.addFromLoci(loci); // loci: Loci
 ```
 Reset by:
 ```ts
@@ -109,8 +111,9 @@ plugin.managers.structure.focus.clear();
 ### Zoom ``Loci``
 A ``Loci`` can also be used to manipulate the camera. Zoom in by:
 ```ts
-plugin.managers.camera.focusLoci(loci);
+plugin.managers.camera.focusLoci(loci); // loci: Loci
 ```
+
 Restore the default camera position by:
 ```ts
 plugin.managers.camera.reset();
