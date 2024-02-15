@@ -118,3 +118,15 @@ Restore the default camera position by:
 ```ts
 plugin.managers.camera.reset();
 ```
+
+### Turn off view resetting on new representations
+A new representation via something like
+```ts
+.apply(StateTransforms.Representation.VolumeRepresentation3D, ...)
+```
+can reset the view to make the whole representation visible.
+When one wants to keep the view the same instead of having the rep reset the view,
+keep the view constant by:
+```ts
+plugin.canvas3d?.setProps({ camera: { manualReset: true } });
+```
