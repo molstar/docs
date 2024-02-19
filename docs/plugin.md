@@ -83,7 +83,8 @@ function initViewer(target: string | HTMLElement) {
 
 ```ts
 import { DefaultPluginUISpec, PluginUISpec } from 'molstar/lib/mol-plugin-ui/spec';
-import { createPluginAsync } from 'molstar/lib/mol-plugin-ui/index';
+import { createPluginUI } from 'molstar/lib/mol-plugin-ui';
+import { renderReact18 } from 'molstar/lib/mol-plugin-ui/react18';
 import { PluginConfig } from 'molstar/lib/mol-plugin/config';
 
 const MySpec: PluginUISpec = {
@@ -94,7 +95,11 @@ const MySpec: PluginUISpec = {
 }
 
 async function createPlugin(parent: HTMLElement) {
-    const plugin = await createPluginAsync(parent, MySpec);
+    const plugin = await createPluginUI({
+      target: parent,
+      spec: MySpec,
+      render: renderReact18
+    });
 
     const data = await plugin.builders.data.download({ url: '...' }, { state: { isGhost: true } });
     const trajectory = await plugin.builders.structure.parseTrajectory(data, format);
@@ -103,7 +108,7 @@ async function createPlugin(parent: HTMLElement) {
     return plugin;
 }
 
-createPlugin(document.getElementById('app')!); // app is a <div> element
+createPlugin(document.getElementById('app')!); // app is a <div> element with position: relative
 ```
 
 To use the plugin (with the React UI) inside another React app:
@@ -114,6 +119,7 @@ plugins, each with its own context and viewport, some extra steps are required (
 ```ts
 import { useEffect, createRef } from "react";
 import { createPluginUI } from "molstar/lib/mol-plugin-ui";
+import { renderReact18 } from "molstar/lib/mol-plugin-ui/react18";
 import { PluginUIContext } from "molstar/lib/mol-plugin-ui/context";
 /*  Might require extra configuration,
 see https://webpack.js.org/loaders/sass-loader/ for example.
@@ -130,9 +136,14 @@ declare global {
 export function MolStarWrapper() {
   const parent = createRef<HTMLDivElement>();
 
+  // In debug mode of react's strict mode, this code will
+  // be called twice in a row, which might result in unexpected behavior.
   useEffect(() => {
     async function init() {
-        window.molstar = await createPluginUI(parent.current as HTMLDivElement);
+        window.molstar = await createPluginUI({
+          target: parent.current as HTMLDivElement,
+          render: renderReact18
+        });
 
         const data = await window.molstar.builders.data.download(
           { url: "https://files.rcsb.org/download/3PTB.pdb" }, /* replace with your URL */
@@ -166,13 +177,46 @@ Furthermore, if it is desirable in your project to use the `molstar`'s React UI 
 // your_app.plugin: PluginUIContext
 ...
 <div className="your_custom_ui">
-<PluginContextContainer plugin={your_app.plugin}>
-        <SequenceView />
-</PluginContextContainer>
+  <PluginContextContainer plugin={your_app.plugin}>
+    <SequenceView />
+  </PluginContextContainer>
 </div>
 ```
 
+## Directly using Mol* React UI
 
+```ts
+class MolStarWrapper {
+  private resolveInit: () => void;
+  initialized = new Promise<boolean>(res => { this.resolveInit = () => res(true); });
+
+  private initCalled = false;
+  plugin: PluginUIContext;
+  async init() {
+    if (this.initCalled) return;
+    this.initCalled = true;
+    this.plugin = ...;
+    await this.plugin.init();
+    this.resolveInit();
+  }
+}
+
+function MolStar({ model }: { model: MolStarWrapper }) {
+  const [initialized, setInitialized] = useState(false);
+  useEffect(() => {
+     async function init() {
+       await model.init();
+       setInitialized(true);
+     }
+     init();
+  }, [model]);
+
+  if (!initialized) return <>Loading</>;
+  return <div style={{ ..., position: 'relative' }}>
+    <Plugin plugin={model.plugin} />
+  </div>;
+}
+```
 
 ## ``PluginContext`` without built-in React UI
 
