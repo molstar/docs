@@ -1,0 +1,816 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>Camera Settings - Mol* Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mvs-camera-settings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Mol* Documentation" class="md-header-nav__button md-logo" aria-label="Mol* Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Mol* Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              Camera Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/molstar/docs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Mol* Documentation" class="md-nav__button md-logo" aria-label="Mol* Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    Mol* Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/molstar/docs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../plugin/" class="md-nav__link">
+        Creating Plugin Instance
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-state/" class="md-nav__link">
+        Data State Management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../viewer-state/" class="md-nav__link">
+        Viewer State Management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selections/" class="md-nav__link">
+        Selections
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+      
+      <label class="md-nav__link" for="nav-7">
+        Transforms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Transforms" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Transforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transforms/custom-trajectory/" class="md-nav__link">
+        Load Trajectory from a Custom Format
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Data Access Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Access Tools" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Data Access Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/model-server/" class="md-nav__link">
+        Model Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/volume-server/" class="md-nav__link">
+        Volume Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/plugin-state-server/" class="md-nav__link">
+        Plugin State Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/convert-to-bcif/" class="md-nav__link">
+        Convert CIF to BinaryCIF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/create-ccd-table/" class="md-nav__link">
+        Create Table from CCD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/extract-ccd-ions/" class="md-nav__link">
+        Extract Ions from CCD
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      
+      <label class="md-nav__link" for="nav-9">
+        Extensions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extensions" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Extensions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1" checked>
+      
+      <label class="md-nav__link" for="nav-9-1">
+        MolViewSpec
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MolViewSpec" data-md-level="2">
+        <label class="md-nav__title" for="nav-9-1">
+          <span class="md-nav__icon md-icon"></span>
+          MolViewSpec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree-schema/" class="md-nav__link">
+        Tree Schema
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selectors/" class="md-nav__link">
+        Selectors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotations/" class="md-nav__link">
+        Annotations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Camera Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Camera Settings
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#camera-node" class="md-nav__link">
+    camera node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-node" class="md-nav__link">
+    focus node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas-node" class="md-nav__link">
+    canvas node
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvs-molstar-extension/" class="md-nav__link">
+        MVS Extension in Mol*
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvs-molstar-extension-integration/" class="md-nav__link">
+        MVS Extension in Mol* - Integration
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../struct-conn/" class="md-nav__link">
+        wwPDB StructConn
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#camera-node" class="md-nav__link">
+    camera node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#focus-node" class="md-nav__link">
+    focus node
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas-node" class="md-nav__link">
+    canvas node
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/molstar/docs/edit/master/docs/extensions/mvs/camera-settings.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="mvs-camera-settings">MVS camera settings</h1>
+<p>Camera position and orientation in MVS views can be adjusted in two ways: using a <code>camera</code> node or a <code>focus</code> node. Global attributes of the MVS view unrelated to camera positioning can be adjusted via a <code>canvas</code> node.</p>
+<h2 id="camera-node"><strong><code>camera</code></strong> node</h2>
+<p>This node instructs to directly set the camera position and orientation. This is done by passing <code>target</code>, <code>position</code>, and optional <code>up</code> vector. The <code>camera</code> node is placed as a child of the <code>root</code> node (see <a href="./mvs-tree-schema.md#camera">MVS tree schema</a>).</p>
+<p><img alt="Camera parameters" src="../files/camera.png" title="Camera parameters" /></p>
+<p>However, if the <code>target</code> and <code>position</code> vectors were interpreted directly, the resulting view would wildly depend on the camera <em>field of view</em> (FOV). For example, assume we have a sphere with center in the point [0,0,0] and radius 10 Angstroms, and we set <code>target=[0,0,0]</code> and <code>position=[0,0,20]</code>. With a camera with vertical FOV=90&deg;, the sphere will fit into the camera's view nicely, with some margin above and under the sphere. But with a camera with vertical FOV=30&deg;, the top and bottom of sphere will be cropped. To avoid these differences, MVS always uses position of a "reference camera" instead of the real camera position.</p>
+<p>We define the "reference camera" as a camera with such FOV that a sphere with radius <em>R</em> viewed from distance 2<em>R</em> (from the center of the sphere) will just fit into view (i.e. there will be no margin but the sphere will not be cropped). This happens to be FOV = 2 arcsin(1/2) = 60&deg; for perspective projection, and FOV = 2 arctan(1/2) &approx; 53&deg; for orthographic projection.</p>
+<p>When using <strong>perspective</strong> projection, the real camera distance from target and the real camera position can be calculated using these formulas:</p>
+<p><span class="arithmatex">\(d _\mathrm{adj} = d _\mathrm{ref} \cdot \frac{1}{2 \sin(\alpha/2)}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} + (\mathbf{p} _\mathrm{ref} - \mathbf{t}) \cdot \frac{1}{2 \sin(\alpha/2)}\)</span></p>
+<p>Where <span class="arithmatex">\(\alpha\)</span> is the vertical FOV of the real camera, <span class="arithmatex">\(d _\mathrm{ref}\)</span> is the reference camera distance from target, <span class="arithmatex">\(d _\mathrm{adj}\)</span> is the real (adjusted) camera distance from target, <span class="arithmatex">\(\mathbf{t}\)</span> is the target position, <span class="arithmatex">\(\mathbf{p} _\mathrm{ref}\)</span> is the reference camera position (the value in the MVS file), and <span class="arithmatex">\(\mathbf{p} _\mathrm{adj}\)</span> is the real (adjusted) camera position.</p>
+<p>When using <strong>orthographic</strong> projection, the formulas are slightly different:</p>
+<p><span class="arithmatex">\(d _\mathrm{adj} = d _\mathrm{ref} \cdot \frac{1}{2 \tan(\alpha/2)}\)</span></p>
+<p><span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} + (\mathbf{p} _\mathrm{ref} - \mathbf{t}) \cdot \frac{1}{2 \tan(\alpha/2)}\)</span></p>
+<p>The following image illustrates the camera position adjustment (left: reference camera with FOV=60&deg;, right: real camera with FOV=30&deg; must be positioned further from the target to obtain a similar view):</p>
+<p><img alt="Camera position adjustment (left: reference camera, right: real camera)" src="../files/camera-adjustment.png" title="Camera position adjustment (left: reference camera, right: real camera)" /></p>
+<p>Using the example above (<code>target=[0,0,0]</code> and <code>position=[0,0,20]</code>), we can calculate that the real camera position will have to be set to:</p>
+<ul>
+<li>[0, 0, 14.14] for FOV=90&deg; (perspective projection)</li>
+<li>[0, 0, 20] for FOV=60&deg; (perspective projection)</li>
+<li>[0, 0, 38.68] for FOV=30&deg; (perspective projection)</li>
+</ul>
+<p>Note that for orthographic projection this adjustment achieves that the resulting view does not depend on the FOV value. For perspective projection, this is not possible and there will always be some "fisheye effect", but still it greatly reduces the dependence on FOV and avoids the too-much-zoomed-in and too-much-zoomed-out views when FOV changes.</p>
+<p>The <code>up</code> vector describes how the camera should be rotated around the position-target axis, i.e. it is the vector in 3D space that will be point up when projected on the screen. For this, the <code>up</code> vector must be perpendicular to the position-target axis. However, the MVS specification does not require that the provided <code>up</code> vector be perpendicular. This can be solved by a simple adjustment:</p>
+<p><span class="arithmatex">\(\mathbf{u} _\mathrm{adj} = \mathrm{normalize} ( ((\mathbf{t}-\mathbf{p}) \times \mathbf{u}) \times (\mathbf{t}-\mathbf{p}) )\)</span></p>
+<p>Where <span class="arithmatex">\(\mathbf{u}\)</span> is the unadjusted up vector (the value in the MVS file), <span class="arithmatex">\(\mathbf{u} _\mathrm{adj}\)</span> is the adjusted up vector, <span class="arithmatex">\(\mathbf{t}\)</span> is the target position, and <span class="arithmatex">\(\mathbf{p}\)</span> is the camera position (can be either reference or adjusted camera position, the result will be the same).</p>
+<p>If the up vector parameter is not provided, the default value ([0, 1, 0]) will be used (after adjustment).</p>
+<h2 id="focus-node"><strong><code>focus</code></strong> node</h2>
+<p>The other way to adjust camera is to use a <code>focus</code> node. This node is placed as a child of a <code>component</code> node and instructs to set focus to the parent component (zoom in). This means that the camera target should be set to the center of the bounding sphere of the component, and the camera position should be set so that the bounding sphere just fits into view (vertically and horizontally).</p>
+<p>By default, the camera will be oriented so that the X axis points right, the Y axis points up, and the Z axis points towards the observer. This orientation can be changed using the optional vector parameters <code>direction</code> and <code>up</code> (see <a href="./mvs-tree-schema.md#focus">MVS tree schema</a>). The <code>direction</code> vector describes the direction from the camera position towards the target position (default [0, 0, -1]). The meaning of the <code>up</code> vector is the same as for the <code>camera</code> node and the same adjustment applies to it (default [0, 1, 0]).</p>
+<p>The reference camera position for a <code>focus</code> node can be calculated as follows:</p>
+<p><span class="arithmatex">\(\mathbf{p} _\mathrm{ref} = \mathbf{t} - \mathrm{normalize}(\mathbf{d}) \cdot 2 r \cdot \max(1, \frac{h}{w})\)</span></p>
+<p>Where <span class="arithmatex">\(\mathbf{t}\)</span> is the target position (center of the bounding sphere of the component), <span class="arithmatex">\(r\)</span> is the radius of the bounding sphere of the component, <span class="arithmatex">\(\mathbf{d}\)</span> is the direction vector, <span class="arithmatex">\(h\)</span> is the height of the viewport, <span class="arithmatex">\(w\)</span> is the width of the viewport, and <span class="arithmatex">\(\mathbf{p} _\mathrm{ref}\)</span> is the reference camera position (see explanation above).</p>
+<p>The following image illustrates the camera position calculation to fit the bounding sphere of a structure:</p>
+<p><img alt="Focus calculation" src="../files/focus.png" title="Focus calculation" /></p>
+<p>Applying the FOV-adjustment formulas from the previous section, we can easily calculate the real position that we have to set to the camera (<span class="arithmatex">\(\mathbf{p} _\mathrm{adj}\)</span>):</p>
+<p>For perspective projection: <span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} - \mathrm{normalize}(\mathbf{d}) \cdot \frac{r}{\sin(\alpha/2)} \cdot \max(1, \frac{h}{w})\)</span></p>
+<p>For orthographic projection: <span class="arithmatex">\(\mathbf{p} _\mathrm{adj} = \mathbf{t} - \mathrm{normalize}(\mathbf{d}) \cdot \frac{r}{\tan(\alpha/2)} \cdot \max(1, \frac{h}{w})\)</span></p>
+<h2 id="canvas-node"><strong><code>canvas</code></strong> node</h2>
+<p>Attributes that apply to the MVS view as a whole, but are not related to camera positioning, can be set using a <code>canvas</code> node. This node is placed as a child of the <code>root</code> node (see <a href="./mvs-tree-schema.md#canvas">MVS tree schema</a>).</p>
+<p>Currently, this only includes one parameter: <code>background_color</code>. Its value can be set to either a <a href="http://www.w3.org/TR/css3-color/#svg-color">X11 color</a> (e.g. <code>"red"</code>), or a hexadecimal color code (e.g. <code>"#FF0011"</code>). If there is no <code>canvas</code> node, the background will be white.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../annotations/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Annotations
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../mvs-molstar-extension/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                MVS Extension in Mol*
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

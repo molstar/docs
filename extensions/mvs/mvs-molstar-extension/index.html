@@ -1,0 +1,865 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-6.2.6">
+    
+    
+      
+        <title>MVS Extension in Mol* - Mol* Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#molviewspec-extension-in-mol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="Mol* Documentation" class="md-header-nav__button md-logo" aria-label="Mol* Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Mol* Documentation
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              MVS Extension in Mol*
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/molstar/docs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Mol* Documentation" class="md-nav__button md-logo" aria-label="Mol* Documentation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89"><path d="M3.136 17.387v42.932l42.932 21.467L3.136 17.387z"/><path d="M21.91 8l42.933 64.398-18.775 9.388L3.136 17.387 21.91 8z" fill-opacity=".5"/><path d="M67.535 17.387L40.273 35.543l21.878 32.818 5.384 2.691V17.387z"/><path d="M67.535 17.387v53.666l18.774-9.388V8l-18.774 9.387z" fill-opacity=".25"/></svg>
+
+    </a>
+    Mol* Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/molstar/docs" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../examples/" class="md-nav__link">
+        Examples
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../plugin/" class="md-nav__link">
+        Creating Plugin Instance
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-state/" class="md-nav__link">
+        Data State Management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../viewer-state/" class="md-nav__link">
+        Viewer State Management
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../selections/" class="md-nav__link">
+        Selections
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+      
+      <label class="md-nav__link" for="nav-7">
+        Transforms
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Transforms" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Transforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../transforms/custom-trajectory/" class="md-nav__link">
+        Load Trajectory from a Custom Format
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
+      
+      <label class="md-nav__link" for="nav-8">
+        Data Access Tools
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Access Tools" data-md-level="1">
+        <label class="md-nav__title" for="nav-8">
+          <span class="md-nav__icon md-icon"></span>
+          Data Access Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/model-server/" class="md-nav__link">
+        Model Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/volume-server/" class="md-nav__link">
+        Volume Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/plugin-state-server/" class="md-nav__link">
+        Plugin State Server
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/convert-to-bcif/" class="md-nav__link">
+        Convert CIF to BinaryCIF
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/create-ccd-table/" class="md-nav__link">
+        Create Table from CCD
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-access-tools/extract-ccd-ions/" class="md-nav__link">
+        Extract Ions from CCD
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      
+      <label class="md-nav__link" for="nav-9">
+        Extensions
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Extensions" data-md-level="1">
+        <label class="md-nav__title" for="nav-9">
+          <span class="md-nav__icon md-icon"></span>
+          Extensions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9-1" type="checkbox" id="nav-9-1" checked>
+      
+      <label class="md-nav__link" for="nav-9-1">
+        MolViewSpec
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="MolViewSpec" data-md-level="2">
+        <label class="md-nav__title" for="nav-9-1">
+          <span class="md-nav__icon md-icon"></span>
+          MolViewSpec
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tree-schema/" class="md-nav__link">
+        Tree Schema
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selectors/" class="md-nav__link">
+        Selectors
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../annotations/" class="md-nav__link">
+        Annotations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../camera-settings/" class="md-nav__link">
+        Camera Settings
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MVS Extension in Mol*
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        MVS Extension in Mol*
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graphical-user-interface" class="md-nav__link">
+    Graphical user interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-interface" class="md-nav__link">
+    Programming interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-utilities" class="md-nav__link">
+    Command-line utilities
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mvs-molstar-extension-integration/" class="md-nav__link">
+        MVS Extension in Mol* - Integration
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../struct-conn/" class="md-nav__link">
+        wwPDB StructConn
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#graphical-user-interface" class="md-nav__link">
+    Graphical user interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#programming-interface" class="md-nav__link">
+    Programming interface
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-line-utilities" class="md-nav__link">
+    Command-line utilities
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/molstar/docs/edit/master/docs/extensions/mvs/mvs-molstar-extension.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="molviewspec-extension-in-mol">MolViewSpec extension in Mol*</h1>
+<p>Mol* MolViewSpec extension provides functionality for building, validating, and visualizing MVS views.</p>
+<h2 id="graphical-user-interface">Graphical user interface</h2>
+<p>There are multiple ways to load MolViewSpec views (<code>.mvsj</code>/<code>.mvsx</code>) into Mol* Viewer:</p>
+<ul>
+<li>
+<p><strong>Drag&amp;drop support:</strong> The easiest way to load a MVS view into Mol* Viewer is to drag a <code>.mvsj</code> or <code>.mvsx</code> file and drop it in a browser window with Mol* Viewer.</p>
+<p>Test with these files: <a href="../files/1cbs.mvsj">1cbs.mvsj</a>, <a href="../files/1h9t.mvsx">1h9t.mvsx</a></p>
+<p><img alt="MolViewSpec extension - load by drag&amp;drop" src="../files/ui-drag-and-drop.png" title="MolViewSpec extension - load by drag&amp;drop" /></p>
+</li>
+<li>
+<p><strong>Load via menu:</strong> Another way to load a MVS view is to use "Download File" or "Open Files" action, available in the "Home" tab in the left panel. For these actions, the "Format" parameter must be set to "MVSJ" or "MVSX" (in the "Miscellaneous" category) or "Auto".</p>
+<p>Test with this URL:</p>
+<div class="highlight"><pre><span></span><code>https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj
+</code></pre></div>
+<p><img alt="MolViewSpec extension - load via &quot;Download File&quot;" src="../files/ui-download-file.png" title="MolViewSpec extension - load via &quot;Download File&quot;" /></p>
+<p><img alt="MolViewSpec extension - load via &quot;Open Files&quot;" src="../files/ui-open-files.png" title="MolViewSpec extension - load via &quot;Open Files&quot;" /></p>
+</li>
+<li>
+<p><strong>URL parameters:</strong> Mol* Viewer supports <code>mvs-url</code>, <code>mvs-data</code>, and <code>mvs-format</code> URL parameters to specify a MVS view to be loaded when the viewer is initialized.</p>
+<ul>
+<li><code>mvs-url</code> specifies the address from which the MVS view should be retrieved.</li>
+<li><code>mvs-data</code> specifies the MVS view data directly. Keep in mind that some characters must be escaped to be used in the URL. Also beware that URLs longer than 2000 character may not work in all browsers. Because of these limitations, the preferred method it to host the data somewhere and use <code>mvs-url</code> instead.</li>
+<li><code>mvs-format</code> specifies the format of the MVS view data from <code>mvs-url</code> or <code>mvs-data</code>. Allowed values are <code>mvsj</code> and <code>mvsx</code> (default is <code>mvsj</code>).</li>
+</ul>
+<p>Examples of URL parameter usage:</p>
+<ul>
+<li>
+<p><a href="https://molstar.org/viewer/?mvs-format=mvsj&amp;mvs-url=https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj">https://molstar.org/viewer/?mvs-format=mvsj&amp;mvs-url=https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj</a></p>
+</li>
+<li>
+<p><a href="https://molstar.org/viewer/?mvs-format=mvsx&amp;mvs-url=https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1h9t.mvsx">https://molstar.org/viewer/?mvs-format=mvsx&amp;mvs-url=https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1h9t.mvsx</a></p>
+</li>
+<li>
+<p><a href="https://molstar.org/viewer/?mvs-format=mvsj&amp;mvs-data=%7B%22metadata%22%3A%7B%22title%22%3A%22Example%20MolViewSpec%20-%201cbs%20with%20labelled%20protein%20and%20ligand%22%2C%22version%22%3A%221%22%2C%22timestamp%22%3A%222023-11-24T10%3A38%3A17.483%22%7D%2C%22root%22%3A%7B%22kind%22%3A%22root%22%2C%22children%22%3A%5B%7B%22kind%22%3A%22download%22%2C%22params%22%3A%7B%22url%22%3A%22https%3A//www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22parse%22%2C%22params%22%3A%7B%22format%22%3A%22bcif%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22structure%22%2C%22params%22%3A%7B%22type%22%3A%22model%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22component%22%2C%22params%22%3A%7B%22selector%22%3A%22polymer%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22representation%22%2C%22params%22%3A%7B%22type%22%3A%22cartoon%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22color%22%2C%22params%22%3A%7B%22color%22%3A%22green%22%7D%7D%2C%7B%22kind%22%3A%22color%22%2C%22params%22%3A%7B%22selector%22%3A%7B%22label_asym_id%22%3A%22A%22%2C%22beg_label_seq_id%22%3A1%2C%22end_label_seq_id%22%3A50%7D%2C%22color%22%3A%22%236688ff%22%7D%7D%5D%7D%2C%7B%22kind%22%3A%22label%22%2C%22params%22%3A%7B%22text%22%3A%22Protein%22%7D%7D%5D%7D%2C%7B%22kind%22%3A%22component%22%2C%22params%22%3A%7B%22selector%22%3A%22ligand%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22representation%22%2C%22params%22%3A%7B%22type%22%3A%22ball_and_stick%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22color%22%2C%22params%22%3A%7B%22color%22%3A%22%23cc3399%22%7D%7D%5D%7D%2C%7B%22kind%22%3A%22label%22%2C%22params%22%3A%7B%22text%22%3A%22Retinoic%20Acid%22%7D%7D%5D%7D%5D%7D%5D%7D%5D%7D%2C%7B%22kind%22%3A%22canvas%22%2C%22params%22%3A%7B%22background_color%22%3A%22%23ffffee%22%7D%7D%2C%7B%22kind%22%3A%22camera%22%2C%22params%22%3A%7B%22target%22%3A%5B17%2C21%2C27%5D%2C%22position%22%3A%5B41%2C34%2C69%5D%2C%22up%22%3A%5B-0.129%2C0.966%2C-0.224%5D%7D%7D%5D%7D%7D">https://molstar.org/viewer/?mvs-format=mvsj&amp;mvs-data=%7B%22metadata%22%3A%7B%22title%22%3A%22Example%20MolViewSpec%20-%201cbs%20with%20labelled%20protein%20and%20ligand%22%2C%22version%22%3A%221%22%2C%22timestamp%22%3A%222023-11-24T10%3A38%3A17.483%22%7D%2C%22root%22%3A%7B%22kind%22%3A%22root%22%2C%22children%22%3A%5B%7B%22kind%22%3A%22download%22%2C%22params%22%3A%7B%22url%22%3A%22https%3A//www.ebi.ac.uk/pdbe/entry-files/1cbs.bcif%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22parse%22%2C%22params%22%3A%7B%22format%22%3A%22bcif%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22structure%22%2C%22params%22%3A%7B%22type%22%3A%22model%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22component%22%2C%22params%22%3A%7B%22selector%22%3A%22polymer%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22representation%22%2C%22params%22%3A%7B%22type%22%3A%22cartoon%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22color%22%2C%22params%22%3A%7B%22color%22%3A%22green%22%7D%7D%2C%7B%22kind%22%3A%22color%22%2C%22params%22%3A%7B%22selector%22%3A%7B%22label_asym_id%22%3A%22A%22%2C%22beg_label_seq_id%22%3A1%2C%22end_label_seq_id%22%3A50%7D%2C%22color%22%3A%22%236688ff%22%7D%7D%5D%7D%2C%7B%22kind%22%3A%22label%22%2C%22params%22%3A%7B%22text%22%3A%22Protein%22%7D%7D%5D%7D%2C%7B%22kind%22%3A%22component%22%2C%22params%22%3A%7B%22selector%22%3A%22ligand%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22representation%22%2C%22params%22%3A%7B%22type%22%3A%22ball_and_stick%22%7D%2C%22children%22%3A%5B%7B%22kind%22%3A%22color%22%2C%22params%22%3A%7B%22color%22%3A%22%23cc3399%22%7D%7D%5D%7D%2C%7B%22kind%22%3A%22label%22%2C%22params%22%3A%7B%22text%22%3A%22Retinoic%20Acid%22%7D%7D%5D%7D%5D%7D%5D%7D%5D%7D%2C%7B%22kind%22%3A%22canvas%22%2C%22params%22%3A%7B%22background_color%22%3A%22%23ffffee%22%7D%7D%2C%7B%22kind%22%3A%22camera%22%2C%22params%22%3A%7B%22target%22%3A%5B17%2C21%2C27%5D%2C%22position%22%3A%5B41%2C34%2C69%5D%2C%22up%22%3A%5B-0.129%2C0.966%2C-0.224%5D%7D%7D%5D%7D%7D</a></p>
+</li>
+<li>
+<p><a href="https://molstar.org/viewer/?mvs-format=mvsx&amp;mvs-data=base64,UEsDBBQAAAAIADSFPlhDx8RXYwEAAGwFAAAUABwAYW5ub3RhdGlvbnMtMWg5dC5jaWZVVAkAA8MmuWVuvbtldXgLAAEE9gEAAAQUAAAAlZJNj4IwEIbv/RVNPPSkacGPckT8TDabPe6emkq72ARbF9iD/34LFBV1FSbh7YTh4Z1hELzgjOyDgnGtTcELZXQOQGrMkQEWm8PRaKmLfJTynUwZz08HpkSrck5BCD8yU0ilwfycRXDxHoJFpUu4NqkAm/pYwWifmkwJCdaXdHtJmy6uOrtt47q0kwmry7n8uatKLZ5UY2M9Hzi1byWZ+T2WbAhtBPaiPoRoIMR0ijGyqZ1yuFNaKJ0geI5RBdAxhJ5PSgBjSmsgjE/pMDIhbFEj+wFbDnHcAP85zO8dKH3mEFWHEzQgBGPOnQP8vHp347BoA6KKBvh6ACzbwLeNeoZy/XfPW2DTF1i1AYyFqIHmH0I3wLovsO0LlJuezJygTDZ9ozeVcC2aLcBcFSVLKmA6c9IRIB5x8hrwamDipDMQOOkKzKiT14BfAh72S+nY0rzf0OMa6D60A7oPXQF9ZhiDP1BLAwQUAAAACACagEFYhgn8CJECAAAbFQAACgAcAGluZGV4Lm12c2pVVAkAAyTBu2UlwbtldXgLAAEE9gEAAAQUAAAA7VjBjtowEL3vV0S5tiSBFnXhttpKPbWq1KqXqoqMPWwsHDuynaVoxb/XNhAIiUOEtK26m5zIzLzJG8+8gfB0EwShFEKH8+DJfDZ3K8qJudtZ3+5sOKOMSODG/tNZgn10DUHEmjOByB7lfAWSKFdV9r21lMwCMq0LNY/j9XodwYJGCEflKi7IAmLgWm5GS8pAxYe88Tib6bQsCNJAIkyXYZVze/LIFrJ1wjXShqCCE8Z+1s6zFDJH9rTCPK8xOGPRxaTJpsZIaVliXcpzVt3MnFdvCnDcBAEWNiK2LQk7OLbzrHHFIi8EN81Kl1LkaSlpC+nLxF2EBZuUUYw4FxppKrga2Za7VrenrXWkMwyboXkQcpNylEONuurITYGRJsIPWDCBV2kGiIC0EDexJ/X4kQpnkCP3mAxRfonTI2IlKE/T9pFfpdBgUnkifrXaW2bEJbswJ/bydfZ0qUAhQZkjdMfhLbLPvLiow8BjJLUQ3lK9ZbkkPUqzVxeRmiSYkJfkUKF6lekir5NHBe8nkyq8IZc+Q3x82JluzIlcBl2tnSrDUUNmyCgpIZWIP4B/Kuy17fD6fe3i8SHaolsn8nWv22fYgR+/3L2G/bdAjBmtkFRpilfDGvTC/+oaHPZRhRj20S7yk2CkS/b3mZENJd4ZeUlLS5VyiXCHHIZtNWwrT/Q124qhBbD/b1P1en2s/+J2lT7vW2qPGWnr5jV9M292TNNi6Ny/7VzDdq7LesSp9+g5WHcWe+cmIsxBI4I0Ov4P+QhS2a8bwziJxod/IgkoLGmh9547HsBvlBcMgjXVWfD5x7egeRyhpjkobeIsZpJM3o+SySgZfx+P59Pb+btZNPtwO5lO3yTJPEnskWxvtn8AUEsBAh4DFAAAAAgANIU+WEPHxFdjAQAAbAUAABQAGAAAAAAAAQAAAKSBAAAAAGFubm90YXRpb25zLTFoOXQuY2lmVVQFAAPDJrlldXgLAAEE9gEAAAQUAAAAUEsBAh4DFAAAAAgAmoBBWIYJ/AiRAgAAGxUAAAoAGAAAAAAAAQAAAKSBsQEAAGluZGV4Lm12c2pVVAUAAyTBu2V1eAsAAQT2AQAABBQAAABQSwUGAAAAAAIAAgCqAAAAhgQAAAAA">https://molstar.org/viewer/?mvs-format=mvsx&amp;mvs-data=base64,UEsDBBQAAAAIADSFPlhDx8RXYwEAAGwFAAAUABwAYW5ub3RhdGlvbnMtMWg5dC5jaWZVVAkAA8MmuWVuvbtldXgLAAEE9gEAAAQUAAAAlZJNj4IwEIbv/RVNPPSkacGPckT8TDabPe6emkq72ARbF9iD/34LFBV1FSbh7YTh4Z1hELzgjOyDgnGtTcELZXQOQGrMkQEWm8PRaKmLfJTynUwZz08HpkSrck5BCD8yU0ilwfycRXDxHoJFpUu4NqkAm/pYwWifmkwJCdaXdHtJmy6uOrtt47q0kwmry7n8uatKLZ5UY2M9Hzi1byWZ+T2WbAhtBPaiPoRoIMR0ijGyqZ1yuFNaKJ0geI5RBdAxhJ5PSgBjSmsgjE/pMDIhbFEj+wFbDnHcAP85zO8dKH3mEFWHEzQgBGPOnQP8vHp347BoA6KKBvh6ACzbwLeNeoZy/XfPW2DTF1i1AYyFqIHmH0I3wLovsO0LlJuezJygTDZ9ozeVcC2aLcBcFSVLKmA6c9IRIB5x8hrwamDipDMQOOkKzKiT14BfAh72S+nY0rzf0OMa6D60A7oPXQF9ZhiDP1BLAwQUAAAACACagEFYhgn8CJECAAAbFQAACgAcAGluZGV4Lm12c2pVVAkAAyTBu2UlwbtldXgLAAEE9gEAAAQUAAAA7VjBjtowEL3vV0S5tiSBFnXhttpKPbWq1KqXqoqMPWwsHDuynaVoxb/XNhAIiUOEtK26m5zIzLzJG8+8gfB0EwShFEKH8+DJfDZ3K8qJudtZ3+5sOKOMSODG/tNZgn10DUHEmjOByB7lfAWSKFdV9r21lMwCMq0LNY/j9XodwYJGCEflKi7IAmLgWm5GS8pAxYe88Tib6bQsCNJAIkyXYZVze/LIFrJ1wjXShqCCE8Z+1s6zFDJH9rTCPK8xOGPRxaTJpsZIaVliXcpzVt3MnFdvCnDcBAEWNiK2LQk7OLbzrHHFIi8EN81Kl1LkaSlpC+nLxF2EBZuUUYw4FxppKrga2Za7VrenrXWkMwyboXkQcpNylEONuurITYGRJsIPWDCBV2kGiIC0EDexJ/X4kQpnkCP3mAxRfonTI2IlKE/T9pFfpdBgUnkifrXaW2bEJbswJ/bydfZ0qUAhQZkjdMfhLbLPvLiow8BjJLUQ3lK9ZbkkPUqzVxeRmiSYkJfkUKF6lekir5NHBe8nkyq8IZc+Q3x82JluzIlcBl2tnSrDUUNmyCgpIZWIP4B/Kuy17fD6fe3i8SHaolsn8nWv22fYgR+/3L2G/bdAjBmtkFRpilfDGvTC/+oaHPZRhRj20S7yk2CkS/b3mZENJd4ZeUlLS5VyiXCHHIZtNWwrT/Q124qhBbD/b1P1en2s/+J2lT7vW2qPGWnr5jV9M292TNNi6Ny/7VzDdq7LesSp9+g5WHcWe+cmIsxBI4I0Ov4P+QhS2a8bwziJxod/IgkoLGmh9547HsBvlBcMgjXVWfD5x7egeRyhpjkobeIsZpJM3o+SySgZfx+P59Pb+btZNPtwO5lO3yTJPEnskWxvtn8AUEsBAh4DFAAAAAgANIU+WEPHxFdjAQAAbAUAABQAGAAAAAAAAQAAAKSBAAAAAGFubm90YXRpb25zLTFoOXQuY2lmVVQFAAPDJrlldXgLAAEE9gEAAAQUAAAAUEsBAh4DFAAAAAgAmoBBWIYJ/AiRAgAAGxUAAAoAGAAAAAAAAQAAAKSBsQEAAGluZGV4Lm12c2pVVAUAAyTBu2V1eAsAAQT2AQAABBQAAABQSwUGAAAAAAIAAgCqAAAAhgQAAAAA</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2 id="programming-interface">Programming interface</h2>
+<p>Most functions for manipulation of MVS data (including parsing, encoding, validating, and building) are provided by the <code>MVSData</code> object (defined in <a href="https://github.com/molstar/molstar/blob/master/src/extensions/mvs/mvs-data.ts">src/extensions/mvs/mvs-data.ts</a>). In TypeScript, <code>MVSData</code> is also the type for a MVS view.</p>
+<p>The <code>loadMVS</code> function (defined in <a href="https://github.com/molstar/molstar/blob/master/src/extensions/mvs/load.ts">src/extensions/mvs/load.ts</a>) can be used to load MVS view data into Mol* Viewer.</p>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Fetch a MVS, validate, and load</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="s1">&#39;https://raw.githubusercontent.com/molstar/molstar/master/examples/mvs/1cbs.mvsj&#39;</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">rawData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">text</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mvsData</span><span class="o">:</span><span class="w"> </span><span class="kt">MVSData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">fromMVSJ</span><span class="p">(</span><span class="nx">rawData</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">isValid</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">))</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`Oh no: </span><span class="si">${</span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">validationIssues</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">loadMVS</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="nx">mvsData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">replaceExisting</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Loaded this:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">toPrettyString</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Loaded this:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">toMVSJ</span><span class="p">(</span><span class="nx">mvsData</span><span class="p">));</span>
+
+<span class="c1">// Build a MVS and load</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">builder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MVSData</span><span class="p">.</span><span class="nx">createBuilder</span><span class="p">();</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">structure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;https://www.ebi.ac.uk/pdbe/entry-files/download/1og2_updated.cif&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">parse</span><span class="p">({</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;mmcif&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">modelStructure</span><span class="p">();</span>
+<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;polymer&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;cartoon&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="nx">structure</span><span class="p">.</span><span class="nx">component</span><span class="p">({</span><span class="w"> </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ligand&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">representation</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;ball_and_stick&#39;</span><span class="w"> </span><span class="p">}).</span><span class="nx">color</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#aa55ff&#39;</span><span class="w"> </span><span class="p">});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">mvsData2</span><span class="o">:</span><span class="w"> </span><span class="kt">MVSData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">builder</span><span class="p">.</span><span class="nx">getState</span><span class="p">();</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">loadMVS</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="nx">mvsData2</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">replaceExisting</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p>When using the pre-built Mol* plugin bundle, <code>MVSData</code> and <code>loadMVS</code> are exposed as <code>molstar.PluginExtensions.mvs.MVSData</code> and <code>molstar.PluginExtensions.mvs.loadMVS</code>. Furthermore, the <code>molstar.Viewer</code> class has <code>loadMvsFromUrl</code> and <code>loadMvsData</code> methods, providing the same functionality as <code>mvs-url</code> and <code>mvs-data</code> URL parameters. </p>
+<p>See <a href="../mvs-molstar-extension-integration/">MolViewSpec extension in Mol* - Integration in web pages</a> for a demonstration.</p>
+<hr />
+<h2 id="command-line-utilities">Command-line utilities</h2>
+<p>The MVS extension in Mol* provides a few command-line utilities, which can be executed via NodeJS:</p>
+<ul>
+<li><code>mvs-validate</code> provides validation of MolViewSpec files</li>
+<li><code>mvs-render</code> creates images based on MolViewSpec files</li>
+<li><code>mvs-print-schema</code> prints MolViewSpec tree schema (i.e. currently supported node types and their parameters)</li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Clone Mol* repo, install, and build</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/molstar/molstar.git
+<span class="nb">cd</span><span class="w"> </span>molstar/
+npm<span class="w"> </span>install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+
+<span class="c1"># Validate a MolViewSpec file `examples/mvs/1cbs.mvsj`</span>
+node<span class="w"> </span>lib/commonjs/cli/mvs/mvs-validate.js<span class="w"> </span>examples/mvs/1cbs.mvsj
+
+<span class="c1"># Render a MolViewSpec file `examples/mvs/1cbs.mvsj` to `../outputs/1cbs.png`</span>
+node<span class="w"> </span>lib/commonjs/cli/mvs/mvs-render.js<span class="w"> </span>-i<span class="w"> </span>examples/mvs/1cbs.mvsj<span class="w"> </span>-o<span class="w"> </span>../outputs/1cbs.png<span class="w"> </span>--size<span class="w"> </span>800x600<span class="w"> </span>--molj
+
+<span class="c1"># Print MolViewSpec tree schema formatted as markdown</span>
+node<span class="w"> </span>lib/commonjs/cli/mvs/mvs-print-schema.js<span class="w"> </span>--markdown
+</code></pre></div>
+<p>(An alternative to cloning the GitHub repository is to install Mol* package from npm by <code>npm install molstar canvas gl jpeg-js pngjs</code>. Then you can type <code>npx mvs-validate ...</code> instead of <code>node lib/commonjs/cli/mvs/mvs-validate.js ...</code>)</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../camera-settings/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Camera Settings
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../mvs-molstar-extension-integration/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                MVS Extension in Mol* - Integration
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.53cc9318.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e9c9f54f.min.js"></script><script id="__lang" type="application/json">{"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
