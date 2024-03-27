@@ -46,8 +46,8 @@ nav:
     - 'data-access-tools/extract-ccd-ions.md'
   - Extensions:
     - MolViewSpec: 
-      - Introduction: 'extensions/mvs/intro.md'
-      - Tree Schema: 'extensions/mvs/mvs-tree-schema.md'
+      - Introduction: 'extensions/mvs/index.md'
+      - Tree Schema: 'extensions/mvs/tree-schema.md'
       - Selectors: 'extensions/mvs/selectors.md'
       - Annotations: 'extensions/mvs/annotations.md'
       - Camera Settings: 'extensions/mvs/camera-settings.md'
