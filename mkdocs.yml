@@ -45,13 +45,6 @@ nav:
     - 'data-access-tools/create-ccd-table.md'
     - 'data-access-tools/extract-ccd-ions.md'
   - Extensions:
-    - MolViewSpec: 
-      - Introduction: 'extensions/mvs/index.md'
-      - Tree Schema: 'extensions/mvs/tree-schema.md'
-      - Selectors: 'extensions/mvs/selectors.md'
-      - Annotations: 'extensions/mvs/annotations.md'
-      - Camera Settings: 'extensions/mvs/camera-settings.md'
-      - MVS Extension in Mol*: 'extensions/mvs/mvs-molstar-extension.md'
-      - MVS Extension in Mol* - Integration: 'extensions/mvs/mvs-molstar-extension-integration.md'
+    - MolViewSpec: 'extensions/mvs/index.md'
     - wwPDB StructConn: 'extensions/struct-conn.md'
 repo_url: https://github.com/molstar/docs
