@@ -1,18 +1,3 @@
-# Mol* Documentation
+# Mol* Developer Documentation
 
-Contributions to the documentations are highly welcome! Please make a pull request with your changes.
-
-Requires Python 3.x to build.
-
-```
-pip install mkdocs-material
-git clone --recursive https://github.com/molstar/docs.git
-cd docs
-```
-
-For local preview, run
-
-```
-mkdocs serve
-```
-
+This is a helper repository for publishing developer documentation from the [main repo](https://github.com/molstar/molstar/tree/master/docs) to https://molstar.org/docs/.
