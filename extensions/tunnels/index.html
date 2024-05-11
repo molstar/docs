@@ -1237,7 +1237,7 @@
 
 <h1 id="tunnel-visualization-extension">Tunnel Visualization Extension</h1>
 <p>This documentation outlines the usage of the Mol<em> extension for visualizing tunnels in molecular structures. The extension integrates with Mol</em> to render 3D representations of tunnels using specified data sources and properties.</p>
-<p>The extension is a key component in ChannelsDB, enabling users to visualize tunnels within molecules directly from the database. While it is used with ChannelsDB, users can also input their own data or connect to different databases, ensuring versatility across various research environments.</p>
+<p>The extension is a key component in ChannelsDB (https://channelsdb2.biodata.ceitec.cz/), enabling users to visualize tunnels within molecules directly from the database. While it is used with ChannelsDB, users can also input their own data or connect to different databases, ensuring versatility across various research environments.</p>
 <h2 id="data-types">Data Types</h2>
 <p>The primary data types involved in tunnel visualization are:</p>
 <h3 id="tunnel">Tunnel</h3>
@@ -1304,11 +1304,11 @@
 <ul>
 <li><code>Purpose</code>: Converts single Tunnel data into a state object for individual processing.</li>
 <li><code>Usage</code>:
-    <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">().</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Profile</span><span class="p">,</span><span class="w"> </span>
-<span class="w">        </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Id</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">tunnel</span><span class="p">.</span><span class="nx">Type</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
-<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+    <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">().</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Profile</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Id</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">tunnel</span><span class="p">.</span><span class="nx">Type</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
 <span class="p">});</span>
 </code></pre></div></li>
 </ul>
@@ -1334,8 +1334,8 @@
 <h3 id="visualizing-a-single-tunnel">Visualizing a Single Tunnel</h3>
 <p>This example (<a href="../../../src/extensions/sb-ncbr/tunnels/examples.ts#L46">runVisualizeTunnel</a>) shows how to visualize a single tunnel.
 <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">()</span>
-<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Profile</span><span class="p">,</span>
 <span class="w">                </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Id</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">tunnel</span><span class="p">.</span><span class="nx">Type</span><span class="w"> </span><span class="p">}</span>
 <span class="w">            </span><span class="p">}</span>
