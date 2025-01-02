@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -1193,7 +1193,7 @@
 <h1 id="creating-plugin-instance">Creating Plugin Instance</h1>
 <h2 id="intro">Intro</h2>
 <p>What is a plugin? A plugin is a collection of modules that provide functionality to the <code>Mol*</code> UI. The plugin is responsible for managing the state of the viewer, internal and user interactions. It has been a previous point of confusion for new users of <code>Mol*</code> to associate the <strong>viewer</strong> part of the library with what is further referred to as the <strong>plugin</strong>. These two are closely connected in the <code>molstar-plugin-ui</code> module, which is the user-facing part of the library and ultimately provides the viewer, but they are ultimately distinct. </p>
-<p>It is recommended that you inspect the general class structure of <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/plugin.tsx#L41"><code>PluginInitWrapper</code></a>, <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin/context.ts#L71"><code>PluginUIContext</code></a> and <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16"><code>PluginUIComponent</code></a> to better understand the flow of data and events in the plugin. 
+<p>It is recommended that you inspect the general class structure of <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/plugin.tsx#L41"><code>PluginInitWrapper</code></a>, <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/context.ts#L12"><code>PluginUIContext</code></a> and <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16"><code>PluginUIComponent</code></a> to better understand the flow of data and events in the plugin. 
 A passing analogy is that a <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin/context.ts#L71"> <code>PluginContext</code> </a> is the engine that powers computation, rendering, events and subscriptions inside the molstar UI. All UI components depend on <code>PluginContext</code>. </p>
 <p>There are 4 basic ways of instantiating the Mol* plugin.</p>
 <h2 id="viewer-wrapper"><code>Viewer</code> wrapper</h2>
@@ -1477,7 +1477,7 @@ plugins, each with its own context and viewport, some extra steps are required (
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
