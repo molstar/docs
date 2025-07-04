@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -488,7 +488,7 @@
   
   
   <span class="md-ellipsis">
-    State Transforms
+    Managers
     
   </span>
   
@@ -498,6 +498,75 @@
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Managers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../plugin/managers/markdown-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Markdown Extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    State Transforms
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             State Transforms
           </label>
@@ -1219,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../exporting-components.md" class="md-nav__link">
+      <a href="../../misc/exporting-components/" class="md-nav__link">
         
   
   
@@ -1484,7 +1553,7 @@
 <h2 id="visualization-examples">Visualization Examples</h2>
 <p>To help users understand how to use these transformations in practice, include detailed examples:</p>
 <h3 id="visualizing-multiple-tunnels">Visualizing Multiple Tunnels</h3>
-<p>This example (<a href="../../../src/extensions/sb-ncbr/tunnels/examples.ts#L19">runVisualizeTunnels</a>) demonstrates how to visualize multiple tunnels from a fetched dataset.
+<p>This example (see <code>src/extensions/sb-ncbr/tunnels/examples.ts#L19</code>) demonstrates how to visualize multiple tunnels from a fetched dataset.
 <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">()</span>
 <span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelsFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnels</span><span class="w"> </span><span class="p">})</span>
 <span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">SelectTunnel</span><span class="p">)</span>
@@ -1492,7 +1561,7 @@
 <span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Representation</span><span class="p">.</span><span class="nx">ShapeRepresentation3D</span><span class="p">);</span>
 </code></pre></div></p>
 <h3 id="visualizing-a-single-tunnel">Visualizing a Single Tunnel</h3>
-<p>This example (<a href="../../../src/extensions/sb-ncbr/tunnels/examples.ts#L46">runVisualizeTunnel</a>) shows how to visualize a single tunnel.
+<p>This example (see <code>src/extensions/sb-ncbr/tunnels/examples.ts#L46</code>) shows how to visualize a single tunnel.
 <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">()</span>
 <span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
@@ -1554,7 +1623,7 @@
       <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
