@@ -9,18 +9,22 @@
       
       
       
+        <link rel="prev" href="custom-trajectory.html">
       
       
-      <link rel="icon" href="/assets/favicon.png">
+        <link rel="next" href="../../data-access-tools/model-server.html">
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Mol* Developer Documentation</title>
+        <title>Custom Conformation - Mol* Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -39,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#assign-custom-conformation-to-a-model" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="Mol* Developer Documentation" class="md-header__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
+    <a href="../../index.html" title="Mol* Developer Documentation" class="md-header__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -94,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Custom Conformation
             
           </span>
         </div>
@@ -184,7 +193,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="Mol* Developer Documentation" class="md-nav__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
+    <a href="../../index.html" title="Mol* Developer Documentation" class="md-nav__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -219,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -238,18 +247,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -265,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin
@@ -279,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/instance.html" class="md-nav__link">
+      <a href="../instance.html" class="md-nav__link">
         
   
   
@@ -302,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/examples.html" class="md-nav__link">
+      <a href="../examples.html" class="md-nav__link">
         
   
   
@@ -325,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/custom-library.html" class="md-nav__link">
+      <a href="../custom-library.html" class="md-nav__link">
         
   
   
@@ -348,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/selections.html" class="md-nav__link">
+      <a href="../selections.html" class="md-nav__link">
         
   
   
@@ -371,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/viewer-state.html" class="md-nav__link">
+      <a href="../viewer-state.html" class="md-nav__link">
         
   
   
@@ -394,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/data-state.html" class="md-nav__link">
+      <a href="../data-state.html" class="md-nav__link">
         
   
   
@@ -417,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/file-formats.html" class="md-nav__link">
+      <a href="../file-formats.html" class="md-nav__link">
         
   
   
@@ -440,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/cif-schemas.html" class="md-nav__link">
+      <a href="../cif-schemas.html" class="md-nav__link">
         
   
   
@@ -501,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/managers/markdown-extensions.html" class="md-nav__link">
+      <a href="../managers/markdown-extensions.html" class="md-nav__link">
         
   
   
@@ -529,18 +540,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" checked>
         
           
           <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
@@ -556,7 +569,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_10">
             <span class="md-nav__icon md-icon"></span>
             State Transforms
@@ -570,7 +583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/transforms/custom-trajectory.html" class="md-nav__link">
+      <a href="custom-trajectory.html" class="md-nav__link">
         
   
   
@@ -590,10 +603,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/plugin/transforms/custom-conformation.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="custom-conformation.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -604,6 +626,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -669,7 +692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/model-server.html" class="md-nav__link">
+      <a href="../../data-access-tools/model-server.html" class="md-nav__link">
         
   
   
@@ -730,7 +753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/index.html" class="md-nav__link">
+      <a href="../../data-access-tools/volume-server/index.html" class="md-nav__link">
         
   
   
@@ -753,7 +776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/examples.html" class="md-nav__link">
+      <a href="../../data-access-tools/volume-server/examples.html" class="md-nav__link">
         
   
   
@@ -776,7 +799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/how-it-works.html" class="md-nav__link">
+      <a href="../../data-access-tools/volume-server/how-it-works.html" class="md-nav__link">
         
   
   
@@ -799,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/response-data-format.html" class="md-nav__link">
+      <a href="../../data-access-tools/volume-server/response-data-format.html" class="md-nav__link">
         
   
   
@@ -830,7 +853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/plugin-state-server.html" class="md-nav__link">
+      <a href="../../data-access-tools/plugin-state-server.html" class="md-nav__link">
         
   
   
@@ -853,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/convert-to-bcif.html" class="md-nav__link">
+      <a href="../../data-access-tools/convert-to-bcif.html" class="md-nav__link">
         
   
   
@@ -876,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/create-ccd-table.html" class="md-nav__link">
+      <a href="../../data-access-tools/create-ccd-table.html" class="md-nav__link">
         
   
   
@@ -899,7 +922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/extract-ccd-ions.html" class="md-nav__link">
+      <a href="../../data-access-tools/extract-ccd-ions.html" class="md-nav__link">
         
   
   
@@ -967,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/mvs/index.html" class="md-nav__link">
+      <a href="../../extensions/mvs/index.html" class="md-nav__link">
         
   
   
@@ -990,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/struct-conn.html" class="md-nav__link">
+      <a href="../../extensions/struct-conn.html" class="md-nav__link">
         
   
   
@@ -1013,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/tunnels.html" class="md-nav__link">
+      <a href="../../extensions/tunnels.html" class="md-nav__link">
         
   
   
@@ -1036,7 +1059,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/interactions.html" class="md-nav__link">
+      <a href="../../extensions/interactions.html" class="md-nav__link">
         
   
   
@@ -1104,7 +1127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/interesting-pdb-entries.html" class="md-nav__link">
+      <a href="../../misc/interesting-pdb-entries.html" class="md-nav__link">
         
   
   
@@ -1127,7 +1150,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/exporting-components.html" class="md-nav__link">
+      <a href="../../misc/exporting-components.html" class="md-nav__link">
         
   
   
@@ -1167,6 +1190,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1178,8 +1203,68 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="assign-custom-conformation-to-a-model">Assign custom conformation to a Model</h1>
+<p>This document shows how to update model conformation dynamically using the <code>ModelWithCoordinates</code> transforms. If this does not work well with your particular use case, it is suggested to write a custom version of <code>ModelWithCoordinates</code> with similar usage as outlined in this document.</p>
+<div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">animateFirstXCoordinateExample</span><span class="p">(</span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="kt">PluginContext</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">BuiltInTrajectoryFormat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Load data</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="p">});</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">trajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">parseTrajectory</span><span class="p">(</span><span class="nx">_data</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="p">);</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">hierarchy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">hierarchy</span><span class="p">.</span><span class="nx">applyPreset</span><span class="p">(</span><span class="nx">trajectory</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;default&#39;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">hierarchy</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Insert ModelWithCoordinates cell to be updated in the loop bellow</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">coordinatesNode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">build</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">hierarchy</span><span class="o">!</span><span class="p">.</span><span class="nx">model</span><span class="p">).</span><span class="nx">insert</span><span class="p">(</span><span class="nx">ModelWithCoordinates</span><span class="p">).</span><span class="nx">commit</span><span class="p">();</span>
+
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">x0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hierarchy</span><span class="o">!</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">data</span><span class="o">!</span><span class="p">.</span><span class="nx">atomicConformation</span><span class="p">.</span><span class="nx">x</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">xOffset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">animateFirstXCoord</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Normally, the whole conformation would come from an API/library call, but here we fake it:</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="p">,</span><span class="w"> </span><span class="nx">z</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hierarchy</span><span class="o">!</span><span class="p">.</span><span class="nx">model</span><span class="p">.</span><span class="nx">data</span><span class="o">!</span><span class="p">.</span><span class="nx">atomicConformation</span><span class="p">;</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">nextX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[...(</span><span class="nx">x</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="kt">number</span><span class="p">[])];</span>
+<span class="w">        </span><span class="nx">nextX</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">x0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">xOffset</span><span class="p">;</span>
+<span class="w">        </span><span class="nx">xOffset</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">0.05</span><span class="p">;</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">xOffset</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span><span class="w"> </span><span class="nx">xOffset</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span>
+
+<span class="w">        </span><span class="c1">// Construct new coodinate frame from the data and commit the update.</span>
+<span class="w">        </span><span class="c1">// Rest of the state tree will reconcile automatically.</span>
+<span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">build</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">coordinatesNode</span><span class="p">).</span><span class="nx">update</span><span class="p">({</span>
+<span class="w">            </span><span class="nx">atomicCoordinateFrame</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">elementCount</span><span class="o">:</span><span class="w"> </span><span class="kt">x.length</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">time</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"> </span><span class="nx">unit</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;step&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nx">xyzOrdering</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isIdentity</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">                </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">nextX</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">y</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">z</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}).</span><span class="nx">commit</span><span class="p">();</span>
+
+<span class="w">        </span><span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">animateFirstXCoord</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">animateFirstXCoord</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="c1">// animateFirstXCoordinateExample(&#39;https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/CID/2244/record/SDF/?record_type=3d&#39;, &#39;sdf&#39;);</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1215,10 +1300,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

@@ -9,18 +9,22 @@
       
       
       
+        <link rel="prev" href="viewer-state.html">
       
       
-      <link rel="icon" href="/assets/favicon.png">
+        <link rel="next" href="file-formats.html">
+      
+      
+      <link rel="icon" href="../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
       
-        <title>Mol* Developer Documentation</title>
+        <title>Data State - Mol* Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -39,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -57,6 +61,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#plugin-state-representation" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -69,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="Mol* Developer Documentation" class="md-header__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
+    <a href="../index.html" title="Mol* Developer Documentation" class="md-header__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -94,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Data State
             
           </span>
         </div>
@@ -184,7 +193,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="Mol* Developer Documentation" class="md-nav__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
+    <a href="../index.html" title="Mol* Developer Documentation" class="md-nav__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -219,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -238,18 +247,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -265,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin
@@ -279,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/instance.html" class="md-nav__link">
+      <a href="instance.html" class="md-nav__link">
         
   
   
@@ -302,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/examples.html" class="md-nav__link">
+      <a href="examples.html" class="md-nav__link">
         
   
   
@@ -325,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/custom-library.html" class="md-nav__link">
+      <a href="custom-library.html" class="md-nav__link">
         
   
   
@@ -348,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/selections.html" class="md-nav__link">
+      <a href="selections.html" class="md-nav__link">
         
   
   
@@ -371,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/viewer-state.html" class="md-nav__link">
+      <a href="viewer-state.html" class="md-nav__link">
         
   
   
@@ -391,10 +402,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/plugin/data-state.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="data-state.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -405,6 +425,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -417,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/file-formats.html" class="md-nav__link">
+      <a href="file-formats.html" class="md-nav__link">
         
   
   
@@ -440,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/cif-schemas.html" class="md-nav__link">
+      <a href="cif-schemas.html" class="md-nav__link">
         
   
   
@@ -501,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/managers/markdown-extensions.html" class="md-nav__link">
+      <a href="managers/markdown-extensions.html" class="md-nav__link">
         
   
   
@@ -570,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/transforms/custom-trajectory.html" class="md-nav__link">
+      <a href="transforms/custom-trajectory.html" class="md-nav__link">
         
   
   
@@ -593,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/plugin/transforms/custom-conformation.html" class="md-nav__link">
+      <a href="transforms/custom-conformation.html" class="md-nav__link">
         
   
   
@@ -669,7 +690,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/model-server.html" class="md-nav__link">
+      <a href="../data-access-tools/model-server.html" class="md-nav__link">
         
   
   
@@ -730,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/index.html" class="md-nav__link">
+      <a href="../data-access-tools/volume-server/index.html" class="md-nav__link">
         
   
   
@@ -753,7 +774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/examples.html" class="md-nav__link">
+      <a href="../data-access-tools/volume-server/examples.html" class="md-nav__link">
         
   
   
@@ -776,7 +797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/how-it-works.html" class="md-nav__link">
+      <a href="../data-access-tools/volume-server/how-it-works.html" class="md-nav__link">
         
   
   
@@ -799,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/volume-server/response-data-format.html" class="md-nav__link">
+      <a href="../data-access-tools/volume-server/response-data-format.html" class="md-nav__link">
         
   
   
@@ -830,7 +851,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/plugin-state-server.html" class="md-nav__link">
+      <a href="../data-access-tools/plugin-state-server.html" class="md-nav__link">
         
   
   
@@ -853,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/convert-to-bcif.html" class="md-nav__link">
+      <a href="../data-access-tools/convert-to-bcif.html" class="md-nav__link">
         
   
   
@@ -876,7 +897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/create-ccd-table.html" class="md-nav__link">
+      <a href="../data-access-tools/create-ccd-table.html" class="md-nav__link">
         
   
   
@@ -899,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/data-access-tools/extract-ccd-ions.html" class="md-nav__link">
+      <a href="../data-access-tools/extract-ccd-ions.html" class="md-nav__link">
         
   
   
@@ -967,7 +988,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/mvs/index.html" class="md-nav__link">
+      <a href="../extensions/mvs/index.html" class="md-nav__link">
         
   
   
@@ -990,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/struct-conn.html" class="md-nav__link">
+      <a href="../extensions/struct-conn.html" class="md-nav__link">
         
   
   
@@ -1013,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/tunnels.html" class="md-nav__link">
+      <a href="../extensions/tunnels.html" class="md-nav__link">
         
   
   
@@ -1036,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/extensions/interactions.html" class="md-nav__link">
+      <a href="../extensions/interactions.html" class="md-nav__link">
         
   
   
@@ -1104,7 +1125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/interesting-pdb-entries.html" class="md-nav__link">
+      <a href="../misc/interesting-pdb-entries.html" class="md-nav__link">
         
   
   
@@ -1127,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/misc/exporting-components.html" class="md-nav__link">
+      <a href="../misc/exporting-components.html" class="md-nav__link">
         
   
   
@@ -1167,6 +1188,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -1178,8 +1201,124 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="plugin-state-representation">Plugin State Representation</h1>
+<p>The state of the plugin is represented by a JS Object with these components (described in more detail below):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Snapshot of data state tree</span>
+<span class="w">    </span><span class="nx">data?</span><span class="o">:</span><span class="w"> </span><span class="kt">State.Snapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Snapshot of behavior state tree</span>
+<span class="w">    </span><span class="nx">behaviour?</span><span class="o">:</span><span class="w"> </span><span class="kt">State.Snapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Snapshot for current animation,</span>
+<span class="w">    </span><span class="nx">animation?</span><span class="o">:</span><span class="w"> </span><span class="kt">PluginAnimationManager.Snapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Saved camera positions</span>
+<span class="w">    </span><span class="nx">cameraSnapshots?</span><span class="o">:</span><span class="w"> </span><span class="kt">CameraSnapshotManager.StateSnapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">canvas3d</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Current camera position</span>
+<span class="w">        </span><span class="nx">camera?</span><span class="o">:</span><span class="w"> </span><span class="kt">Camera.Snapshot</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// Viewport properties such as background color</span>
+<span class="w">        </span><span class="nx">viewport?</span><span class="o">:</span><span class="w"> </span><span class="kt">Canvas3DProps</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>When defining the state object, all components are optional, i.e., it is possible to define just the <code>data</code> component.</p>
+<p>Example state is available <a href="example-state.json">here</a>. In the plugin, it is possible to create and load these objects using <code>Download JSON</code> 
+and <code>Open JSON</code> buttons in the <code>State Snapshots</code> section.</p>
+<h1 id="state-tree">State Tree</h1>
+<p>The data and behavior of the plugin is stored in a tree data structure implemented in the <code>mol-state</code> module. This data structure 
+strictly separates the definition of the state with its actual instantiation, similar to the relation of HTML and DOM in web browsers.</p>
+<p>The snapshot itself is a JS Object with these components</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">State</span><span class="p">.</span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">tree</span><span class="o">:</span><span class="w"> </span><span class="kt">StateTree.Serialized</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">StateTree</span><span class="p">.</span><span class="nx">Serialized</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Transforms serialized in pre-order</span>
+<span class="w">    </span><span class="c1">// The first transform must always be a special &quot;root&quot; node with ref: &#39;-=root=-&#39;</span>
+<span class="w">    </span><span class="nx">transforms</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">Transform</span><span class="p">.</span><span class="nx">Serialized</span><span class="p">,</span><span class="w"> </span><span class="nx">StateObjectCell</span><span class="p">.</span><span class="nx">State</span><span class="p">][]</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Transform</span><span class="p">.</span><span class="nx">Serialized</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// id of the parent transform</span>
+<span class="w">    </span><span class="nx">parent</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// id of the corresponding transformer</span>
+<span class="w">    </span><span class="nx">transformer</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// parameters of the transform</span>
+<span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Properties</span>
+<span class="w">    </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="kt">Transform.Props</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// reference to this transform node (a unique string, can be UUID)</span>
+<span class="w">    </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// version of the node (a unique string, can be UUID)</span>
+<span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Transform</span><span class="p">.</span><span class="nx">Props</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// tag used in state related operation</span>
+<span class="w">    </span><span class="nx">tag?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// is the node visible in the UI</span>
+<span class="w">    </span><span class="nx">isGhost?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// is the node bound to its parent? (shown as a single node in the UI)</span>
+<span class="w">    </span><span class="nx">isBinding?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>"Built-in" data state transforms and description of their parameters are defined in <code>mol-plugin/state/transforms</code>. Behavior transforms are defined in <code>mol-plugin/behavior</code>.</p>
+<h1 id="animation-state">Animation State</h1>
+<p>Defined by <code>CameraSnapshotManager.StateSnapshot</code> in <code>mol-plugin/state/animation/manager.ts</code>.</p>
+<h1 id="canvas3d-state">Canvas3D State</h1>
+<p>Defined by <code>Canvas3DParams</code> in <code>mol-canvas3d/canvas3d.ts</code>.</p>
+<h1 id="camera-snapshots">Camera Snapshots</h1>
+<p>The camera position (defined in <code>mol-canvas3d/camera.ts</code>) is a plain JS object with the type:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="kt">Mode</span><span class="p">,</span><span class="w"> </span><span class="c1">// = &#39;perspective&#39; | &#39;orthographic&#39;</span>
+
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+<span class="w">    </span><span class="c1">// Normalized camera direction</span>
+<span class="w">    </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+<span class="w">    </span><span class="nx">up</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+
+<span class="w">    </span><span class="nx">near</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">far</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">fogNear</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">fogFar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nx">fov</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>cameraSnapshots</code> component of the state are defined in <code>mol-plugin/state/camera.ts</code></p>
+<div class="highlight"><pre><span></span><code><span class="kr">interface</span><span class="w"> </span><span class="nx">CameraSnapshotManager</span><span class="p">.</span><span class="nx">StateSnapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">entries</span><span class="o">:</span><span class="w"> </span><span class="nx">Entry</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span><span class="w"> </span><span class="nx">Entry</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">UUID</span><span class="p">,</span><span class="w"> </span><span class="c1">// or any string</span>
+<span class="w">    </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// timestamp usually in UTC format</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">?:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional name</span>
+<span class="w">    </span><span class="nx">description</span><span class="o">?:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional description</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="o">:</span><span class="w"> </span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Snapshot</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -1215,10 +1354,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/assets/javascripts/bundle.50899def.min.js"></script>
+      <script src="../assets/javascripts/bundle.50899def.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
