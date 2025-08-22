@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../plugin-state-server/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../create-ccd-table/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>Convert CIF to BinaryCIF - Mol* Developer Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#convert-cif-to-binarycif" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              Convert CIF to BinaryCIF
             
           </span>
         </div>
@@ -637,18 +637,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -664,7 +666,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data Access Tools
@@ -678,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/model-server/" class="md-nav__link">
+      <a href="../model-server/" class="md-nav__link">
         
   
   
@@ -739,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/" class="md-nav__link">
+      <a href="../volume-server/" class="md-nav__link">
         
   
   
@@ -762,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/examples/" class="md-nav__link">
+      <a href="../volume-server/examples/" class="md-nav__link">
         
   
   
@@ -785,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/how-it-works/" class="md-nav__link">
+      <a href="../volume-server/how-it-works/" class="md-nav__link">
         
   
   
@@ -808,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/response-data-format/" class="md-nav__link">
+      <a href="../volume-server/response-data-format/" class="md-nav__link">
         
   
   
@@ -839,7 +841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/plugin-state-server/" class="md-nav__link">
+      <a href="../plugin-state-server/" class="md-nav__link">
         
   
   
@@ -859,10 +861,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../data-access-tools/convert-to-bcif/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Convert CIF to BinaryCIF
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -873,6 +897,68 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -885,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/create-ccd-table/" class="md-nav__link">
+      <a href="../create-ccd-table/" class="md-nav__link">
         
   
   
@@ -908,7 +994,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/extract-ccd-ions/" class="md-nav__link">
+      <a href="../extract-ccd-ions/" class="md-nav__link">
         
   
   
@@ -935,20 +1021,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -964,7 +1048,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Extensions
@@ -975,19 +1059,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../extensions/mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +1073,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1011,7 +1085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../struct-conn/" class="md-nav__link">
+      <a href="../../extensions/struct-conn/" class="md-nav__link">
         
   
   
@@ -1034,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+      <a href="../../extensions/tunnels/" class="md-nav__link">
         
   
   
@@ -1057,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/" class="md-nav__link">
+      <a href="../../extensions/interactions/" class="md-nav__link">
         
   
   
@@ -1191,6 +1265,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Filter file
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1208,8 +1332,58 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+<h1 id="convert-cif-to-binarycif">Convert CIF to BinaryCIF</h1>
+<p>BinaryCIF is an efficient, binary flavor of the CIF format. See <a href="https://github.com/molstar/BinaryCIF">specification</a> and <a href="https://doi.org/10.1371/journal.pcbi.1008247">publication</a> for further details.</p>
+<p>This script reads data in CIF format and converts it lossless to a BinaryCIF file that can be read by Mol* or other 
+applications.</p>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/cli/cif2bcif/index.js<span class="w"> </span>file.cif<span class="w"> </span>file.bcif
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src</code></td>
+<td>Source CIF to convert (can be gzipped)</td>
+</tr>
+<tr>
+<td><code>out</code></td>
+<td>Generated BinaryCIF output path</td>
+</tr>
+<tr>
+<td><code>-c</code></td>
+<td>Path to optional config file</td>
+</tr>
+<tr>
+<td><code>-f</code></td>
+<td>Path to optional filter file</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>index.js<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CONFIG<span class="o">]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILTER<span class="o">]</span><span class="w"> </span>src<span class="w"> </span>out
+</code></pre></div>
+<h3 id="config-file">Config file</h3>
+<p>Controls how certain columns will be encoded. This is a JSON array of instructions:
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">EncodingStrategyHint</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">categoryName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">columnName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">encoding</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pack&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;rle&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;delta&#39;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="s1">&#39;delta-rle&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">precision?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+</code></pre></div>
+Identify a particular CIF columns by its name and override the encoding by Integer Packing, Run-Length Encoding, Delta 
+Encoding, or Delta &amp; Run-Length Encoding. You can optionally control the precision if dealing with float values.</p>
+<h3 id="filter-file">Filter file</h3>
+<p>Specifies which categories and columns will be written. This is a plain text file, each line represents one entry. 
+You can specify explicitly which categories or columns to include by adding <code>category_name</code> or 
+<code>category_name.field_name</code>. You can also choose to ignore some categories or columns by adding <code>!category_name</code> or 
+<code>!category_name.field_name</code>.</p>
 
 
 

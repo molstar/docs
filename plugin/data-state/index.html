@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../viewer-state/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../file-formats/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>Data State - Mol* Developer Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#plugin-state-representation" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              Data State
             
           </span>
         </div>
@@ -247,18 +247,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -274,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin
@@ -288,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/instance/" class="md-nav__link">
+      <a href="../instance/" class="md-nav__link">
         
   
   
@@ -311,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -334,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/custom-library/" class="md-nav__link">
+      <a href="../custom-library/" class="md-nav__link">
         
   
   
@@ -357,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/selections/" class="md-nav__link">
+      <a href="../selections/" class="md-nav__link">
         
   
   
@@ -380,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/viewer-state/" class="md-nav__link">
+      <a href="../viewer-state/" class="md-nav__link">
         
   
   
@@ -400,10 +402,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../plugin/data-state/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -414,6 +425,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -426,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/file-formats/" class="md-nav__link">
+      <a href="../file-formats/" class="md-nav__link">
         
   
   
@@ -449,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/cif-schemas/" class="md-nav__link">
+      <a href="../cif-schemas/" class="md-nav__link">
         
   
   
@@ -510,7 +522,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/managers/markdown-extensions/" class="md-nav__link">
+      <a href="../managers/markdown-extensions/" class="md-nav__link">
         
   
   
@@ -579,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-trajectory/" class="md-nav__link">
+      <a href="../transforms/custom-trajectory/" class="md-nav__link">
         
   
   
@@ -602,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-conformation/" class="md-nav__link">
+      <a href="../transforms/custom-conformation/" class="md-nav__link">
         
   
   
@@ -935,20 +947,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -964,7 +974,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Extensions
@@ -975,19 +985,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../extensions/mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +999,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1011,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../struct-conn/" class="md-nav__link">
+      <a href="../../extensions/struct-conn/" class="md-nav__link">
         
   
   
@@ -1034,7 +1034,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+      <a href="../../extensions/tunnels/" class="md-nav__link">
         
   
   
@@ -1057,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/" class="md-nav__link">
+      <a href="../../extensions/interactions/" class="md-nav__link">
         
   
   
@@ -1208,8 +1208,104 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+<h1 id="plugin-state-representation">Plugin State Representation</h1>
+<p>The state of the plugin is represented by a JS Object with these components (described in more detail below):</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Snapshot of data state tree</span>
+<span class="w">    </span><span class="nx">data?</span><span class="o">:</span><span class="w"> </span><span class="kt">State.Snapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Snapshot of behavior state tree</span>
+<span class="w">    </span><span class="nx">behaviour?</span><span class="o">:</span><span class="w"> </span><span class="kt">State.Snapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Snapshot for current animation,</span>
+<span class="w">    </span><span class="nx">animation?</span><span class="o">:</span><span class="w"> </span><span class="kt">PluginAnimationManager.Snapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Saved camera positions</span>
+<span class="w">    </span><span class="nx">cameraSnapshots?</span><span class="o">:</span><span class="w"> </span><span class="kt">CameraSnapshotManager.StateSnapshot</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">canvas3d</span><span class="o">?:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Current camera position</span>
+<span class="w">        </span><span class="nx">camera?</span><span class="o">:</span><span class="w"> </span><span class="kt">Camera.Snapshot</span><span class="p">,</span>
+<span class="w">        </span><span class="c1">// Viewport properties such as background color</span>
+<span class="w">        </span><span class="nx">viewport?</span><span class="o">:</span><span class="w"> </span><span class="kt">Canvas3DProps</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>When defining the state object, all components are optional, i.e., it is possible to define just the <code>data</code> component.</p>
+<p>Example state is available <a href="../example-state.json">here</a>. In the plugin, it is possible to create and load these objects using <code>Download JSON</code> 
+and <code>Open JSON</code> buttons in the <code>State Snapshots</code> section.</p>
+<h1 id="state-tree">State Tree</h1>
+<p>The data and behavior of the plugin is stored in a tree data structure implemented in the <code>mol-state</code> module. This data structure 
+strictly separates the definition of the state with its actual instantiation, similar to the relation of HTML and DOM in web browsers.</p>
+<p>The snapshot itself is a JS Object with these components</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">State</span><span class="p">.</span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">tree</span><span class="o">:</span><span class="w"> </span><span class="kt">StateTree.Serialized</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">StateTree</span><span class="p">.</span><span class="nx">Serialized</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Transforms serialized in pre-order</span>
+<span class="w">    </span><span class="c1">// The first transform must always be a special &quot;root&quot; node with ref: &#39;-=root=-&#39;</span>
+<span class="w">    </span><span class="nx">transforms</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">Transform</span><span class="p">.</span><span class="nx">Serialized</span><span class="p">,</span><span class="w"> </span><span class="nx">StateObjectCell</span><span class="p">.</span><span class="nx">State</span><span class="p">][]</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Transform</span><span class="p">.</span><span class="nx">Serialized</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// id of the parent transform</span>
+<span class="w">    </span><span class="nx">parent</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// id of the corresponding transformer</span>
+<span class="w">    </span><span class="nx">transformer</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// parameters of the transform</span>
+<span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// Properties</span>
+<span class="w">    </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="kt">Transform.Props</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// reference to this transform node (a unique string, can be UUID)</span>
+<span class="w">    </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// version of the node (a unique string, can be UUID)</span>
+<span class="w">    </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Transform</span><span class="p">.</span><span class="nx">Props</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// tag used in state related operation</span>
+<span class="w">    </span><span class="nx">tag?</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span>
+<span class="w">    </span><span class="c1">// is the node visible in the UI</span>
+<span class="w">    </span><span class="nx">isGhost?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">,</span>
+<span class="w">    </span><span class="c1">// is the node bound to its parent? (shown as a single node in the UI)</span>
+<span class="w">    </span><span class="nx">isBinding?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>"Built-in" data state transforms and description of their parameters are defined in <code>mol-plugin/state/transforms</code>. Behavior transforms are defined in <code>mol-plugin/behavior</code>.</p>
+<h1 id="animation-state">Animation State</h1>
+<p>Defined by <code>CameraSnapshotManager.StateSnapshot</code> in <code>mol-plugin/state/animation/manager.ts</code>.</p>
+<h1 id="canvas3d-state">Canvas3D State</h1>
+<p>Defined by <code>Canvas3DParams</code> in <code>mol-canvas3d/canvas3d.ts</code>.</p>
+<h1 id="camera-snapshots">Camera Snapshots</h1>
+<p>The camera position (defined in <code>mol-canvas3d/camera.ts</code>) is a plain JS object with the type:</p>
+<div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="kt">Mode</span><span class="p">,</span><span class="w"> </span><span class="c1">// = &#39;perspective&#39; | &#39;orthographic&#39;</span>
+
+<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+<span class="w">    </span><span class="c1">// Normalized camera direction</span>
+<span class="w">    </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+<span class="w">    </span><span class="nx">up</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+<span class="w">    </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">Vec3</span><span class="p">,</span><span class="w"> </span><span class="c1">// array with [x, y, z]</span>
+
+<span class="w">    </span><span class="nx">near</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">far</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">fogNear</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">fogFar</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nx">fov</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The <code>cameraSnapshots</code> component of the state are defined in <code>mol-plugin/state/camera.ts</code></p>
+<div class="highlight"><pre><span></span><code><span class="kr">interface</span><span class="w"> </span><span class="nx">CameraSnapshotManager</span><span class="p">.</span><span class="nx">StateSnapshot</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">entries</span><span class="o">:</span><span class="w"> </span><span class="nx">Entry</span><span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="kr">interface</span><span class="w"> </span><span class="nx">Entry</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="nx">UUID</span><span class="p">,</span><span class="w"> </span><span class="c1">// or any string</span>
+<span class="w">    </span><span class="nx">timestamp</span><span class="o">:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// timestamp usually in UTC format</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">?:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional name</span>
+<span class="w">    </span><span class="nx">description</span><span class="o">?:</span><span class="w"> </span><span class="nx">string</span><span class="p">,</span><span class="w"> </span><span class="c1">// optional description</span>
+<span class="w">    </span><span class="nx">snapshot</span><span class="o">:</span><span class="w"> </span><span class="nx">Camera</span><span class="p">.</span><span class="nx">Snapshot</span>
+<span class="p">}</span>
+</code></pre></div>
 
 
 

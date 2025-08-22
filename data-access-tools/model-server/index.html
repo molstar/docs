@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../../plugin/transforms/custom-conformation/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../volume-server/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>Model Server - Mol* Developer Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#model-server" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              Model Server
             
           </span>
         </div>
@@ -637,18 +637,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -664,7 +666,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data Access Tools
@@ -675,10 +677,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../data-access-tools/model-server/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Model Server
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -689,6 +713,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessor-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessor Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessor-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessor Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      From NPM
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -739,7 +870,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/" class="md-nav__link">
+      <a href="../volume-server/" class="md-nav__link">
         
   
   
@@ -762,7 +893,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/examples/" class="md-nav__link">
+      <a href="../volume-server/examples/" class="md-nav__link">
         
   
   
@@ -785,7 +916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/how-it-works/" class="md-nav__link">
+      <a href="../volume-server/how-it-works/" class="md-nav__link">
         
   
   
@@ -808,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/response-data-format/" class="md-nav__link">
+      <a href="../volume-server/response-data-format/" class="md-nav__link">
         
   
   
@@ -839,7 +970,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/plugin-state-server/" class="md-nav__link">
+      <a href="../plugin-state-server/" class="md-nav__link">
         
   
   
@@ -862,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/convert-to-bcif/" class="md-nav__link">
+      <a href="../convert-to-bcif/" class="md-nav__link">
         
   
   
@@ -885,7 +1016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/create-ccd-table/" class="md-nav__link">
+      <a href="../create-ccd-table/" class="md-nav__link">
         
   
   
@@ -908,7 +1039,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/extract-ccd-ions/" class="md-nav__link">
+      <a href="../extract-ccd-ions/" class="md-nav__link">
         
   
   
@@ -935,20 +1066,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -964,7 +1093,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Extensions
@@ -975,19 +1104,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../extensions/mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +1118,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1011,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../struct-conn/" class="md-nav__link">
+      <a href="../../extensions/struct-conn/" class="md-nav__link">
         
   
   
@@ -1034,7 +1153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+      <a href="../../extensions/tunnels/" class="md-nav__link">
         
   
   
@@ -1057,7 +1176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/" class="md-nav__link">
+      <a href="../../extensions/interactions/" class="md-nav__link">
         
   
   
@@ -1191,6 +1310,101 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#production-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      Production Use
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memory-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessor-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessor Example
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessor-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preprocessor Usage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Mode
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Properties
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-npm" class="md-nav__link">
+    <span class="md-ellipsis">
+      From NPM
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1208,8 +1422,192 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+<h1 id="model-server">Model Server</h1>
+<p>Provides access to molecular 1D, 2D, and 3D (sub-)structure models of molecules. Substructures are described by the 
+mol-script (MolQL) language. It has the ability to include additional data to mmCIF “on the fly”, e.g. integrate 
+primary PDB archival data from <a href="https://www.wwpdb.org/data/ccd">Chemical Component Dictionary (CCD)</a>, 
+<a href="https://www.wwpdb.org/data/ccd">Protonation Variants Companion Dictionary (PVCD)</a> and 
+<a href="https://www.wwpdb.org/data/bird">Biologically Interesting moleculeReference Dictionary (BIRD)</a>. </p>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/server<span class="w"> </span>--sourceMap<span class="w"> </span>pdb-bcif<span class="w"> </span><span class="s1">&#39;/opt/data/bcif/${id}.bcif&#39;</span>
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--version</code>, <code>-v</code></td>
+<td>Show program's version number and exit.</td>
+</tr>
+<tr>
+<td><code>--cfg</code></td>
+<td>JSON config file path. If a property is not specified, cmd line param/OS variable/default value are used.</td>
+</tr>
+<tr>
+<td><code>--printCfg</code></td>
+<td>Print current config for validation and exit.</td>
+</tr>
+<tr>
+<td><code>--cfgTemplate</code></td>
+<td>Prints default JSON config template to be modified and exit.</td>
+</tr>
+<tr>
+<td><code>--apiPrefix</code></td>
+<td>Specify the prefix of the API, i.e. &lt;host&gt;/&lt;apiPrefix&gt;/&lt;API queries&gt;</td>
+</tr>
+<tr>
+<td><code>--defaultPort</code></td>
+<td>Specify the port the server is running on</td>
+</tr>
+<tr>
+<td><code>--cacheMaxSizeInBytes</code></td>
+<td>Read structures are cached, this specifies the cache size, 0 for off.</td>
+</tr>
+<tr>
+<td><code>--cacheEntryTimeoutMs</code></td>
+<td>Specify in ms how long to keep entries in cache.</td>
+</tr>
+<tr>
+<td><code>--requestTimeoutMs</code></td>
+<td>The maximum number of ms the server spends on a request.</td>
+</tr>
+<tr>
+<td><code>--queryTimeoutMs</code></td>
+<td>The maximum time the server dedicates to executing a query in ms. Does not include the time it takes to read and export the data.</td>
+</tr>
+<tr>
+<td><code>--shutdownTimeoutMinutes</code></td>
+<td>Server will shut down after this amount of minutes, 0 for off.</td>
+</tr>
+<tr>
+<td><code>--shutdownTimeoutVarianceMinutes</code></td>
+<td>Modifies the shutdown timer by +/- <code>timeoutVarianceMinutes</code> (to avoid multiple instances shutting at the same time)</td>
+</tr>
+<tr>
+<td><code>--maxQueryManyQueries</code></td>
+<td>Maximum number of queries allowed by the query-many at a time</td>
+</tr>
+<tr>
+<td><code>--defaultSource</code></td>
+<td>modifies which 'sourceMap' source to use by default</td>
+</tr>
+<tr>
+<td><code>--sourceMap</code></td>
+<td>Map <code>id</code>s for a <code>source</code> to a file path. Example: <code>pdb-bcif '../../data/bcif/${id}.bcif'</code> - JS expressions can be used inside <code>${}</code>, e.g. <code>${id.substr(1, 2)}/${id}.mdb</code> Can be specified multiple times. The <code>SOURCE</code> variable (e.g. <code>pdb-bcif</code>) is arbitrary and depends on how you plan to use the server. Supported formats: cif, bcif, cif.gz, bcif.gz</td>
+</tr>
+<tr>
+<td><code>--sourceMapUrl</code></td>
+<td>Same as <code>--sourceMap</code> but for URL. <code>--sourceMapUrl src url format</code> Example: <code>pdb-cif 'https://www.ebi.ac.uk/pdbe/entry-files/download/${id}_updated.cif' cif</code> Supported formats: cif, bcif, cif.gz, bcif.gz. Supported protocols: http://, https://, gs://</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/server<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--cfg<span class="w"> </span>CFG<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--printCfg<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--cfgTemplate<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--apiPrefix<span class="w"> </span>PREFIX<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--defaultPort<span class="w"> </span>PORT<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--cacheMaxSizeInBytes<span class="w"> </span>CACHE_SIZE<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--cacheEntryTimeoutMs<span class="w"> </span>CACHE_TIMEOUT<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--requestTimeoutMs<span class="w"> </span>REQUEST_TIMEOUT<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--queryTimeoutMs<span class="w"> </span>QUERY_TIMEOUT<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--shutdownTimeoutMinutes<span class="w"> </span>TIME<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--shutdownTimeoutVarianceMinutes<span class="w"> </span>VARIANCE<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--maxQueryManyQueries<span class="w"> </span>QUERY_MANY_LIMIT<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--defaultSource<span class="w"> </span>DEFAULT_SOURCE<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--sourceMap<span class="w"> </span>SOURCE<span class="w"> </span>PATH<span class="o">]</span>
+<span class="w">        </span><span class="o">[</span>--sourceMapUrl<span class="w"> </span>SOURCE<span class="w"> </span>PATH<span class="w"> </span>SOURCE_MAP_FORMAT<span class="o">]</span>
+</code></pre></div>
+<h3 id="production-use">Production Use</h3>
+<p>In production, it is required to use a service that will keep the server running, such as <a href="https://github.com/foreverjs/forever">forever.js</a>.</p>
+<h3 id="memory-issues">Memory Issues</h3>
+<p>Sometimes nodejs might run into problems with memory. This is usually resolved by adding the <code>--max-old-space-size=8192</code> parameter.</p>
+<h3 id="preprocessor-example">Preprocessor Example</h3>
+<p>The preprocessor application allows addiing custom data to CIF files and/or 
+<a href="../convert-to-bcif/">convert CIF to BinaryCIF</a>.
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/preprocess
+</code></pre></div></p>
+<h3 id="preprocessor-usage">Preprocessor Usage</h3>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--input</code>, <code>-i</code></td>
+<td>Input filename</td>
+</tr>
+<tr>
+<td><code>--outCIF</code>, <code>-oc</code></td>
+<td>Output CIF filename</td>
+</tr>
+<tr>
+<td><code>--outBCIF</code>, <code>-ob</code></td>
+<td>Output BinaryCIF filename</td>
+</tr>
+<tr>
+<td><code>--cfg</code>, <code>-c</code></td>
+<td>Config file path</td>
+</tr>
+<tr>
+<td><code>--folderIn</code>, <code>-fin</code></td>
+<td>Convert folder</td>
+</tr>
+<tr>
+<td><code>--folderOutCIF</code>, <code>-foc</code></td>
+<td>Convert folder text output</td>
+</tr>
+<tr>
+<td><code>--folderOutBCIF</code>, <code>-fob</code></td>
+<td>Convert folder binary output</td>
+</tr>
+<tr>
+<td><code>--folderNumProcesses</code>, <code>-fp</code></td>
+<td>Convert folder number processes</td>
+</tr>
+</tbody>
+</table>
+<p>Example cfg.json:
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="s2">&quot;numProcesses&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="s2">&quot;customProperties&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="s2">&quot;sources&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;wwpdb&quot;</span><span class="w"> </span><span class="p">],</span><span class="w"> </span>
+<span class="w">        </span><span class="s2">&quot;params&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">            </span><span class="s2">&quot;wwPDB&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">                </span><span class="s2">&quot;chemCompBondTablePath&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./build/data/ccb.bcif&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="local-mode">Local Mode</h3>
+<p>The server can be run in local/file based mode using
+<div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/query
+</code></pre></div></p>
+<h3 id="custom-properties">Custom Properties</h3>
+<p>This feature is still in development.</p>
+<p>It is possible to provide property descriptors that transform data to internal representation and define how it should 
+be exported into one or mode CIF categories. Examples of this are located in the <code>mol-model-props</code> module and are 
+linked to the server in the config and <code>servers/model/properties</code>.</p>
+<h2 id="from-npm">From NPM</h2>
+<div class="highlight"><pre><span></span><code>npm install --production molstar
+cd ./model-server 
+</code></pre></div>
+<p>(or <code>node node_modules\.bin\model-server</code> in Windows).</p>
+<p>The NPM package contains all the tools mentioned in the previous sections as "binaries":</p>
+<ul>
+<li><code>model-server</code></li>
+<li><code>model-server-query</code></li>
+<li><code>model-server-preprocess</code></li>
+</ul>
 
 
 

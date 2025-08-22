@@ -9,22 +9,22 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../how-it-works/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../../plugin-state-server/">
       
       
-      <link rel="icon" href="../../assets/favicon.png">
+      <link rel="icon" href="../../../assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>Data Format - Mol* Developer Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7e37652d.min.css">
       
       
 
@@ -43,7 +43,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#volumeserver-response-data-format" class="md-skip">
           Skip to content
         </a>
       
@@ -78,7 +78,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Mol* Developer Documentation" class="md-header__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Mol* Developer Documentation" class="md-header__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              Data Format
             
           </span>
         </div>
@@ -193,7 +193,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Mol* Developer Documentation" class="md-nav__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
+    <a href="../../.." title="Mol* Developer Documentation" class="md-nav__button md-logo" aria-label="Mol* Developer Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 89 89">
@@ -228,7 +228,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   
@@ -288,7 +288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/instance/" class="md-nav__link">
+      <a href="../../../plugin/instance/" class="md-nav__link">
         
   
   
@@ -311,7 +311,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/examples/" class="md-nav__link">
+      <a href="../../../plugin/examples/" class="md-nav__link">
         
   
   
@@ -334,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/custom-library/" class="md-nav__link">
+      <a href="../../../plugin/custom-library/" class="md-nav__link">
         
   
   
@@ -357,7 +357,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/selections/" class="md-nav__link">
+      <a href="../../../plugin/selections/" class="md-nav__link">
         
   
   
@@ -380,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/viewer-state/" class="md-nav__link">
+      <a href="../../../plugin/viewer-state/" class="md-nav__link">
         
   
   
@@ -403,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/data-state/" class="md-nav__link">
+      <a href="../../../plugin/data-state/" class="md-nav__link">
         
   
   
@@ -426,7 +426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/file-formats/" class="md-nav__link">
+      <a href="../../../plugin/file-formats/" class="md-nav__link">
         
   
   
@@ -449,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/cif-schemas/" class="md-nav__link">
+      <a href="../../../plugin/cif-schemas/" class="md-nav__link">
         
   
   
@@ -510,7 +510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/managers/markdown-extensions/" class="md-nav__link">
+      <a href="../../../plugin/managers/markdown-extensions/" class="md-nav__link">
         
   
   
@@ -579,7 +579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-trajectory/" class="md-nav__link">
+      <a href="../../../plugin/transforms/custom-trajectory/" class="md-nav__link">
         
   
   
@@ -602,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-conformation/" class="md-nav__link">
+      <a href="../../../plugin/transforms/custom-conformation/" class="md-nav__link">
         
   
   
@@ -637,18 +637,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -664,7 +666,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Data Access Tools
@@ -678,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/model-server/" class="md-nav__link">
+      <a href="../../model-server/" class="md-nav__link">
         
   
   
@@ -698,18 +700,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -725,7 +729,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Volume Server
@@ -739,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -762,7 +766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -785,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/how-it-works/" class="md-nav__link">
+      <a href="../how-it-works/" class="md-nav__link">
         
   
   
@@ -805,10 +809,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../data-access-tools/volume-server/response-data-format/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Data Format
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -819,6 +845,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#query-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axis order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#origin-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origin and dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spacegroup-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spacegroup information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -839,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/plugin-state-server/" class="md-nav__link">
+      <a href="../../plugin-state-server/" class="md-nav__link">
         
   
   
@@ -862,7 +995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/convert-to-bcif/" class="md-nav__link">
+      <a href="../../convert-to-bcif/" class="md-nav__link">
         
   
   
@@ -885,7 +1018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/create-ccd-table/" class="md-nav__link">
+      <a href="../../create-ccd-table/" class="md-nav__link">
         
   
   
@@ -908,7 +1041,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../data-access-tools/extract-ccd-ions/" class="md-nav__link">
+      <a href="../../extract-ccd-ions/" class="md-nav__link">
         
   
   
@@ -935,20 +1068,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -964,7 +1095,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Extensions
@@ -975,19 +1106,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../extensions/mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +1120,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1011,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../struct-conn/" class="md-nav__link">
+      <a href="../../../extensions/struct-conn/" class="md-nav__link">
         
   
   
@@ -1034,7 +1155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+      <a href="../../../extensions/tunnels/" class="md-nav__link">
         
   
   
@@ -1057,7 +1178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/" class="md-nav__link">
+      <a href="../../../extensions/interactions/" class="md-nav__link">
         
   
   
@@ -1125,7 +1246,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/interesting-pdb-entries/" class="md-nav__link">
+      <a href="../../../misc/interesting-pdb-entries/" class="md-nav__link">
         
   
   
@@ -1148,7 +1269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/exporting-components/" class="md-nav__link">
+      <a href="../../../misc/exporting-components/" class="md-nav__link">
         
   
   
@@ -1191,6 +1312,101 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#query-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query info
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      Query data
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axis-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axis order
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#origin-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Origin and dimensions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample rate
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sample-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sample count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spacegroup-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spacegroup information
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values info
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      Values
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1208,8 +1424,93 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+<h1 id="volumeserver-response-data-format">VolumeServer: Response Data Format</h1>
+<p>This document describes the CIF categories and fields generated by the server.</p>
+<h2 id="query-info">Query info</h2>
+<p>The reponse always contains a data block called <code>SERVER</code> with this format:</p>
+<div class="highlight"><pre><span></span><code>data_SERVER
+#
+_density_server_result.server_version     0.9.0 
+_density_server_result.datetime_utc       &#39;2017-03-09 20:35:45&#39; 
+_density_server_result.guid               f69581b4-6b48-4fa4-861f-c879b4323688 
+_density_server_result.is_empty           no 
+_density_server_result.has_error          no 
+_density_server_result.error              . 
+_density_server_result.query_source_id    xray/1cbs 
+_density_server_result.query_type         box 
+_density_server_result.query_box_type     cartesian 
+_density_server_result.query_box_a[0]     14.555 
+_density_server_result.query_box_a[1]     16.075001 
+_density_server_result.query_box_a[2]     9.848 
+_density_server_result.query_box_b[0]     29.302999 
+_density_server_result.query_box_b[1]     35.737 
+_density_server_result.query_box_b[2]     32.037001 
+</code></pre></div>
+<h2 id="query-data">Query data</h2>
+<p>If the query completed successfully with a non-empty result the response will contain one or more data blocks that correpond to the
+"channels" present in the data (e.g. for x-ray data there will be <code>2Fo-Fc</code> and <code>Fo-Fc</code>) channels.</p>
+<p>The format is this:</p>
+<div class="highlight"><pre><span></span><code>data_2FO-FC
+#
+_volume_data_3d_info.name                         2Fo-Fc 
+</code></pre></div>
+<h3 id="axis-order">Axis order</h3>
+<p>Axis order determines the order of axes of <code>origin</code>, <code>dimensions</code> and <code>sample_count</code> fields. It also specifies
+the order of values in <code>_volume_data_3d.values</code>. <code>0</code> = X axis, <code>1</code> = Y axis, <code>2</code> = Z axis.</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.axis_order[0]                0 
+_volume_data_3d_info.axis_order[1]                1 
+_volume_data_3d_info.axis_order[2]                2  
+</code></pre></div>
+<h3 id="origin-and-dimensions">Origin and dimensions</h3>
+<p>Specifies the fractional coordinates of the bounding box of the data present in the data block.</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.origin[0]                    -0.5 
+_volume_data_3d_info.origin[1]                    -0.5 
+_volume_data_3d_info.origin[2]                    -0.5 
+_volume_data_3d_info.dimensions[0]                1 
+_volume_data_3d_info.dimensions[1]                1 
+_volume_data_3d_info.dimensions[2]                1 
+</code></pre></div>
+<h3 id="sample-rate">Sample rate</h3>
+<p>Determines how many values of the original input data were collapsed in to 1 value.</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.sample_rate                  8 
+</code></pre></div>
+<h3 id="sample-count">Sample count</h3>
+<p>Determines how many values in <code>_volume_data_3d.values</code> are present along each axis (in <code>axis_order</code>).</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.sample_count[0]              96 
+_volume_data_3d_info.sample_count[1]              96 
+_volume_data_3d_info.sample_count[2]              96 
+</code></pre></div>
+<h3 id="spacegroup-information">Spacegroup information</h3>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.spacegroup_number            1 
+_volume_data_3d_info.spacegroup_cell_size[0]      798.72 
+_volume_data_3d_info.spacegroup_cell_size[1]      798.72 
+_volume_data_3d_info.spacegroup_cell_size[2]      798.72 
+_volume_data_3d_info.spacegroup_cell_angles[0]    90 
+_volume_data_3d_info.spacegroup_cell_angles[1]    90 
+_volume_data_3d_info.spacegroup_cell_angles[2]    90 
+</code></pre></div>
+<h3 id="values-info">Values info</h3>
+<p>Contains mean, standard deviation, min, and max values for the <em>entire</em> (i.e. not just the slice present in response)
+original and the downsampled data. Both types of values are present 
+so that relative iso-levels can be estimated when sampling changes between queries.</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.mean_source                  0.026747 
+_volume_data_3d_info.mean_sampled                 0.026748 
+_volume_data_3d_info.sigma_source                 1.129252 
+_volume_data_3d_info.sigma_sampled                0.344922 
+_volume_data_3d_info.min_source                   -19.308199 
+_volume_data_3d_info.min_sampled                  -2.692016 
+_volume_data_3d_info.max_source                   26.264214 
+_volume_data_3d_info.max_sampled                  3.533172 
+</code></pre></div>
+<h3 id="values">Values</h3>
+<p>The values are stored in the <code>_volume_data_3d.values</code> loop containg <code>sample_count[0] * sample_count[1] * sample_count[2]</code> values. <code>axis_order[0]</code> is the axis that changes the fastest, <code>axis_order[2]</code> is the axis that changes the slowest, same as in the <a href="http://www.ccp4.ac.uk/html/maplib.html#description">CCP4 format</a>).</p>
+<div class="highlight"><pre><span></span><code>loop_
+_volume_data_3d.values
+-0.075391 
+-0.078252 
+-0.078161 
+...
+</code></pre></div>
 
 
 
@@ -1258,10 +1559,10 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.92b07e13.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

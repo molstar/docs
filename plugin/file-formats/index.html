@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../data-state/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../cif-schemas/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>File Formats - Mol* Developer Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#structure" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              File Formats
             
           </span>
         </div>
@@ -247,18 +247,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -274,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin
@@ -288,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/instance/" class="md-nav__link">
+      <a href="../instance/" class="md-nav__link">
         
   
   
@@ -311,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -334,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/custom-library/" class="md-nav__link">
+      <a href="../custom-library/" class="md-nav__link">
         
   
   
@@ -357,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/selections/" class="md-nav__link">
+      <a href="../selections/" class="md-nav__link">
         
   
   
@@ -380,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/viewer-state/" class="md-nav__link">
+      <a href="../viewer-state/" class="md-nav__link">
         
   
   
@@ -403,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/data-state/" class="md-nav__link">
+      <a href="../data-state/" class="md-nav__link">
         
   
   
@@ -423,10 +425,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../plugin/file-formats/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    File Formats
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -437,6 +459,69 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shape
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -449,7 +534,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/cif-schemas/" class="md-nav__link">
+      <a href="../cif-schemas/" class="md-nav__link">
         
   
   
@@ -510,7 +595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/managers/markdown-extensions/" class="md-nav__link">
+      <a href="../managers/markdown-extensions/" class="md-nav__link">
         
   
   
@@ -579,7 +664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-trajectory/" class="md-nav__link">
+      <a href="../transforms/custom-trajectory/" class="md-nav__link">
         
   
   
@@ -602,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-conformation/" class="md-nav__link">
+      <a href="../transforms/custom-conformation/" class="md-nav__link">
         
   
   
@@ -935,20 +1020,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -964,7 +1047,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Extensions
@@ -975,19 +1058,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../extensions/mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +1072,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1011,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../struct-conn/" class="md-nav__link">
+      <a href="../../extensions/struct-conn/" class="md-nav__link">
         
   
   
@@ -1034,7 +1107,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+      <a href="../../extensions/tunnels/" class="md-nav__link">
         
   
   
@@ -1057,7 +1130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/" class="md-nav__link">
+      <a href="../../extensions/interactions/" class="md-nav__link">
         
   
   
@@ -1188,8 +1261,59 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#topology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Topology
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coordinates
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Volume
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shape
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1208,8 +1332,46 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+  <h1>File Formats</h1>
+
+<p>Support file formats and their extensions.</p>
+<h2 id="structure">Structure</h2>
+<ul>
+<li>MMCIF and CIFCORE (mmCIF and coreCIF schemas): cif, bcif, mmcif, mcif</li>
+<li>GRO: gro</li>
+<li>MOL: mol</li>
+<li>MOL2: mol2</li>
+<li>PDB/PDBQT: pdb, ent, pdbqt</li>
+<li>SDF: sdf, sd</li>
+<li>XYZ: xyz</li>
+</ul>
+<h2 id="topology">Topology</h2>
+<p>Need to be loaded together with Coordinates.</p>
+<ul>
+<li>PRMTOP: prmtop, parm7</li>
+<li>PSF: psf</li>
+<li>TOP: top</li>
+</ul>
+<h2 id="coordinates">Coordinates</h2>
+<p>Need to be loaded together with a Structure or Topology.</p>
+<ul>
+<li>DCD: dcd</li>
+<li>NCTRAJ: nc, nctraj</li>
+<li>TRR: trr</li>
+<li>XTC: xtc</li>
+</ul>
+<h2 id="volume">Volume</h2>
+<ul>
+<li>CCP4/MRC/MAP: ccp4, mrc, map</li>
+<li>CUBE (may include a Structure): cub, cube</li>
+<li>DSN6/BRIX: dsn6, brix</li>
+<li>DX and DXBIN: dx, dxbin</li>
+<li>DSCIF (DensityServer CIF schema): cif, bcif</li>
+</ul>
+<h2 id="shape">Shape</h2>
+<ul>
+<li>PLY</li>
+</ul>
 
 
 

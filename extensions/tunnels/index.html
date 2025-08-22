@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../struct-conn/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../interactions/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>Tunnels - Mol* Developer Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#tunnel-visualization-extension" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              Tunnels
             
           </span>
         </div>
@@ -975,19 +975,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +989,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1031,10 +1021,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Tunnels
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1045,6 +1057,134 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformers-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformers Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformers Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnels-data-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnels Data Transformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-data-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel Data Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-shape-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel Shape Provider
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-multiple-tunnels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing Multiple Tunnels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-a-single-tunnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing a Single Tunnel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1191,6 +1331,122 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#data-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data Types
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Profile
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformers-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transformers Usage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transformers Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tunnels-data-transformer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnels Data Transformer
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-data-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel Data Provider
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tunnel-shape-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tunnel Shape Provider
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualization Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Visualization Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-multiple-tunnels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing Multiple Tunnels
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizing-a-single-tunnel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualizing a Single Tunnel
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1208,8 +1464,114 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+<h1 id="tunnel-visualization-extension">Tunnel Visualization Extension</h1>
+<p>This documentation outlines the usage of the Mol<em> extension for visualizing tunnels in molecular structures. The extension integrates with Mol</em> to render 3D representations of tunnels using specified data sources and properties.</p>
+<p>The extension is a key component in ChannelsDB (https://channelsdb2.biodata.ceitec.cz/), enabling users to visualize tunnels within molecules directly from the database. While it is used with ChannelsDB, users can also input their own data or connect to different databases, ensuring versatility across various research environments.</p>
+<h2 id="data-types">Data Types</h2>
+<p>The primary data types involved in tunnel visualization are:</p>
+<h3 id="tunnel">Tunnel</h3>
+<p>A Tunnel object contains the actual tunnel data necessary for visualization. It consists of:</p>
+<ul>
+<li><code>data</code>: An array of <code>Profile</code> objects that describe the tunnel at various points.</li>
+<li><code>props</code>: Properties such as the tunnel's type, ID, and optional labels or descriptions.</li>
+</ul>
+<h3 id="profile">Profile</h3>
+<p>A <code>Profile</code> object in a <code>Tunnel</code> holds detailed geometric and physical properties of a tunnel at specific points along its length. These properties include:</p>
+<ul>
+<li><code>Charge</code>: The electric charge at a specific point in the tunnel.</li>
+<li><code>Radius</code>: The overall radius of the tunnel at this point.</li>
+<li><code>FreeRadius</code>: The radius of the tunnel not obstructed by any molecular elements.</li>
+<li><code>T</code>: Temperature factor or a similar property related to the point.</li>
+<li><code>Distance</code>: Distance along the tunnel's path from the start.</li>
+<li><code>X</code>, <code>Y</code>, <code>Z</code>: Coordinates of the point in 3D space.</li>
+</ul>
+<p>These profiles are crucial for understanding the physical and chemical environment inside the tunnel, allowing for detailed analysis and visualization.</p>
+<p>Example:
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;Profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.49</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;FreeRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.49</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;T&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Distance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;X&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-19.152</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.654</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-13.034</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Charge&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.524</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;FreeRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.524</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;T&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.00625</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Distance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.087</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;X&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-19.162</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.596</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.969</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Charge&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Radius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.56</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;FreeRadius&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.56</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;T&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0125</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Distance&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.174</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;X&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-19.171</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Y&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-22.539</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Z&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">-12.905</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Charge&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div></p>
+<h2 id="transformers-usage">Transformers Usage</h2>
+<p>The extension uses several transformations to process and visualize tunnel data:</p>
+<h3 id="tunnels-data-transformer">Tunnels Data Transformer</h3>
+<ul>
+<li><code>Purpose</code>: Converts a collection of Tunnel data into a state object.</li>
+<li><code>Usage</code>:
+    <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">().</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelsFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnels</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div></li>
+</ul>
+<h3 id="tunnel-data-provider">Tunnel Data Provider</h3>
+<ul>
+<li><code>Purpose</code>: Converts single Tunnel data into a state object for individual processing.</li>
+<li><code>Usage</code>:
+    <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">().</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Profile</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Id</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">tunnel</span><span class="p">.</span><span class="nx">Type</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></li>
+</ul>
+<h3 id="tunnel-shape-provider">Tunnel Shape Provider</h3>
+<ul>
+<li><code>Purpose</code>: Provides the shapes for rendering the tunnel based on WebGL context and shape parameters.</li>
+<li><code>Usage</code>:
+    <div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelShapeProvider</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">webgl</span><span class="p">,</span>
+<span class="p">}).</span><span class="nx">apply</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Representation</span><span class="p">.</span><span class="nx">ShapeRepresentation3D</span><span class="p">);</span>
+</code></pre></div></li>
+</ul>
+<h2 id="visualization-examples">Visualization Examples</h2>
+<p>To help users understand how to use these transformations in practice, include detailed examples:</p>
+<h3 id="visualizing-multiple-tunnels">Visualizing Multiple Tunnels</h3>
+<p>This example (see <code>src/extensions/sb-ncbr/tunnels/examples.ts#L19</code>) demonstrates how to visualize multiple tunnels from a fetched dataset.
+<div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelsFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnels</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">SelectTunnel</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelShapeProvider</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">webgl</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Representation</span><span class="p">.</span><span class="nx">ShapeRepresentation3D</span><span class="p">);</span>
+</code></pre></div></p>
+<h3 id="visualizing-a-single-tunnel">Visualizing a Single Tunnel</h3>
+<p>This example (see <code>src/extensions/sb-ncbr/tunnels/examples.ts#L46</code>) shows how to visualize a single tunnel.
+<div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="p">.</span><span class="nx">toRoot</span><span class="p">()</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelFromRawData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Profile</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">props</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">tunnel.Id</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="nx">tunnel</span><span class="p">.</span><span class="nx">Type</span><span class="w"> </span><span class="p">}</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TunnelShapeProvider</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">webgl</span><span class="w"> </span><span class="p">})</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Representation</span><span class="p">.</span><span class="nx">ShapeRepresentation3D</span><span class="p">);</span>
+</code></pre></div></p>
 
 
 

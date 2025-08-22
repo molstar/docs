@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../../data-access-tools/extract-ccd-ions/">
+        <link rel="prev" href="../selections/">
       
       
-        <link rel="next" href="../struct-conn/">
+        <link rel="next" href="../data-state/">
       
       
       <link rel="icon" href="../../assets/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>MolViewSpec - Mol* Developer Documentation</title>
+        <title>Viewer State - Mol* Developer Documentation</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#molviewspec" class="md-skip">
+        <a href="#viewer-state-management" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              MolViewSpec
+              Viewer State
             
           </span>
         </div>
@@ -247,18 +247,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -274,7 +276,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Plugin
@@ -288,7 +290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/instance/" class="md-nav__link">
+      <a href="../instance/" class="md-nav__link">
         
   
   
@@ -311,7 +313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/examples/" class="md-nav__link">
+      <a href="../examples/" class="md-nav__link">
         
   
   
@@ -334,7 +336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/custom-library/" class="md-nav__link">
+      <a href="../custom-library/" class="md-nav__link">
         
   
   
@@ -357,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/selections/" class="md-nav__link">
+      <a href="../selections/" class="md-nav__link">
         
   
   
@@ -377,10 +379,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../plugin/viewer-state/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Viewer State
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -391,6 +415,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#canvas3d-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas3D Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Canvas3D Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-background-highlight-or-select-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change background, highlight, or select color
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-message-to-mol-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log message to Mol* console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-toast-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show toast message
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behaviors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behaviors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlight-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlight Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focus-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Focus Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-off-view-resetting-on-new-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn off view resetting on new representations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -403,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/data-state/" class="md-nav__link">
+      <a href="../data-state/" class="md-nav__link">
         
   
   
@@ -426,7 +587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/file-formats/" class="md-nav__link">
+      <a href="../file-formats/" class="md-nav__link">
         
   
   
@@ -449,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/cif-schemas/" class="md-nav__link">
+      <a href="../cif-schemas/" class="md-nav__link">
         
   
   
@@ -510,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/managers/markdown-extensions/" class="md-nav__link">
+      <a href="../managers/markdown-extensions/" class="md-nav__link">
         
   
   
@@ -579,7 +740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-trajectory/" class="md-nav__link">
+      <a href="../transforms/custom-trajectory/" class="md-nav__link">
         
   
   
@@ -602,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../plugin/transforms/custom-conformation/" class="md-nav__link">
+      <a href="../transforms/custom-conformation/" class="md-nav__link">
         
   
   
@@ -935,20 +1096,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -964,7 +1123,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Extensions
@@ -975,19 +1134,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../extensions/mvs/" class="md-nav__link">
         
   
   
@@ -998,7 +1148,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1011,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../struct-conn/" class="md-nav__link">
+      <a href="../../extensions/struct-conn/" class="md-nav__link">
         
   
   
@@ -1034,7 +1183,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tunnels/" class="md-nav__link">
+      <a href="../../extensions/tunnels/" class="md-nav__link">
         
   
   
@@ -1057,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/" class="md-nav__link">
+      <a href="../../extensions/interactions/" class="md-nav__link">
         
   
   
@@ -1191,6 +1340,131 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#canvas3d-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      Canvas3D Properties
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Canvas3D Properties">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#change-background-highlight-or-select-color" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change background, highlight, or select color
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactivity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#log-message-to-mol-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      Log message to Mol* console
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#show-toast-message" class="md-nav__link">
+    <span class="md-ellipsis">
+      Show toast message
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behaviors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Behaviors
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Behaviors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlight-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Highlight Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#select-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Select Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focus-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Focus Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zoom-loci" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom Loci
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#turn-off-view-resetting-on-new-representations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Turn off view resetting on new representations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1208,8 +1482,98 @@
   
 
 
-<h1 id="molviewspec">MolViewSpec</h1>
-<p>Please see the <a href="https://molstar.org/mol-view-spec-docs/">standalone MolViewSpec documentation</a>.</p>
+<h1 id="viewer-state-management">Viewer State Management</h1>
+<h2 id="canvas3d-properties"><code>Canvas3D</code> Properties</h2>
+<p>Properties of the <a href="https://github.com/molstar/molstar/blob/master/src/mol-canvas3d/canvas3d.ts"><code>Canvas3D</code></a> can be 
+changed using <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/commands.ts"><code>PluginCommands</code></a>.  </p>
+<h3 id="change-background-highlight-or-select-color">Change background, highlight, or select color</h3>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ColorNames</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-util/color/names&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/commands&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">canvas3d</span><span class="o">!</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">renderer</span><span class="p">;</span>
+<span class="nx">PluginCommands</span><span class="p">.</span><span class="nx">Canvas3D</span><span class="p">.</span><span class="nx">SetSettings</span><span class="p">(</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">renderer</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="kt">ColorNames.red</span><span class="w"> </span><span class="cm">/* or: 0xff0000 as Color */</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+Similarly, <code>highlightColor</code> and <code>selectColor</code> can be updated.</p>
+<h2 id="interactivity">Interactivity</h2>
+<p>Interactivity in Mol* is based on the concept of <code>Loci</code>. A <code>Loci</code> usually references a collection of objects and can be created by a <a href="../selections/"><code>Selection</code></a>. For example, the
+<code>Loci</code> captures all atoms in the chain with label_asym_id B of a protein:
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Script</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/script&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure/query&#39;</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">hierarchy</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">structures</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">cell</span><span class="p">.</span><span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">selection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Script</span><span class="p">.</span><span class="nx">getStructureSelection</span><span class="p">(</span><span class="nx">Q</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
+<span class="w">    </span><span class="s1">&#39;chain-test&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">ammp</span><span class="p">(</span><span class="s1">&#39;label_asym_id&#39;</span><span class="p">)])</span>
+<span class="p">}),</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithSourceUnits</span><span class="p">(</span><span class="nx">selection</span><span class="p">);</span>
+</code></pre></div>
+A <code>Loci</code> can be used to trigger custom <a href="#behaviors"><code>Behaviors</code></a>.</p>
+<h3 id="log-message-to-mol-console">Log message to Mol* console</h3>
+<p>The built-in console in the bottom center of the plugin shows log entries.
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">message</span><span class="p">(</span><span class="s1">&#39;This message will appear in the Mol* console&#39;</span><span class="p">);</span>
+</code></pre></div>
+Other log levels are: <code>info</code>, <code>warn</code>, and <code>error</code>.</p>
+<h3 id="show-toast-message">Show toast message</h3>
+<p>Toast messages will appear in the bottom right of the plugin and will linger for a limited time before disappearing.
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/commands&#39;</span><span class="p">;</span>
+
+<span class="nx">PluginCommands</span><span class="p">.</span><span class="nx">Toast</span><span class="p">.</span><span class="nx">Show</span><span class="p">(</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Custom Message&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A custom toast message that will disappear after 2 seconds.&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;toast-custom&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">timeoutMs</span><span class="o">:</span><span class="w"> </span><span class="kt">2000</span>
+<span class="p">});</span>
+</code></pre></div></p>
+<h2 id="behaviors">Behaviors</h2>
+<p>The state of the Mol* plugin is usually governed by dynamic behaviors which can be set up in initial plugin specification or updated during the plugin runtime. This allows for high modularity and customizability of individual plugin instances.</p>
+<h3 id="highlight-loci">Highlight <code>Loci</code></h3>
+<p>Highlighting adds a transient overpaint to a representation that will linger until the mouse enters hovers over another 
+object. Highlights can be applied to a previously defined <code>Loci</code> by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociHighlights</span><span class="p">.</span><span class="nx">highlightOnly</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+</code></pre></div>
+Reset all highlights by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">clearHighlights</span><span class="p">();</span>
+</code></pre></div></p>
+<h3 id="select-loci">Select <code>Loci</code></h3>
+<p>Selected elements will appear with distinct visuals and, if applicable, the corresponding sequence positions will be 
+shown in the Sequence Viewer panel. Selections persist until removed, for example by clicking the background. A <code>Loci</code>
+is selected by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">select</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+</code></pre></div></p>
+<p>Deselect a specific <code>Loci</code> by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">deselect</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+</code></pre></div>
+To deselect everything:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">deselectAll</span><span class="p">();</span>
+</code></pre></div></p>
+<h3 id="focus-loci">Focus <code>Loci</code></h3>
+<p>The focus representation shows a <code>Loci</code> in ball-and-stick representation and, additionally, visualizes non-covalent
+interactions between atoms of the <code>Loci</code> as well as interactions with surrounding residues (default: 5 Å).
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">focus</span><span class="p">.</span><span class="nx">setFromLoci</span><span class="p">(</span><span class="nx">loci</span><span class="p">);</span>
+</code></pre></div>
+Extend an existing focus representation by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">focus</span><span class="p">.</span><span class="nx">addFromLoci</span><span class="p">(</span><span class="nx">loci</span><span class="p">);</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+</code></pre></div>
+Reset by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">focus</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+</code></pre></div></p>
+<h3 id="zoom-loci">Zoom <code>Loci</code></h3>
+<p>A <code>Loci</code> can also be used to manipulate the camera. Zoom in by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">focusLoci</span><span class="p">(</span><span class="nx">loci</span><span class="p">);</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+</code></pre></div></p>
+<p>Restore the default camera position by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+</code></pre></div></p>
+<h3 id="turn-off-view-resetting-on-new-representations">Turn off view resetting on new representations</h3>
+<p>A new representation via something like
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Representation</span><span class="p">.</span><span class="nx">VolumeRepresentation3D</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
+</code></pre></div>
+can reset the view to make the whole representation visible.
+When one wants to keep the view the same instead of having the rep reset the view,
+keep the view constant by:
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">canvas3d</span><span class="o">?</span><span class="p">.</span><span class="nx">setProps</span><span class="p">({</span><span class="w"> </span><span class="nx">camera</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">manualReset</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div></p>
 
 
 
