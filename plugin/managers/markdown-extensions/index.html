@@ -1400,12 +1400,14 @@ the <code>Markdown</code> React component to enable executing commands and rende
 <li><code>apply-snapshot=key</code> - Loads snapshots with the provided key</li>
 <li><code>focus-refs=ref1,ref2,...</code> - On click, focuses nodes with the provided refs</li>
 <li><code>highlight-refs=ref1,ref2,...</code> - On mouse over, highlights the provided refs</li>
-<li><code>query=...&amp;lang=...&amp;action=highlight,focus&amp;focus-radius=...</code></li>
+<li><code>query=...&amp;lang=...&amp;action=highlight,focus&amp;focus-radius=...</code><ul>
 <li><code>query</code> is an expression (e.g., <code>resn HEM</code> when using PyMol syntax)</li>
 <li>(optional) <code>lang</code> is one of <code>mol-script</code> (default), <code>pymol</code>, <code>vmd</code>, <code>jmol</code></li>
 <li>(optional) <code>action</code> is an array of <code>highlight</code> (default), <code>focus</code> (multiple actions can be specified)</li>
 <li>(optional) <code>focus-radius</code> is extra distance applied when focusing the selection (default is <code>3</code>)</li>
-<li>Example: <code>[HEM](!query%3Dresn%20HEM%26lang%3Dpymol%26action%3Dhighlight%2Cfocus)</code> highlights or focuses the HEM residue (the command must be URL encoded because it contains spaces and possibly other special characters)</li>
+<li>Example: <code>[HEM](!query=resn%20HEM%26lang=pymol&amp;action=highlight,focus)</code> highlights or focuses the HEM residue (the query must be URL encoded because it contains spaces and possibly other special characters)</li>
+</ul>
+</li>
 <li><code>play-audio=src</code>, <code>toggle-audio[=str]</code>, <code>stop-audio</code>, <code>pause-audio</code> - Audio playback support</li>
 </ul>
 <h2 id="custom-content">Custom Content</h2>
@@ -1413,12 +1415,14 @@ the <code>Markdown</code> React component to enable executing commands and rende
 <h3 id="built-in-custom-content">Built-in Custom Content</h3>
 <ul>
 <li><code>color-swatch=color</code> - Renders a box with the provided color</li>
-<li>Color palettes:</li>
+<li>Color palettes:<ul>
 <li><code>color-palette-name=name</code> - Renders a gradient with the provided named color palette (see <code>mol-util/color/lists.ts</code> for supported color schemes)</li>
 <li><code>color-palette-colors=color1,color2</code> - Renders a gradient with the provided colors</li>
 <li><code>color-palette-width=CCS-value</code> - Specifies the width of the element, defaults to <code>150px</code></li>
 <li><code>color-palette-height=CCS-value</code> - Specified the height of the element, defaults to <code>0.5em</code></li>
 <li><code>color-palette-discrete</code> - Renders discrete color list instead of interpolating</li>
+</ul>
+</li>
 </ul>
 <h2 id="example">Example</h2>
 <div class="highlight"><pre><span></span><code><span class="gu">### Highlight/Focus:</span>
