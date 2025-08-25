@@ -1398,6 +1398,8 @@ the <code>Markdown</code> React component to enable executing commands and rende
 <ul>
 <li><code>center-camera</code> - Centers the camera</li>
 <li><code>apply-snapshot=key</code> - Loads snapshots with the provided key</li>
+<li><code>play-snapshots</code> - Starts playback of state snapshots</li>
+<li><code>play-transition</code> - Plays an animation associated with the given snapshot</li>
 <li><code>focus-refs=ref1,ref2,...</code> - On click, focuses nodes with the provided refs</li>
 <li><code>highlight-refs=ref1,ref2,...</code> - On mouse over, highlights the provided refs</li>
 <li><code>query=...&amp;lang=...&amp;action=highlight,focus&amp;focus-radius=...</code><ul>
@@ -1408,7 +1410,7 @@ the <code>Markdown</code> React component to enable executing commands and rende
 <li>Example: <code>[HEM](!query=resn%20HEM%26lang=pymol&amp;action=highlight,focus)</code> highlights or focuses the HEM residue (the query must be URL encoded because it contains spaces and possibly other special characters)</li>
 </ul>
 </li>
-<li><code>play-audio=src</code>, <code>toggle-audio[=str]</code>, <code>stop-audio</code>, <code>pause-audio</code> - Audio playback support</li>
+<li><code>play-audio=src</code>, <code>toggle-audio[=src]</code>, <code>stop-audio</code>, <code>pause-audio</code>, <code>dispose-audio</code> - Audio playback support</li>
 </ul>
 <h2 id="custom-content">Custom Content</h2>
 <p>Extends Markdown Image syntax to support expressions of the form <code>![alt](!c1=v1&amp;c2=v2&amp;...)</code> to render custom elements instead.</p>
