@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../superposition/">
+        <link rel="prev" href="../selections/">
       
       
-        <link rel="next" href="../data-state/">
+        <link rel="next" href="../viewer-state/">
       
       
         
@@ -23,7 +23,7 @@
     
     
       
-        <title>Viewer State - Mol* Developer Documentation</title>
+        <title>Superposition - Mol* Developer Documentation</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#viewer-state-management" class="md-skip">
+        <a href="#structure-superposition" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Viewer State
+              Superposition
             
           </span>
         </div>
@@ -415,34 +415,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../superposition/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Superposition
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -462,7 +434,7 @@
   <span class="md-ellipsis">
     
   
-    Viewer State
+    Superposition
   
 
     
@@ -480,7 +452,7 @@
   <span class="md-ellipsis">
     
   
-    Viewer State
+    Superposition
   
 
     
@@ -506,22 +478,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#canvas3d-properties" class="md-nav__link">
+  <a href="#rmsd-based-superposition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canvas3D Properties
+        RMSD-based Superposition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Canvas3D Properties">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tm-align-superposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TM-align Superposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TM-align Superposition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#change-background-highlight-or-select-color" class="md-nav__link">
+  <a href="#basic-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Change background, highlight, or select color
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tm-align-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TM-align Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-tm-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding TM-score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-level-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low-level API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-aligning-two-pdb-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Aligning Two PDB Structures
       
     </span>
   </a>
@@ -534,113 +561,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactivity" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interactivity
+        References
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Interactivity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#log-message-to-mol-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Log message to Mol* console
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#show-toast-message" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Show toast message
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behaviors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behaviors
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Behaviors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#highlight-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Highlight Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#select-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Select Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#focus-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Focus Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zoom-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zoom Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#turn-off-view-resetting-on-new-representations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Turn off view resetting on new representations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -648,6 +575,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../viewer-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Viewer State
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1602,22 +1557,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#canvas3d-properties" class="md-nav__link">
+  <a href="#rmsd-based-superposition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Canvas3D Properties
+        RMSD-based Superposition
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Canvas3D Properties">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tm-align-superposition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TM-align Superposition
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TM-align Superposition">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#change-background-highlight-or-select-color" class="md-nav__link">
+  <a href="#basic-usage" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Change background, highlight, or select color
+        Basic Usage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tm-align-result" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TM-align Result
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-tm-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Understanding TM-score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#low-level-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Low-level API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-aligning-two-pdb-structures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example: Aligning Two PDB Structures
       
     </span>
   </a>
@@ -1630,113 +1640,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactivity" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Interactivity
+        References
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Interactivity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#log-message-to-mol-console" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Log message to Mol* console
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#show-toast-message" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Show toast message
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#behaviors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Behaviors
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Behaviors">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#highlight-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Highlight Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#select-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Select Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#focus-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Focus Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#zoom-loci" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Zoom Loci
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#turn-off-view-resetting-on-new-representations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Turn off view resetting on new representations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1760,98 +1670,174 @@
   
 
 
-<h1 id="viewer-state-management">Viewer State Management</h1>
-<h2 id="canvas3d-properties"><code>Canvas3D</code> Properties</h2>
-<p>Properties of the <a href="https://github.com/molstar/molstar/blob/master/src/mol-canvas3d/canvas3d.ts"><code>Canvas3D</code></a> can be 
-changed using <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/commands.ts"><code>PluginCommands</code></a>.  </p>
-<h3 id="change-background-highlight-or-select-color">Change background, highlight, or select color</h3>
-<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ColorNames</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-util/color/names&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/commands&#39;</span><span class="p">;</span>
+<h1 id="structure-superposition">Structure Superposition</h1>
+<p>Mol* provides utilities for superposing protein structures, including both sequence-independent (RMSD-based) and structure-based (TM-align) methods.</p>
+<h2 id="rmsd-based-superposition">RMSD-based Superposition</h2>
+<p>The basic superposition method uses the Kabsch algorithm to minimize RMSD between corresponding atoms:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">superpose</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure/structure/util/superposition&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">compile</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/runtime/query/compiler&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MolScriptBuilder</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">MS</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/language/builder&#39;</span><span class="p">;</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">canvas3d</span><span class="o">!</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">renderer</span><span class="p">;</span>
-<span class="nx">PluginCommands</span><span class="p">.</span><span class="nx">Canvas3D</span><span class="p">.</span><span class="nx">SetSettings</span><span class="p">(</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">renderer</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="kt">ColorNames.red</span><span class="w"> </span><span class="cm">/* or: 0xff0000 as Color */</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div>
-Similarly, <code>highlightColor</code> and <code>selectColor</code> can be updated.</p>
-<h2 id="interactivity">Interactivity</h2>
-<p>Interactivity in Mol* is based on the concept of <code>Loci</code>. A <code>Loci</code> usually references a collection of objects and can be created by a <a href="../selections/"><code>Selection</code></a>. For example, the
-<code>Loci</code> captures all atoms in the chain with label_asym_id B of a protein:
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Script</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/script&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure/query&#39;</span><span class="p">;</span>
+<span class="c1">// Create a query for C-alpha atoms</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">caQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">compile</span><span class="o">&lt;</span><span class="nx">StructureSelection</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">MS</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
+<span class="w">    </span><span class="s1">&#39;atom-test&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">MS</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="nx">MS</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">atomProperty</span><span class="p">.</span><span class="nx">macromolecular</span><span class="p">.</span><span class="nx">label_atom_id</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;CA&#39;</span><span class="p">])</span>
+<span class="p">}));</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">hierarchy</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">structures</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">cell</span><span class="p">.</span><span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
-<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<span class="c1">// Get selections from two structures</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sel1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithCurrentUnits</span><span class="p">(</span><span class="nx">caQuery</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">QueryContext</span><span class="p">(</span><span class="nx">structure1</span><span class="p">)));</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sel2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithCurrentUnits</span><span class="p">(</span><span class="nx">caQuery</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">QueryContext</span><span class="p">(</span><span class="nx">structure2</span><span class="p">)));</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">selection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Script</span><span class="p">.</span><span class="nx">getStructureSelection</span><span class="p">(</span><span class="nx">Q</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
-<span class="w">    </span><span class="s1">&#39;chain-test&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">ammp</span><span class="p">(</span><span class="s1">&#39;label_asym_id&#39;</span><span class="p">)])</span>
-<span class="p">}),</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithSourceUnits</span><span class="p">(</span><span class="nx">selection</span><span class="p">);</span>
-</code></pre></div>
-A <code>Loci</code> can be used to trigger custom <a href="#behaviors"><code>Behaviors</code></a>.</p>
-<h3 id="log-message-to-mol-console">Log message to Mol* console</h3>
-<p>The built-in console in the bottom center of the plugin shows log entries.
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">message</span><span class="p">(</span><span class="s1">&#39;This message will appear in the Mol* console&#39;</span><span class="p">);</span>
-</code></pre></div>
-Other log levels are: <code>info</code>, <code>warn</code>, and <code>error</code>.</p>
-<h3 id="show-toast-message">Show toast message</h3>
-<p>Toast messages will appear in the bottom right of the plugin and will linger for a limited time before disappearing.
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/commands&#39;</span><span class="p">;</span>
+<span class="c1">// Compute superposition (returns transformation matrices)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">transforms</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">superpose</span><span class="p">([</span><span class="nx">sel1</span><span class="p">,</span><span class="w"> </span><span class="nx">sel2</span><span class="p">]);</span>
 
-<span class="nx">PluginCommands</span><span class="p">.</span><span class="nx">Toast</span><span class="p">.</span><span class="nx">Show</span><span class="p">(</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Custom Message&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A custom toast message that will disappear after 2 seconds.&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;toast-custom&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">timeoutMs</span><span class="o">:</span><span class="w"> </span><span class="kt">2000</span>
-<span class="p">});</span>
-</code></pre></div></p>
-<h2 id="behaviors">Behaviors</h2>
-<p>The state of the Mol* plugin is usually governed by dynamic behaviors which can be set up in initial plugin specification or updated during the plugin runtime. This allows for high modularity and customizability of individual plugin instances.</p>
-<h3 id="highlight-loci">Highlight <code>Loci</code></h3>
-<p>Highlighting adds a transient overpaint to a representation that will linger until the mouse enters hovers over another 
-object. Highlights can be applied to a previously defined <code>Loci</code> by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociHighlights</span><span class="p">.</span><span class="nx">highlightOnly</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+<span class="c1">// transforms[0].bTransform contains the Mat4 to superpose structure2 onto structure1</span>
 </code></pre></div>
-Reset all highlights by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">clearHighlights</span><span class="p">();</span>
-</code></pre></div></p>
-<h3 id="select-loci">Select <code>Loci</code></h3>
-<p>Selected elements will appear with distinct visuals and, if applicable, the corresponding sequence positions will be 
-shown in the Sequence Viewer panel. Selections persist until removed, for example by clicking the background. A <code>Loci</code>
-is selected by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">select</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// loci: Loci</span>
-</code></pre></div></p>
-<p>Deselect a specific <code>Loci</code> by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">deselect</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="p">});</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+<h2 id="tm-align-superposition">TM-align Superposition</h2>
+<p>TM-align is a structure-based alignment algorithm that produces the TM-score, a length-independent metric for comparing protein structures. Unlike RMSD, TM-score is normalized to [0, 1] and is more robust for comparing proteins of different sizes.</p>
+<h3 id="basic-usage">Basic Usage</h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tmAlign</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure/structure/util/tm-align&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureElement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure&#39;</span><span class="p">;</span>
+
+<span class="c1">// Get C-alpha Loci from two structures (see selection examples above)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">loci1</span><span class="o">:</span><span class="w"> </span><span class="kt">StructureElement.Loci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* ... */</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">loci2</span><span class="o">:</span><span class="w"> </span><span class="kt">StructureElement.Loci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* ... */</span><span class="p">;</span>
+
+<span class="c1">// Run TM-align</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tmAlign</span><span class="p">(</span><span class="nx">loci1</span><span class="p">,</span><span class="w"> </span><span class="nx">loci2</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;TM-score (normalized by structure 1):&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">tmScoreA</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;TM-score (normalized by structure 2):&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">tmScoreB</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;RMSD:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">rmsd</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Aligned residues:&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">.</span><span class="nx">alignedLength</span><span class="p">);</span>
+
+<span class="c1">// result.bTransform is a Mat4 to transform structure2 onto structure1</span>
 </code></pre></div>
-To deselect everything:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">deselectAll</span><span class="p">();</span>
-</code></pre></div></p>
-<h3 id="focus-loci">Focus <code>Loci</code></h3>
-<p>The focus representation shows a <code>Loci</code> in ball-and-stick representation and, additionally, visualizes non-covalent
-interactions between atoms of the <code>Loci</code> as well as interactions with surrounding residues (default: 5 Å).
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">focus</span><span class="p">.</span><span class="nx">setFromLoci</span><span class="p">(</span><span class="nx">loci</span><span class="p">);</span>
+<h3 id="tm-align-result">TM-align Result</h3>
+<p>The <code>tmAlign</code> function returns a <code>TMAlignResult</code> object with the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bTransform</code></td>
+<td><code>Mat4</code></td>
+<td>Transformation matrix to superpose structure B onto A</td>
+</tr>
+<tr>
+<td><code>tmScoreA</code></td>
+<td><code>number</code></td>
+<td>TM-score normalized by length of structure A</td>
+</tr>
+<tr>
+<td><code>tmScoreB</code></td>
+<td><code>number</code></td>
+<td>TM-score normalized by length of structure B</td>
+</tr>
+<tr>
+<td><code>rmsd</code></td>
+<td><code>number</code></td>
+<td>RMSD of aligned residue pairs (in Angstroms)</td>
+</tr>
+<tr>
+<td><code>alignedLength</code></td>
+<td><code>number</code></td>
+<td>Number of aligned residue pairs</td>
+</tr>
+<tr>
+<td><code>sequenceIdentity</code></td>
+<td><code>number</code></td>
+<td>Sequence identity of aligned residues (0-1)</td>
+</tr>
+<tr>
+<td><code>alignmentA</code></td>
+<td><code>number[]</code></td>
+<td>Indices of aligned residues in structure A</td>
+</tr>
+<tr>
+<td><code>alignmentB</code></td>
+<td><code>number[]</code></td>
+<td>Indices of aligned residues in structure B</td>
+</tr>
+</tbody>
+</table>
+<h3 id="understanding-tm-score">Understanding TM-score</h3>
+<p>The TM-score is calculated as:</p>
+<div class="arithmatex">\[\text{TM-score} = \frac{1}{L} \sum_{i=1}^{L_{ali}} \frac{1}{1 + (d_i/d_0)^2}\]</div>
+<p>Where:
+- <span class="arithmatex">\(L\)</span> is the length of the reference protein
+- <span class="arithmatex">\(L_{ali}\)</span> is the number of aligned residues
+- <span class="arithmatex">\(d_i\)</span> is the distance between the <span class="arithmatex">\(i\)</span>-th pair of aligned residues after superposition
+- <span class="arithmatex">\(d_0 = 1.24 \sqrt[3]{L - 15} - 1.8\)</span> is a length-dependent normalization factor</p>
+<p><strong>TM-score interpretation:</strong>
+- TM-score &gt; 0.5: Generally indicates proteins with the same fold
+- TM-score &gt; 0.17: Generally indicates proteins with random structural similarity</p>
+<h3 id="low-level-api">Low-level API</h3>
+<p>For direct coordinate-based alignment without structures, use the <code>TMAlign</code> namespace:</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TMAlign</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-math/linear-algebra/3d/tm-align&#39;</span><span class="p">;</span>
+
+<span class="c1">// Create position arrays</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">posA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TMAlign</span><span class="p">.</span><span class="nx">Positions</span><span class="p">.</span><span class="nx">empty</span><span class="p">(</span><span class="nx">lengthA</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">posB</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TMAlign</span><span class="p">.</span><span class="nx">Positions</span><span class="p">.</span><span class="nx">empty</span><span class="p">(</span><span class="nx">lengthB</span><span class="p">);</span>
+
+<span class="c1">// Fill in coordinates</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">lengthA</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">posA</span><span class="p">.</span><span class="nx">x</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* x coordinate */</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">posA</span><span class="p">.</span><span class="nx">y</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* y coordinate */</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">posA</span><span class="p">.</span><span class="nx">z</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="cm">/* z coordinate */</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// ... similarly for posB</span>
+
+<span class="c1">// Compute alignment</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">TMAlign</span><span class="p">.</span><span class="nx">compute</span><span class="p">({</span><span class="w"> </span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">posA</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="kt">posB</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
-Extend an existing focus representation by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">focus</span><span class="p">.</span><span class="nx">addFromLoci</span><span class="p">(</span><span class="nx">loci</span><span class="p">);</span><span class="w"> </span><span class="c1">// loci: Loci</span>
+<h3 id="complete-example-aligning-two-pdb-structures">Complete Example: Aligning Two PDB Structures</h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/context&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MolScriptBuilder</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">MS</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/language/builder&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">compile</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/runtime/query/compiler&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">,</span><span class="w"> </span><span class="nx">QueryContext</span><span class="p">,</span><span class="w"> </span><span class="nx">StructureElement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tmAlign</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure/structure/util/tm-align&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StateTransforms</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin-state/transforms&#39;</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Mat4</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-math/linear-algebra&#39;</span><span class="p">;</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">alignStructures</span><span class="p">(</span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="kt">PluginContext</span><span class="p">,</span><span class="w"> </span><span class="nx">structure1</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">structure2</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Query for C-alpha atoms in chain A</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">caQuery</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">compile</span><span class="o">&lt;</span><span class="nx">StructureSelection</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">MS</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
+<span class="w">        </span><span class="s1">&#39;chain-test&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">MS</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="nx">MS</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">atomProperty</span><span class="p">.</span><span class="nx">macromolecular</span><span class="p">.</span><span class="nx">auth_asym_id</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">]),</span>
+<span class="w">        </span><span class="s1">&#39;atom-test&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">MS</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="nx">MS</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">atomProperty</span><span class="p">.</span><span class="nx">macromolecular</span><span class="p">.</span><span class="nx">label_atom_id</span><span class="p">(),</span><span class="w"> </span><span class="s1">&#39;CA&#39;</span><span class="p">])</span>
+<span class="w">    </span><span class="p">}));</span>
+
+<span class="w">    </span><span class="c1">// Get structure data</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">structure1</span><span class="p">.</span><span class="nx">cell</span><span class="o">?</span><span class="p">.</span><span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">structure2</span><span class="p">.</span><span class="nx">cell</span><span class="o">?</span><span class="p">.</span><span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Create selections</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sel1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithCurrentUnits</span><span class="p">(</span><span class="nx">caQuery</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">QueryContext</span><span class="p">(</span><span class="nx">data1</span><span class="p">)));</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">sel2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithCurrentUnits</span><span class="p">(</span><span class="nx">caQuery</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="nx">QueryContext</span><span class="p">(</span><span class="nx">data2</span><span class="p">)));</span>
+
+<span class="w">    </span><span class="c1">// Run TM-align</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tmAlign</span><span class="p">(</span><span class="nx">sel1</span><span class="p">,</span><span class="w"> </span><span class="nx">sel2</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Apply transformation to structure2</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">build</span><span class="p">().</span><span class="nx">to</span><span class="p">(</span><span class="nx">structure2</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">TransformStructureConformation</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;matrix&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">result.bTransform</span><span class="p">,</span><span class="w"> </span><span class="nx">transpose</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">runTask</span><span class="p">(</span><span class="nx">plugin</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">updateTree</span><span class="p">(</span><span class="nx">b</span><span class="p">));</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
-Reset by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">focus</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
-</code></pre></div></p>
-<h3 id="zoom-loci">Zoom <code>Loci</code></h3>
-<p>A <code>Loci</code> can also be used to manipulate the camera. Zoom in by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">focusLoci</span><span class="p">(</span><span class="nx">loci</span><span class="p">);</span><span class="w"> </span><span class="c1">// loci: Loci</span>
-</code></pre></div></p>
-<p>Restore the default camera position by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">camera</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
-</code></pre></div></p>
-<h3 id="turn-off-view-resetting-on-new-representations">Turn off view resetting on new representations</h3>
-<p>A new representation via something like
-<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">StateTransforms</span><span class="p">.</span><span class="nx">Representation</span><span class="p">.</span><span class="nx">VolumeRepresentation3D</span><span class="p">,</span><span class="w"> </span><span class="p">...)</span>
-</code></pre></div>
-can reset the view to make the whole representation visible.
-When one wants to keep the view the same instead of having the rep reset the view,
-keep the view constant by:
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">canvas3d</span><span class="o">?</span><span class="p">.</span><span class="nx">setProps</span><span class="p">({</span><span class="w"> </span><span class="nx">camera</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">manualReset</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
-</code></pre></div></p>
+<h2 id="references">References</h2>
+<ul>
+<li>Zhang Y, Skolnick J. "TM-align: a protein structure alignment algorithm based on the TM-score." <em>Nucleic Acids Research</em> 33, 2302-2309 (2005). DOI: <a href="https://doi.org/10.1093/nar/gki524">10.1093/nar/gki524</a></li>
+<li>Kabsch W. "A solution for the best rotation to relate two sets of vectors." <em>Acta Crystallographica</em> A32, 922-923 (1976).</li>
+</ul>
 
 
 
