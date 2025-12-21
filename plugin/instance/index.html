@@ -385,6 +385,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Viewer wrapper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#molstarjs-and-molstarcss-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        molstar.js and molstar.css sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-webpackesbuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using WebPack/esbuild/...
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1548,6 +1587,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Viewer wrapper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#molstarjs-and-molstarcss-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        molstar.js and molstar.css sources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-webpackesbuild" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using WebPack/esbuild/...
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1622,10 +1700,24 @@ A passing analogy is that a <a href="https://github.com/molstar/molstar/blob/6ed
 <p>There are 4 basic ways of instantiating the Mol* plugin.</p>
 <h2 id="viewer-wrapper"><code>Viewer</code> wrapper</h2>
 <ul>
-<li>The most basic usage is to use the <code>Viewer</code> wrapper. This is best suited for use cases that do not require much custom behavior and are mostly about just displaying a structure.</li>
-<li>See <code>Viewer</code> class is defined in <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/app.ts">src/apps/viewer/app.ts</a> for available methods and options.</li>
+<li>The most basic usage is to use the <code>Viewer</code> wrapper. This is best suited for use cases that do not require custom behavior and are mostly about just displaying a structure.</li>
+<li>See <code>Viewer</code> class is defined in <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/app.ts">src/apps/viewer/app.ts</a> for available methods</li>
+<li>See <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/options.ts">options.ts</a> for available plugin options</li>
+<li>See <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/embedded.html">embedded.html</a> and <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/mvs.html">mvs.html</a> for example usage</li>
+<li>Importing <code>molstar.js</code> will expose <code>molstar.lib</code> namespace that allow accessing various functionality without a bundler such as WebPack or esbuild. See the <code>mvs</code> example above for basic usage.</li>
+<li>Alternative color themes can be used by importing <code>theme/dark.css</code> (or <code>light/blue</code>) instead of <code>molstar.css</code></li>
 </ul>
-<p>Example usage without using WebPack:</p>
+<h3 id="molstarjs-and-molstarcss-sources">molstar.js and molstar.css sources</h3>
+<ul>
+<li>Download <code>molstar</code> NPM package and use the files from <code>build/viewer</code> diractory</li>
+<li>Use <code>jsdelivr</code> CDN</li>
+<li><code>&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js" /&gt;</code></li>
+<li><code>&lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css" /&gt;</code></li>
+<li><code>@latest</code> can be replaced by a specific Mol* version, e.g., <code>@5.4.2</code></li>
+<li>Clone &amp; build the GitHub repository</li>
+<li>This option allows for quite straightforward extension customization, e.g., not including movie export, which reduces the bundle size by ~0.5MB</li>
+</ul>
+<h3 id="example">Example</h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">#</span><span class="nn">app</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
@@ -1640,7 +1732,7 @@ A passing analogy is that a <a href="https://github.com/molstar/molstar/blob/6ed
 <span class="cm">    - the folder build/viewer after cloning and building the molstar package </span>
 <span class="cm">    - from the build/viewer folder in the Mol* NPM package</span>
 <span class="cm">--&gt;</span>
-<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;molstar.css&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;./molstar.css&quot;</span> <span class="p">/&gt;</span>
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;./molstar.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;app&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -1666,11 +1758,12 @@ A passing analogy is that a <a href="https://github.com/molstar/molstar/blob/6ed
 <span class="w">    </span><span class="p">});</span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>When using WebPack (or possibly other build tool) with the Mol* NPM package installed, the viewer class can be imported using </p>
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Viewer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/build/viewer/molstar&#39;</span>
+<h3 id="using-webpackesbuild">Using WebPack/esbuild/...</h3>
+<p>When using WebPack (or other bundler) with the Mol* NPM package installed, the viewer class can be imported using </p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Viewer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/apps/viewer/app&#39;</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">initViewer</span><span class="p">(</span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Viewer</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* options */</span><span class="p">})</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Viewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="cm">/* options */</span><span class="p">})</span><span class="w"> </span><span class="c1">// returns a Promise</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="plugincontext-with-built-in-react-ui"><code>PluginContext</code> with built-in React UI</h2>
@@ -1735,6 +1828,8 @@ plugins, each with its own context and viewport, some extra steps are required (
 <span class="w">  </span><span class="c1">// In debug mode of react&#39;s strict mode, this code will</span>
 <span class="w">  </span><span class="c1">// be called twice in a row, which might result in unexpected behavior.</span>
 <span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// By default, react will call each useEffect twice if using Strict mode in</span>
+<span class="w">    </span><span class="c1">// debug build, it is recommended to disable strict mode for this reason if possible</span>
 <span class="w">    </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">init</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nb">window</span><span class="p">.</span><span class="nx">molstar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">createPluginUI</span><span class="p">({</span>
 <span class="w">          </span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">parent.current</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">HTMLDivElement</span><span class="p">,</span>
