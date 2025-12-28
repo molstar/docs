@@ -400,6 +400,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bundle-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundle size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1602,6 +1613,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#bundle-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bundle size
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1717,6 +1739,11 @@ A passing analogy is that a <a href="https://github.com/molstar/molstar/blob/6ed
 <li>Clone &amp; build the GitHub repository</li>
 <li>This option allows for quite straightforward extension customization, e.g., not including movie export, which reduces the bundle size by ~0.5MB</li>
 </ul>
+<h3 id="bundle-size">Bundle size</h3>
+<p>By default, the <code>Viewer</code> includes all the available extensions. This increases the bundle size significantly, especially by including the <code>mp4-export</code>, which is responsible for almost <code>0.5MB</code> of compressed bundle size. 
+It is quite easy to reduce this bundle size by cloning the Mol* repository, editing <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/options.ts">extensions.ts</a> and rebuilding it with <code>npm run build:apps</code>. The new build will be available 
+in the <code>build/viewer</code> directory (the JS file you will find there is uncompressed, but your hosting setup should include automatic gzip compression, significantly reducing the size).</p>
+<p>Alternatively, you can explore building your own "viewer" using the base Mol* library. For this, see the options below.</p>
 <h3 id="example">Example</h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
 <span class="w">    </span><span class="p">#</span><span class="nn">app</span><span class="w"> </span><span class="p">{</span>
