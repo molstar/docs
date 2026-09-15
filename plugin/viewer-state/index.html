@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -1765,8 +1765,8 @@
 <p>Properties of the <a href="https://github.com/molstar/molstar/blob/master/src/mol-canvas3d/canvas3d.ts"><code>Canvas3D</code></a> can be 
 changed using <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/commands.ts"><code>PluginCommands</code></a>.  </p>
 <h3 id="change-background-highlight-or-select-color">Change background, highlight, or select color</h3>
-<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ColorNames</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-util/color/names&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/commands&#39;</span><span class="p">;</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">ColorNames</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-util/color/names'</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-plugin/commands'</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">canvas3d</span><span class="o">!</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">renderer</span><span class="p">;</span>
 <span class="nx">PluginCommands</span><span class="p">.</span><span class="nx">Canvas3D</span><span class="p">.</span><span class="nx">SetSettings</span><span class="p">(</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">settings</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">renderer</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="nx">renderer</span><span class="p">,</span><span class="w"> </span><span class="nx">backgroundColor</span><span class="o">:</span><span class="w"> </span><span class="kt">ColorNames.red</span><span class="w"> </span><span class="cm">/* or: 0xff0000 as Color */</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
@@ -1775,31 +1775,31 @@ Similarly, <code>highlightColor</code> and <code>selectColor</code> can be updat
 <h2 id="interactivity">Interactivity</h2>
 <p>Interactivity in Mol* is based on the concept of <code>Loci</code>. A <code>Loci</code> usually references a collection of objects and can be created by a <a href="../selections/"><code>Selection</code></a>. For example, the
 <code>Loci</code> captures all atoms in the chain with label_asym_id B of a protein:
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Script</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-script/script&#39;</span><span class="p">;</span>
-<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-model/structure/query&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Script</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-script/script'</span><span class="p">;</span>
+<span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-model/structure/query'</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">hierarchy</span><span class="p">.</span><span class="nx">current</span><span class="p">.</span><span class="nx">structures</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">cell</span><span class="p">.</span><span class="nx">obj</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
 <span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">selection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Script</span><span class="p">.</span><span class="nx">getStructureSelection</span><span class="p">(</span><span class="nx">Q</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
-<span class="w">    </span><span class="s1">&#39;chain-test&#39;</span><span class="o">:</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="s1">&#39;B&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">ammp</span><span class="p">(</span><span class="s1">&#39;label_asym_id&#39;</span><span class="p">)])</span>
+<span class="w">    </span><span class="s1">'chain-test'</span><span class="o">:</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">core</span><span class="p">.</span><span class="nx">rel</span><span class="p">.</span><span class="nx">eq</span><span class="p">([</span><span class="s1">'B'</span><span class="p">,</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">ammp</span><span class="p">(</span><span class="s1">'label_asym_id'</span><span class="p">)])</span>
 <span class="p">}),</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithSourceUnits</span><span class="p">(</span><span class="nx">selection</span><span class="p">);</span>
 </code></pre></div>
 A <code>Loci</code> can be used to trigger custom <a href="#behaviors"><code>Behaviors</code></a>.</p>
 <h3 id="log-message-to-mol-console">Log message to Mol* console</h3>
 <p>The built-in console in the bottom center of the plugin shows log entries.
-<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">message</span><span class="p">(</span><span class="s1">&#39;This message will appear in the Mol* console&#39;</span><span class="p">);</span>
+<div class="highlight"><pre><span></span><code><span class="nx">plugin</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">message</span><span class="p">(</span><span class="s1">'This message will appear in the Mol* console'</span><span class="p">);</span>
 </code></pre></div>
 Other log levels are: <code>info</code>, <code>warn</code>, and <code>error</code>.</p>
 <h3 id="show-toast-message">Show toast message</h3>
 <p>Toast messages will appear in the bottom right of the plugin and will linger for a limited time before disappearing.
-<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;molstar/lib/mol-plugin/commands&#39;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">PluginCommands</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-plugin/commands'</span><span class="p">;</span>
 
 <span class="nx">PluginCommands</span><span class="p">.</span><span class="nx">Toast</span><span class="p">.</span><span class="nx">Show</span><span class="p">(</span><span class="nx">plugin</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Custom Message&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A custom toast message that will disappear after 2 seconds.&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;toast-custom&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">'Custom Message'</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">'A custom toast message that will disappear after 2 seconds.'</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">'toast-custom'</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">timeoutMs</span><span class="o">:</span><span class="w"> </span><span class="kt">2000</span>
 <span class="p">});</span>
 </code></pre></div></p>
@@ -1904,7 +1904,7 @@ keep the view constant by:
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

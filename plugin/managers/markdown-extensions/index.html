@@ -19,7 +19,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -27,7 +27,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
 
@@ -1711,29 +1711,29 @@ the <code>Markdown</code> React component to enable executing commands and rende
 <span class="n">builder</span> <span class="o">=</span> <span class="n">mvs</span><span class="o">.</span><span class="n">create_builder</span><span class="p">()</span>
 
 <span class="n">assets</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;1cbs.cif&quot;</span><span class="p">:</span> <span class="s2">&quot;https://files.wwpdb.org/download/1cbs.cif&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;logo.png&quot;</span><span class="p">:</span> <span class="s2">&quot;https://molstar.org/img/molstar-logo.png&quot;</span><span class="p">,</span>
+    <span class="s2">"1cbs.cif"</span><span class="p">:</span> <span class="s2">"https://files.wwpdb.org/download/1cbs.cif"</span><span class="p">,</span>
+    <span class="s2">"logo.png"</span><span class="p">:</span> <span class="s2">"https://molstar.org/img/molstar-logo.png"</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="n">model</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;1cbs.cif&quot;</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;mmcif&quot;</span><span class="p">)</span>
+    <span class="n">builder</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">"1cbs.cif"</span><span class="p">)</span>
+        <span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">"mmcif"</span><span class="p">)</span>
         <span class="o">.</span><span class="n">model_structure</span><span class="p">()</span>
 <span class="p">)</span>
 <span class="p">(</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;polymer&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">ref</span><span class="o">=</span><span class="s2">&quot;polymer&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">ref</span><span class="o">=</span><span class="s2">"polymer"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"blue"</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="p">(</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;ligand&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">ref</span><span class="o">=</span><span class="s2">&quot;ligand&quot;</span><span class="p">)</span>
-    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">component</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">"ligand"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">representation</span><span class="p">(</span><span class="n">ref</span><span class="o">=</span><span class="s2">"ligand"</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">color</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s2">"red"</span><span class="p">)</span>
 <span class="p">)</span>
 
 <span class="n">mvsx</span> <span class="o">=</span> <span class="n">mvs</span><span class="o">.</span><span class="n">MVSX</span><span class="p">(</span>
     <span class="n">data</span><span class="o">=</span><span class="n">builder</span><span class="o">.</span><span class="n">get_state</span><span class="p">(</span>
-        <span class="n">description</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;...&quot;&quot;&quot;</span>  <span class="c1"># inline the code above</span>
+        <span class="n">description</span><span class="o">=</span><span class="s2">"""..."""</span>  <span class="c1"># inline the code above</span>
     <span class="p">),</span>
     <span class="n">assets</span><span class="o">=</span><span class="n">assets</span>
 <span class="p">)</span>
@@ -1790,7 +1790,7 @@ the <code>Markdown</code> React component to enable executing commands and rende
       <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
