@@ -1716,34 +1716,58 @@
 
 <h1 id="creating-plugin-instance">Creating Plugin Instance</h1>
 <h2 id="intro">Intro</h2>
-<p>What is a plugin? A plugin is a collection of modules that provide functionality to the <code>Mol*</code> UI. The plugin is responsible for managing the state of the viewer, internal and user interactions. It has been a previous point of confusion for new users of <code>Mol*</code> to associate the <strong>viewer</strong> part of the library with what is further referred to as the <strong>plugin</strong>. These two are closely connected in the <code>molstar-plugin-ui</code> module, which is the user-facing part of the library and ultimately provides the viewer, but they are ultimately distinct. </p>
-<p>It is recommended that you inspect the general class structure of <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/plugin.tsx#L41"><code>PluginInitWrapper</code></a>, <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/context.ts#L12"><code>PluginUIContext</code></a> and <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16"><code>PluginUIComponent</code></a> to better understand the flow of data and events in the plugin. 
-A passing analogy is that a <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin/context.ts#L71"> <code>PluginContext</code> </a> is the engine that powers computation, rendering, events and subscriptions inside the molstar UI. All UI components depend on <code>PluginContext</code>. </p>
+<p>What is a plugin? A plugin is a collection of modules that provide functionality to the <code>Mol*</code> UI. The plugin is
+responsible for managing the state of the viewer, internal and user interactions. It has been a previous point of
+confusion for new users of <code>Mol*</code> to associate the <strong>viewer</strong> part of the library with what is further referred to as
+the <strong>plugin</strong>. These two are closely connected in the <code>molstar-plugin-ui</code> module, which is the user-facing part of the
+library and ultimately provides the viewer, but they are ultimately distinct.</p>
+<p>It is recommended that you inspect the general class structure of
+<a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/plugin.tsx#L41"><code>PluginInitWrapper</code></a>,
+<a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/context.ts#L12"><code>PluginUIContext</code></a>
+and
+<a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16"><code>PluginUIComponent</code></a>
+to better understand the flow of data and events in the plugin. A passing analogy is that a
+<a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin/context.ts#L71"> <code>PluginContext</code> </a>
+is the engine that powers computation, rendering, events and subscriptions inside the molstar UI. All UI components
+depend on <code>PluginContext</code>.</p>
 <p>There are 4 basic ways of instantiating the Mol* plugin.</p>
 <h2 id="viewer-wrapper"><code>Viewer</code> wrapper</h2>
 <ul>
-<li>The most basic usage is to use the <code>Viewer</code> wrapper. This is best suited for use cases that do not require custom behavior and are mostly about just displaying a structure.</li>
-<li>See <code>Viewer</code> class is defined in <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/app.ts">src/apps/viewer/app.ts</a> for available methods</li>
-<li>See <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/options.ts">options.ts</a> for available plugin options</li>
-<li>See <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/embedded.html">embedded.html</a> and <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/mvs.html">mvs.html</a> for example usage</li>
-<li>Importing <code>molstar.js</code> will expose <code>molstar.lib</code> namespace that allow accessing various functionality without a bundler such as WebPack or esbuild. See the <code>mvs</code> example above for basic usage.</li>
+<li>The most basic usage is to use the <code>Viewer</code> wrapper. This is best suited for use cases that do not require custom
+  behavior and are mostly about just displaying a structure.</li>
+<li>See <code>Viewer</code> class is defined in
+  <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/app.ts">src/apps/viewer/app.ts</a> for available methods</li>
+<li>See <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/options.ts">options.ts</a> for available plugin
+  options</li>
+<li>See <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/embedded.html">embedded.html</a> and
+  <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/mvs.html">mvs.html</a> for example usage</li>
+<li>Importing <code>molstar.js</code> will expose <code>molstar.lib</code> namespace that allow accessing various functionality without a
+  bundler such as WebPack or esbuild. See the <code>mvs</code> example above for basic usage.</li>
 <li>Alternative color themes can be used by importing <code>theme/dark.css</code> (or <code>light/blue</code>) instead of <code>molstar.css</code></li>
 <li>See <code>examples/react</code> for ways of using the plugin with React.</li>
 </ul>
 <h3 id="molstarjs-and-molstarcss-sources">molstar.js and molstar.css sources</h3>
 <ul>
 <li>Download <code>molstar</code> NPM package and use the files from <code>build/viewer</code> diractory</li>
-<li>Use <code>jsdelivr</code> CDN</li>
+<li>Use <code>jsdelivr</code> CDN<ul>
 <li><code>&lt;script type="text/javascript" src="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.js" /&gt;</code></li>
 <li><code>&lt;link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/molstar@latest/build/viewer/molstar.css" /&gt;</code></li>
 <li><code>@latest</code> can be replaced by a specific Mol* version, e.g., <code>@5.4.2</code></li>
-<li>Clone &amp; build the GitHub repository</li>
-<li>This option allows for quite straightforward extension customization, e.g., not including movie export, which reduces the bundle size by ~0.5MB</li>
+</ul>
+</li>
+<li>Clone &amp; build the GitHub repository<ul>
+<li>This option allows for quite straightforward extension customization, e.g., not including movie export, which
+  reduces the bundle size by ~0.5MB</li>
+</ul>
+</li>
 </ul>
 <h3 id="bundle-size">Bundle size</h3>
-<p>By default, the <code>Viewer</code> includes all the available extensions. This increases the bundle size significantly, especially by including the <code>mp4-export</code>, which is responsible for almost <code>0.5MB</code> of compressed bundle size. 
-It is quite easy to reduce this bundle size by cloning the Mol* repository, editing <a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/options.ts">extensions.ts</a> and rebuilding it with <code>npm run build:apps</code>. The new build will be available 
-in the <code>build/viewer</code> directory (the JS file you will find there is uncompressed, but your hosting setup should include automatic gzip compression, significantly reducing the size).</p>
+<p>By default, the <code>Viewer</code> includes all the available extensions. This increases the bundle size significantly, especially
+by including the <code>mp4-export</code>, which is responsible for almost <code>0.5MB</code> of compressed bundle size. It is quite easy to
+reduce this bundle size by cloning the Mol* repository, editing
+<a href="https://github.com/molstar/molstar/blob/master/src/apps/viewer/options.ts">extensions.ts</a> and rebuilding it with
+<code>npm run build:apps</code>. The new build will be available in the <code>build/viewer</code> directory (the JS file you will find there
+is uncompressed, but your hosting setup should include automatic gzip compression, significantly reducing the size).</p>
 <p>Alternatively, you can explore building your own "viewer" using the base Mol* library. For this, see the options below.</p>
 <h3 id="example">Example</h3>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
@@ -1755,9 +1779,9 @@ in the <code>build/viewer</code> directory (the JS file you will find there is u
 <span class="w">        </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">600</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-<span class="cm">&lt;!-- </span>
+<span class="cm">&lt;!--</span>
 <span class="cm">    molstar.js and .css are obtained from</span>
-<span class="cm">    - the folder build/viewer after cloning and building the molstar package </span>
+<span class="cm">    - the folder build/viewer after cloning and building the molstar package</span>
 <span class="cm">    - from the build/viewer folder in the Mol* NPM package</span>
 <span class="cm">--&gt;</span>
 <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">href</span><span class="o">=</span><span class="s">"./molstar.css"</span> <span class="p">/&gt;</span>
@@ -1787,7 +1811,7 @@ in the <code>build/viewer</code> directory (the JS file you will find there is u
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <h3 id="using-webpackesbuild">Using WebPack/esbuild/...</h3>
-<p>When using WebPack (or other bundler) with the Mol* NPM package installed, the viewer class can be imported using </p>
+<p>When using WebPack (or other bundler) with the Mol* NPM package installed, the viewer class can be imported using</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Viewer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/apps/viewer/app'</span>
 
 <span class="kd">function</span><span class="w"> </span><span class="nx">initViewer</span><span class="p">(</span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nx">HTMLElement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -1796,10 +1820,14 @@ in the <code>build/viewer</code> directory (the JS file you will find there is u
 </code></pre></div>
 <h2 id="plugincontext-with-built-in-react-ui"><code>PluginContext</code> with built-in React UI</h2>
 <ul>
-<li>For more customization options it is possible to use the <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts"><code>PluginContext</code></a> directly.</li>
-<li>When creating the plugin instance it is possible to customize the <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts"><code>PluginSpec</code></a>.</li>
-<li>The default <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts"><code>PluginSpec</code></a> is available <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts">here</a>.</li>
-<li><a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/config.ts"><code>PluginConfig</code></a> object provides additional customization options.</li>
+<li>For more customization options it is possible to use the
+  <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts"><code>PluginContext</code></a> directly.</li>
+<li>When creating the plugin instance it is possible to customize the
+  <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts"><code>PluginSpec</code></a>.</li>
+<li>The default <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts"><code>PluginSpec</code></a> is available
+  <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/spec.ts">here</a>.</li>
+<li><a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/config.ts"><code>PluginConfig</code></a> object provides additional
+  customization options.</li>
 <li>See the <a href="../viewer-state/">Viewer State Management</a> section for more information on customizing things like background.</li>
 <li>See the <a href="../data-state/">Data State Management</a> section for more information on build the state.</li>
 </ul>
@@ -1832,8 +1860,8 @@ in the <code>build/viewer</code> directory (the JS file you will find there is u
 <span class="nx">createPlugin</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'app'</span><span class="p">)</span><span class="o">!</span><span class="p">);</span><span class="w"> </span><span class="c1">// app is a &lt;div&gt; element with position: relative</span>
 </code></pre></div>
 <p>To use the plugin (with the React UI) inside another React app:</p>
-<p>A single-plugin setup is shown the example below. In order to initialize multiple
-plugins, each with its own context and viewport, some extra steps are required (docs section to be added).</p>
+<p>A single-plugin setup is shown the example below. In order to initialize multiple plugins, each with its own context and
+viewport, some extra steps are required (docs section to be added).</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">createRef</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createPluginUI</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"molstar/lib/mol-plugin-ui"</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">renderReact18</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"molstar/lib/mol-plugin-ui/react18"</span><span class="p">;</span>
@@ -1885,8 +1913,13 @@ plugins, each with its own context and viewport, some extra steps are required (
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">parent</span><span class="p">}</span><span class="w"> </span><span class="nx">style</span><span class="o">=</span><span class="p">{{</span><span class="w"> </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="kt">640</span><span class="p">,</span><span class="w"> </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="kt">480</span><span class="w"> </span><span class="p">}}</span><span class="o">/&gt;</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Furthermore, if it is desirable in your project to use the <code>molstar</code>'s React UI components, but you wish to alter or rearrange the layout, you should take a look at the signatures of <a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16"> <code>PluginUIComponent</code> </a> which every "control" subclasses. </p>
-<p><a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/sequence.tsx#L221C4-L221C4"> <code>SequenceView</code> </a>, for example, can be used separately from the <code>PluginUI</code>. Yet you would need to pass the <code>PluginUIContext</code> to it in order for it to observe the changes in the state of the plugin. This can be done via a <code>PluginContextContainer</code>:
+<p>Furthermore, if it is desirable in your project to use the <code>molstar</code>'s React UI components, but you wish to alter or
+rearrange the layout, you should take a look at the signatures of
+<a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/base.tsx#L16"> <code>PluginUIComponent</code> </a>
+which every "control" subclasses.</p>
+<p><a href="https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-ui/sequence.tsx#L221C4-L221C4"> <code>SequenceView</code> </a>,
+for example, can be used separately from the <code>PluginUI</code>. Yet you would need to pass the <code>PluginUIContext</code> to it in order
+for it to observe the changes in the state of the plugin. This can be done via a <code>PluginContextContainer</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// your_app.plugin: PluginUIContext</span>
 <span class="p">...</span>
 <span class="o">&lt;</span><span class="nx">div</span><span class="w"> </span><span class="nx">className</span><span class="o">=</span><span class="s2">"your_custom_ui"</span><span class="o">&gt;</span>
@@ -1894,7 +1927,7 @@ plugins, each with its own context and viewport, some extra steps are required (
 <span class="w">    </span><span class="o">&lt;</span><span class="nx">SequenceView</span><span class="w"> </span><span class="o">/&gt;</span>
 <span class="w">  </span><span class="o">&lt;</span><span class="err">/PluginContextContainer&gt;</span>
 <span class="o">&lt;</span><span class="err">/div&gt;</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="directly-using-mol-react-ui">Directly using Mol* React UI</h2>
 <div class="highlight"><pre><span></span><code><span class="kd">class</span><span class="w"> </span><span class="nx">MolStarWrapper</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="nx">resolveInit</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="ow">void</span><span class="p">;</span>
@@ -1929,7 +1962,8 @@ plugins, each with its own context and viewport, some extra steps are required (
 </code></pre></div>
 <h2 id="plugincontext-without-built-in-react-ui"><code>PluginContext</code> without built-in React UI</h2>
 <ul>
-<li>The <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts"><code>PluginContext</code></a> can be instantiated without using the default React UI.</li>
+<li>The <a href="https://github.com/molstar/molstar/blob/master/src/mol-plugin/context.ts"><code>PluginContext</code></a> can be instantiated
+  without using the default React UI.</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">'molstar-parent'</span> <span class="na">style</span><span class="o">=</span><span class="s">'position: absolute; top: 0; left: 0; right: 0; bottom: 0'</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">canvas</span> <span class="na">id</span><span class="o">=</span><span class="s">'molstar-canvas'</span> <span class="na">style</span><span class="o">=</span><span class="s">'position: absolute; top: 0; left: 0; right: 0; bottom: 0'</span><span class="p">&gt;&lt;/</span><span class="nt">canvas</span><span class="p">&gt;</span>
@@ -1958,8 +1992,8 @@ plugins, each with its own context and viewport, some extra steps are required (
 <span class="w">        </span><span class="k">return</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="c1">// Example url:"https://files.rcsb.org/download/3j7z.pdb" </span>
-<span class="w">    </span><span class="c1">// Example url:"https://files.rcsb.org/download/5AFI.cif" </span>
+<span class="w">    </span><span class="c1">// Example url:"https://files.rcsb.org/download/3j7z.pdb"</span>
+<span class="w">    </span><span class="c1">// Example url:"https://files.rcsb.org/download/5AFI.cif"</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">'...'</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">isGhost</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">});</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">trajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">parseTrajectory</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="p">);</span><span class="w"> </span><span class="c1">//format is 'mmcif' or 'pdb' etc.</span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">hierarchy</span><span class="p">.</span><span class="nx">applyPreset</span><span class="p">(</span><span class="nx">trajectory</span><span class="p">,</span><span class="w"> </span><span class="s1">'default'</span><span class="p">);</span>

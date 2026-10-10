@@ -1671,7 +1671,8 @@
 
 
 <h1 id="structure-superposition">Structure Superposition</h1>
-<p>Mol* provides utilities for superposing protein structures, including both sequence-independent (RMSD-based) and structure-based (TM-align) methods.</p>
+<p>Mol* provides utilities for superposing protein structures, including both sequence-independent (RMSD-based) and
+structure-based (TM-align) methods.</p>
 <h2 id="rmsd-based-superposition">RMSD-based Superposition</h2>
 <p>The basic superposition method uses the Kabsch algorithm to minimize RMSD between corresponding atoms:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">superpose</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-model/structure/structure/util/superposition'</span><span class="p">;</span>
@@ -1694,7 +1695,9 @@
 <span class="c1">// transforms[0].bTransform contains the Mat4 to superpose structure2 onto structure1</span>
 </code></pre></div>
 <h2 id="tm-align-superposition">TM-align Superposition</h2>
-<p>TM-align is a structure-based alignment algorithm that produces the TM-score, a length-independent metric for comparing protein structures. Unlike RMSD, TM-score is normalized to [0, 1] and is more robust for comparing proteins of different sizes.</p>
+<p>TM-align is a structure-based alignment algorithm that produces the TM-score, a length-independent metric for comparing
+protein structures. Unlike RMSD, TM-score is normalized to [0, 1] and is more robust for comparing proteins of different
+sizes.</p>
 <h3 id="basic-usage">Basic Usage</h3>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">tmAlign</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-model/structure/structure/util/tm-align'</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StructureElement</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-model/structure'</span><span class="p">;</span>
@@ -1769,14 +1772,18 @@
 <h3 id="understanding-tm-score">Understanding TM-score</h3>
 <p>The TM-score is calculated as:</p>
 <div class="arithmatex">\[\text{TM-score} = \frac{1}{L} \sum_{i=1}^{L_{ali}} \frac{1}{1 + (d_i/d_0)^2}\]</div>
-<p>Where:
-- <span class="arithmatex">\(L\)</span> is the length of the reference protein
-- <span class="arithmatex">\(L_{ali}\)</span> is the number of aligned residues
-- <span class="arithmatex">\(d_i\)</span> is the distance between the <span class="arithmatex">\(i\)</span>-th pair of aligned residues after superposition
-- <span class="arithmatex">\(d_0 = 1.24 \sqrt[3]{L - 15} - 1.8\)</span> is a length-dependent normalization factor</p>
-<p><strong>TM-score interpretation:</strong>
-- TM-score &gt; 0.5: Generally indicates proteins with the same fold
-- TM-score &gt; 0.17: Generally indicates proteins with random structural similarity</p>
+<p>Where:</p>
+<ul>
+<li><span class="arithmatex">\(L\)</span> is the length of the reference protein</li>
+<li><span class="arithmatex">\(L_{ali}\)</span> is the number of aligned residues</li>
+<li><span class="arithmatex">\(d_i\)</span> is the distance between the <span class="arithmatex">\(i\)</span>-th pair of aligned residues after superposition</li>
+<li><span class="arithmatex">\(d_0 = 1.24 \sqrt[3]{L - 15} - 1.8\)</span> is a length-dependent normalization factor</li>
+</ul>
+<p><strong>TM-score interpretation:</strong></p>
+<ul>
+<li>TM-score &gt; 0.5: Generally indicates proteins with the same fold</li>
+<li>TM-score &gt; 0.17: Generally indicates proteins with random structural similarity</li>
+</ul>
 <h3 id="low-level-api">Low-level API</h3>
 <p>For direct coordinate-based alignment without structures, use the <code>TMAlign</code> namespace:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">TMAlign</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-math/linear-algebra/3d/tm-align'</span><span class="p">;</span>
@@ -1835,8 +1842,10 @@
 </code></pre></div>
 <h2 id="references">References</h2>
 <ul>
-<li>Zhang Y, Skolnick J. "TM-align: a protein structure alignment algorithm based on the TM-score." <em>Nucleic Acids Research</em> 33, 2302-2309 (2005). DOI: <a href="https://doi.org/10.1093/nar/gki524">10.1093/nar/gki524</a></li>
-<li>Kabsch W. "A solution for the best rotation to relate two sets of vectors." <em>Acta Crystallographica</em> A32, 922-923 (1976).</li>
+<li>Zhang Y, Skolnick J. "TM-align: a protein structure alignment algorithm based on the TM-score." <em>Nucleic Acids
+  Research</em> 33, 2302-2309 (2005). DOI: <a href="https://doi.org/10.1093/nar/gki524">10.1093/nar/gki524</a></li>
+<li>Kabsch W. "A solution for the best rotation to relate two sets of vectors." <em>Acta Crystallographica</em> A32, 922-923
+  (1976).</li>
 </ul>
 
 

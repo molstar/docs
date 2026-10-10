@@ -1440,7 +1440,9 @@
 
 
 <h1 id="assign-custom-conformation-to-a-model">Assign custom conformation to a Model</h1>
-<p>This document shows how to update model conformation dynamically using the <code>ModelWithCoordinates</code> transforms. If this does not work well with your particular use case, it is suggested to write a custom version of <code>ModelWithCoordinates</code> with similar usage as outlined in this document.</p>
+<p>This document shows how to update model conformation dynamically using the <code>ModelWithCoordinates</code> transforms. If this
+does not work well with your particular use case, it is suggested to write a custom version of <code>ModelWithCoordinates</code>
+with similar usage as outlined in this document.</p>
 <div class="highlight"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">animateFirstXCoordinateExample</span><span class="p">(</span><span class="nx">plugin</span><span class="o">:</span><span class="w"> </span><span class="kt">PluginContext</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="kt">BuiltInTrajectoryFormat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// Load data</span>
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">download</span><span class="p">({</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="p">});</span>

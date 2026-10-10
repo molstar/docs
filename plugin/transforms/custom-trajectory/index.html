@@ -1529,7 +1529,9 @@
 
 
 <h1 id="load-trajectory-from-a-custom-format">Load Trajectory from a Custom Format</h1>
-<p>This section shows a high level example for loading trajectory from custom data in specialized plugin instances. A more complete solution is available for example in form of the <a href="https://github.com/molstar/molstar/tree/master/src/extensions/g3d">G3D format extension</a>.</p>
+<p>This section shows a high level example for loading trajectory from custom data in specialized plugin instances. A more
+complete solution is available for example in form of the
+<a href="https://github.com/molstar/molstar/tree/master/src/extensions/g3d">G3D format extension</a>.</p>
 <h2 id="defining-and-using-a-custom-transformer">Defining and Using a Custom Transformer</h2>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">StateTransformer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-state'</span><span class="p">;</span>
 
@@ -1558,8 +1560,8 @@
 <span class="w">    </span><span class="p">},</span>
 <span class="p">});</span>
 </code></pre></div>
-<p>The <code>customParse</code> function can usually be implemented 
-by modifying/extending an <a href="https://github.com/molstar/molstar/tree/master/src/mol-model-formats/structure">existing parser already available in Mol*</a>.</p>
+<p>The <code>customParse</code> function can usually be implemented by modifying/extending an
+<a href="https://github.com/molstar/molstar/tree/master/src/mol-model-formats/structure">existing parser already available in Mol*</a>.</p>
 <p>To use the transformer:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="kt">CustomTrajectoryData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="nx">url</span><span class="p">)).</span><span class="nx">json</span><span class="p">();</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">trajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">build</span><span class="p">().</span><span class="nx">toRoot</span><span class="p">().</span><span class="nx">apply</span><span class="p">(</span><span class="nx">TrajectoryFromCustomData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">}).</span><span class="nx">commit</span><span class="p">();</span>

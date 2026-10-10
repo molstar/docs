@@ -1525,8 +1525,9 @@
 
 
 <h1 id="exporting-components">Exporting components</h1>
-<p>Export components data can be useful to reproduce the same view in a different visualization software.
-To do that, one would need to loop over all components, extract its selection (for example by using atom indices) and its representations (type, coloring and sizing).</p>
+<p>Export components data can be useful to reproduce the same view in a different visualization software. To do that, one
+would need to loop over all components, extract its selection (for example by using atom indices) and its
+representations (type, coloring and sizing).</p>
 <h3 id="getting-assets-molecular-files">Getting assets / molecular files</h3>
 <div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">asset</span><span class="p">,</span><span class="w"> </span><span class="nx">file</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">asset</span><span class="p">.</span><span class="nx">assets</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isFile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">asset</span><span class="p">.</span><span class="nx">asset</span><span class="p">.</span><span class="nx">kind</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">'url'</span>

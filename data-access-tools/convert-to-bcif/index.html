@@ -1583,8 +1583,9 @@
 
 
 <h1 id="convert-cif-to-binarycif">Convert CIF to BinaryCIF</h1>
-<p>BinaryCIF is an efficient, binary flavor of the CIF format. See <a href="https://github.com/molstar/BinaryCIF">specification</a> and <a href="https://doi.org/10.1371/journal.pcbi.1008247">publication</a> for further details.</p>
-<p>This script reads data in CIF format and converts it lossless to a BinaryCIF file that can be read by Mol* or other 
+<p>BinaryCIF is an efficient, binary flavor of the CIF format. See <a href="https://github.com/molstar/BinaryCIF">specification</a>
+and <a href="https://doi.org/10.1371/journal.pcbi.1008247">publication</a> for further details.</p>
+<p>This script reads data in CIF format and converts it lossless to a BinaryCIF file that can be read by Mol* or other
 applications.</p>
 <h2 id="example">Example</h2>
 <div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/cli/cif2bcif/index.js<span class="w"> </span>file.cif<span class="w"> </span>file.bcif
@@ -1619,7 +1620,7 @@ applications.</p>
 <div class="highlight"><pre><span></span><code>index.js<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-c<span class="w"> </span>CONFIG<span class="o">]</span><span class="w"> </span><span class="o">[</span>-f<span class="w"> </span>FILTER<span class="o">]</span><span class="w"> </span>src<span class="w"> </span>out
 </code></pre></div>
 <h3 id="config-file">Config file</h3>
-<p>Controls how certain columns will be encoded. This is a JSON array of instructions:
+<p>Controls how certain columns will be encoded. This is a JSON array of instructions:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">EncodingStrategyHint</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">categoryName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">columnName</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span>
@@ -1627,13 +1628,12 @@ applications.</p>
 <span class="w">    </span><span class="nx">precision?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span>
 <span class="p">}</span>
 </code></pre></div>
-Identify a particular CIF columns by its name and override the encoding by Integer Packing, Run-Length Encoding, Delta 
+<p>Identify a particular CIF columns by its name and override the encoding by Integer Packing, Run-Length Encoding, Delta
 Encoding, or Delta &amp; Run-Length Encoding. You can optionally control the precision if dealing with float values.</p>
 <h3 id="filter-file">Filter file</h3>
-<p>Specifies which categories and columns will be written. This is a plain text file, each line represents one entry. 
-You can specify explicitly which categories or columns to include by adding <code>category_name</code> or 
-<code>category_name.field_name</code>. You can also choose to ignore some categories or columns by adding <code>!category_name</code> or 
-<code>!category_name.field_name</code>.</p>
+<p>Specifies which categories and columns will be written. This is a plain text file, each line represents one entry. You
+can specify explicitly which categories or columns to include by adding <code>category_name</code> or <code>category_name.field_name</code>.
+You can also choose to ignore some categories or columns by adding <code>!category_name</code> or <code>!category_name.field_name</code>.</p>
 
 
 

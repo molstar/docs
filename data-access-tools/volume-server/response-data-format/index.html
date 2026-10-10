@@ -1700,85 +1700,88 @@
 <p>The reponse always contains a data block called <code>SERVER</code> with this format:</p>
 <div class="highlight"><pre><span></span><code>data_SERVER
 #
-_density_server_result.server_version     0.9.0 
-_density_server_result.datetime_utc       '2017-03-09 20:35:45' 
-_density_server_result.guid               f69581b4-6b48-4fa4-861f-c879b4323688 
-_density_server_result.is_empty           no 
-_density_server_result.has_error          no 
-_density_server_result.error              . 
-_density_server_result.query_source_id    xray/1cbs 
-_density_server_result.query_type         box 
-_density_server_result.query_box_type     cartesian 
-_density_server_result.query_box_a[0]     14.555 
-_density_server_result.query_box_a[1]     16.075001 
-_density_server_result.query_box_a[2]     9.848 
-_density_server_result.query_box_b[0]     29.302999 
-_density_server_result.query_box_b[1]     35.737 
-_density_server_result.query_box_b[2]     32.037001 
+_density_server_result.server_version     0.9.0
+_density_server_result.datetime_utc       '2017-03-09 20:35:45'
+_density_server_result.guid               f69581b4-6b48-4fa4-861f-c879b4323688
+_density_server_result.is_empty           no
+_density_server_result.has_error          no
+_density_server_result.error              .
+_density_server_result.query_source_id    xray/1cbs
+_density_server_result.query_type         box
+_density_server_result.query_box_type     cartesian
+_density_server_result.query_box_a[0]     14.555
+_density_server_result.query_box_a[1]     16.075001
+_density_server_result.query_box_a[2]     9.848
+_density_server_result.query_box_b[0]     29.302999
+_density_server_result.query_box_b[1]     35.737
+_density_server_result.query_box_b[2]     32.037001
 </code></pre></div>
 <h2 id="query-data">Query data</h2>
-<p>If the query completed successfully with a non-empty result the response will contain one or more data blocks that correpond to the
-"channels" present in the data (e.g. for x-ray data there will be <code>2Fo-Fc</code> and <code>Fo-Fc</code>) channels.</p>
+<p>If the query completed successfully with a non-empty result the response will contain one or more data blocks that
+correpond to the "channels" present in the data (e.g. for x-ray data there will be <code>2Fo-Fc</code> and <code>Fo-Fc</code>) channels.</p>
 <p>The format is this:</p>
 <div class="highlight"><pre><span></span><code>data_2FO-FC
 #
-_volume_data_3d_info.name                         2Fo-Fc 
+_volume_data_3d_info.name                         2Fo-Fc
 </code></pre></div>
 <h3 id="axis-order">Axis order</h3>
-<p>Axis order determines the order of axes of <code>origin</code>, <code>dimensions</code> and <code>sample_count</code> fields. It also specifies
-the order of values in <code>_volume_data_3d.values</code>. <code>0</code> = X axis, <code>1</code> = Y axis, <code>2</code> = Z axis.</p>
-<div class="highlight"><pre><span></span><code>_volume_data_3d_info.axis_order[0]                0 
-_volume_data_3d_info.axis_order[1]                1 
-_volume_data_3d_info.axis_order[2]                2  
+<p>Axis order determines the order of axes of <code>origin</code>, <code>dimensions</code> and <code>sample_count</code> fields. It also specifies the order
+of values in <code>_volume_data_3d.values</code>. <code>0</code> = X axis, <code>1</code> = Y axis, <code>2</code> = Z axis.</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.axis_order[0]                0
+_volume_data_3d_info.axis_order[1]                1
+_volume_data_3d_info.axis_order[2]                2
 </code></pre></div>
 <h3 id="origin-and-dimensions">Origin and dimensions</h3>
 <p>Specifies the fractional coordinates of the bounding box of the data present in the data block.</p>
-<div class="highlight"><pre><span></span><code>_volume_data_3d_info.origin[0]                    -0.5 
-_volume_data_3d_info.origin[1]                    -0.5 
-_volume_data_3d_info.origin[2]                    -0.5 
-_volume_data_3d_info.dimensions[0]                1 
-_volume_data_3d_info.dimensions[1]                1 
-_volume_data_3d_info.dimensions[2]                1 
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.origin[0]                    -0.5
+_volume_data_3d_info.origin[1]                    -0.5
+_volume_data_3d_info.origin[2]                    -0.5
+_volume_data_3d_info.dimensions[0]                1
+_volume_data_3d_info.dimensions[1]                1
+_volume_data_3d_info.dimensions[2]                1
 </code></pre></div>
 <h3 id="sample-rate">Sample rate</h3>
 <p>Determines how many values of the original input data were collapsed in to 1 value.</p>
-<div class="highlight"><pre><span></span><code>_volume_data_3d_info.sample_rate                  8 
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.sample_rate                  8
 </code></pre></div>
 <h3 id="sample-count">Sample count</h3>
 <p>Determines how many values in <code>_volume_data_3d.values</code> are present along each axis (in <code>axis_order</code>).</p>
-<div class="highlight"><pre><span></span><code>_volume_data_3d_info.sample_count[0]              96 
-_volume_data_3d_info.sample_count[1]              96 
-_volume_data_3d_info.sample_count[2]              96 
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.sample_count[0]              96
+_volume_data_3d_info.sample_count[1]              96
+_volume_data_3d_info.sample_count[2]              96
 </code></pre></div>
 <h3 id="spacegroup-information">Spacegroup information</h3>
-<div class="highlight"><pre><span></span><code>_volume_data_3d_info.spacegroup_number            1 
-_volume_data_3d_info.spacegroup_cell_size[0]      798.72 
-_volume_data_3d_info.spacegroup_cell_size[1]      798.72 
-_volume_data_3d_info.spacegroup_cell_size[2]      798.72 
-_volume_data_3d_info.spacegroup_cell_angles[0]    90 
-_volume_data_3d_info.spacegroup_cell_angles[1]    90 
-_volume_data_3d_info.spacegroup_cell_angles[2]    90 
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.spacegroup_number            1
+_volume_data_3d_info.spacegroup_cell_size[0]      798.72
+_volume_data_3d_info.spacegroup_cell_size[1]      798.72
+_volume_data_3d_info.spacegroup_cell_size[2]      798.72
+_volume_data_3d_info.spacegroup_cell_angles[0]    90
+_volume_data_3d_info.spacegroup_cell_angles[1]    90
+_volume_data_3d_info.spacegroup_cell_angles[2]    90
 </code></pre></div>
 <h3 id="values-info">Values info</h3>
 <p>Contains mean, standard deviation, min, and max values for the <em>entire</em> (i.e. not just the slice present in response)
-original and the downsampled data. Both types of values are present 
-so that relative iso-levels can be estimated when sampling changes between queries.</p>
-<div class="highlight"><pre><span></span><code>_volume_data_3d_info.mean_source                  0.026747 
-_volume_data_3d_info.mean_sampled                 0.026748 
-_volume_data_3d_info.sigma_source                 1.129252 
-_volume_data_3d_info.sigma_sampled                0.344922 
-_volume_data_3d_info.min_source                   -19.308199 
-_volume_data_3d_info.min_sampled                  -2.692016 
-_volume_data_3d_info.max_source                   26.264214 
-_volume_data_3d_info.max_sampled                  3.533172 
+original and the downsampled data. Both types of values are present so that relative iso-levels can be estimated when
+sampling changes between queries.</p>
+<div class="highlight"><pre><span></span><code>_volume_data_3d_info.mean_source                  0.026747
+_volume_data_3d_info.mean_sampled                 0.026748
+_volume_data_3d_info.sigma_source                 1.129252
+_volume_data_3d_info.sigma_sampled                0.344922
+_volume_data_3d_info.min_source                   -19.308199
+_volume_data_3d_info.min_sampled                  -2.692016
+_volume_data_3d_info.max_source                   26.264214
+_volume_data_3d_info.max_sampled                  3.533172
 </code></pre></div>
 <h3 id="values">Values</h3>
-<p>The values are stored in the <code>_volume_data_3d.values</code> loop containg <code>sample_count[0] * sample_count[1] * sample_count[2]</code> values. <code>axis_order[0]</code> is the axis that changes the fastest, <code>axis_order[2]</code> is the axis that changes the slowest, same as in the <a href="http://www.ccp4.ac.uk/html/maplib.html#description">CCP4 format</a>).</p>
+<p>The values are stored in the <code>_volume_data_3d.values</code> loop containg
+<code>sample_count[0] * sample_count[1] * sample_count[2]</code> values. <code>axis_order[0]</code> is the axis that changes the fastest,
+<code>axis_order[2]</code> is the axis that changes the slowest, same as in the
+<a href="http://www.ccp4.ac.uk/html/maplib.html#description">CCP4 format</a>).</p>
 <div class="highlight"><pre><span></span><code>loop_
 _volume_data_3d.values
--0.075391 
--0.078252 
--0.078161 
+-0.075391
+-0.078252
+-0.078161
 ...
 </code></pre></div>
 

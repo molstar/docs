@@ -1593,7 +1593,8 @@
 
 
 <h1 id="building-a-custom-library">Building a Custom Library</h1>
-<p>This page goes over creating a custom Mol* based library usable inside a <code>&lt;script&gt;</code> tag in an HTML page using the <code>esbuild</code> tool.</p>
+<p>This page goes over creating a custom Mol* based library usable inside a <code>&lt;script&gt;</code> tag in an HTML page using the
+<code>esbuild</code> tool.</p>
 <h2 id="setup">Setup</h2>
 <ul>
 <li>Create a new npm/yarn package</li>
@@ -1648,7 +1649,9 @@ npm install esbuild --save-dev
 <span class="w">  </span><span class="nt">"watch"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbuild src/index.ts --bundle --outfile=./build/js/index.js --global-name=molstarLib --watch"</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>and run the command <code>npm run build</code> (or <code>watch</code> for interactive development experience). This will create <code>build/js/index.js</code> file which can be imported with a <code>&lt;script&gt;</code> tag and the exported functions called view the <code>molstarLib</code> prefix (you can customize this parameter).</p>
+<p>and run the command <code>npm run build</code> (or <code>watch</code> for interactive development experience). This will create
+<code>build/js/index.js</code> file which can be imported with a <code>&lt;script&gt;</code> tag and the exported functions called view the
+<code>molstarLib</code> prefix (you can customize this parameter).</p>
 <h2 id="using-the-library">Using the Library</h2>
 <p>Create file <code>build/index.html</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
@@ -1682,12 +1685,14 @@ npm install esbuild --save-dev
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>After opening <code>index.html</code> in a browser, you should see </p>
+<p>After opening <code>index.html</code> in a browser, you should see</p>
 <p><img alt="lib-example" src="../lib-example.png" /></p>
 <h2 id="using-mol-react-ui">Using Mol* React UI</h2>
-<p>The above example does not make use of the default Mol* React UI and any UI components are therefore the author's responsibility. The below examples show how to (re)use the Mol* React UI.</p>
+<p>The above example does not make use of the default Mol* React UI and any UI components are therefore the author's
+responsibility. The below examples show how to (re)use the Mol* React UI.</p>
 <ul>
-<li>Create <code>src/ui.tsx</code>:
+<li>
+<p>Create <code>src/ui.tsx</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">React</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react'</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">createRoot</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'react-dom/client'</span><span class="p">;</span>
 
@@ -1711,12 +1716,15 @@ npm install esbuild --save-dev
 <span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">trajectory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">parseTrajectory</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="o">?</span><span class="p">.</span><span class="nx">format</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="s1">'mmcif'</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">any</span><span class="p">);</span>
 <span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">plugin</span><span class="p">.</span><span class="nx">builders</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">hierarchy</span><span class="p">.</span><span class="nx">applyPreset</span><span class="p">(</span><span class="nx">trajectory</span><span class="p">,</span><span class="w"> </span><span class="s1">'default'</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></li>
-<li>Create <code>src/style.scss</code>:
-<div class="highlight"><pre><span></span><code><span class="k">@use</span><span class="w"> </span><span class="s1">'../node_modules/molstar/lib/mol-plugin-ui/skin/light.scss'</span><span class="o">;</span>
-</code></pre></div></li>
+</code></pre></div>
+</li>
 <li>
-<p>Create <code>build/ui.html</code>:
+<p>Create <code>src/style.scss</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">@use</span><span class="w"> </span><span class="s1">'../node_modules/molstar/lib/mol-plugin-ui/skin/light.scss'</span><span class="o">;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Create <code>build/ui.html</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -1752,18 +1760,22 @@ npm install esbuild --save-dev
 <span class="w">        </span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></div></p>
+</code></pre></div>
 </li>
 <li>
-<p>Install <code>sass</code>: <code>npm install sass -save-dev</code> (or use <a href="https://www.npmjs.com/package/esbuild-sass-plugin"><code>esbuild</code> plugin</a> and <code>import</code> the scss file in <code>ui.tsx</code>)</p>
+<p>Install <code>sass</code>: <code>npm install sass -save-dev</code> (or use
+  <a href="https://www.npmjs.com/package/esbuild-sass-plugin"><code>esbuild</code> plugin</a> and <code>import</code> the scss file in <code>ui.tsx</code>)</p>
 </li>
-<li>Add scripts to <code>package.json</code>:
+<li>
+<p>Add scripts to <code>package.json</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">"build-ui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"esbuild src/ui.tsx --bundle --outfile=./build/js/ui.js --global-name=molstarLib"</span><span class="p">,</span>
 <span class="nt">"css"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sass src/style.scss ./build/css/style.css"</span>
-</code></pre></div></li>
-<li>Run <code>npm run build-ui</code> and <code>npm run css</code> (skip if using <code>esbuild-sass-plugin</code>)</li>
-<li>Opening <code>build/ui.html</code>:
-<img alt="ui-example" src="../ui-example.png" /></li>
+</code></pre></div>
+</li>
+<li>
+<p>Run <code>npm run build-ui</code> and <code>npm run css</code> (skip if using <code>esbuild-sass-plugin</code>)</p>
+</li>
+<li>Opening <code>build/ui.html</code>: <img alt="ui-example" src="../ui-example.png" /></li>
 </ul>
 
 

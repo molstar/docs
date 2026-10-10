@@ -1693,11 +1693,11 @@
 
 
 <h1 id="model-server">Model Server</h1>
-<p>Provides access to molecular 1D, 2D, and 3D (sub-)structure models of molecules. Substructures are described by the 
-mol-script (MolQL) language. It has the ability to include additional data to mmCIF “on the fly”, e.g. integrate 
-primary PDB archival data from <a href="https://www.wwpdb.org/data/ccd">Chemical Component Dictionary (CCD)</a>, 
-<a href="https://www.wwpdb.org/data/ccd">Protonation Variants Companion Dictionary (PVCD)</a> and 
-<a href="https://www.wwpdb.org/data/bird">Biologically Interesting moleculeReference Dictionary (BIRD)</a>. </p>
+<p>Provides access to molecular 1D, 2D, and 3D (sub-)structure models of molecules. Substructures are described by the
+mol-script (MolQL) language. It has the ability to include additional data to mmCIF “on the fly”, e.g. integrate primary
+PDB archival data from <a href="https://www.wwpdb.org/data/ccd">Chemical Component Dictionary (CCD)</a>,
+<a href="https://www.wwpdb.org/data/ccd">Protonation Variants Companion Dictionary (PVCD)</a> and
+<a href="https://www.wwpdb.org/data/bird">Biologically Interesting moleculeReference Dictionary (BIRD)</a>.</p>
 <h2 id="example">Example</h2>
 <div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/server<span class="w"> </span>--sourceMap<span class="w"> </span>pdb-bcif<span class="w"> </span><span class="s1">'/opt/data/bcif/${id}.bcif'</span>
 </code></pre></div>
@@ -1768,7 +1768,7 @@ primary PDB archival data from <a href="https://www.wwpdb.org/data/ccd">Chemical
 </tr>
 <tr>
 <td><code>--sourceMap</code></td>
-<td>Map <code>id</code>s for a <code>source</code> to a file path. Example: <code>pdb-bcif '../../data/bcif/${id}.bcif'</code> - JS expressions can be used inside <code>${}</code>, e.g. <code>${id.substr(1, 2)}/${id}.mdb</code> Can be specified multiple times. The <code>SOURCE</code> variable (e.g. <code>pdb-bcif</code>) is arbitrary and depends on how you plan to use the server. Supported formats: cif, bcif, cif.gz, bcif.gz</td>
+<td>Map <code>id</code>s for a <code>source</code> to a file path. Example: <code>pdb-bcif '../../data/bcif/${id}.bcif'</code>. Inside <code>${}</code>, use <code>id</code> with optional chained calls to <code>toLowerCase()</code>, <code>toUpperCase()</code>, <code>substr(n, m)</code>, <code>substring(n[, m])</code>, or <code>slice(n[, m])</code>, e.g. <code>${id.substring(1, 3).toLowerCase()}/${id.toLowerCase()}.bcif</code>. Calls are applied in order. Indices are non-negative integers; <code>substr</code> takes a start and length, while <code>substring</code> and <code>slice</code> take a start and optional exclusive end index. Can be specified multiple times. The <code>SOURCE</code> variable (e.g. <code>pdb-bcif</code>) is arbitrary and depends on how you plan to use the server. Supported formats: cif, bcif, cif.gz, bcif.gz</td>
 </tr>
 <tr>
 <td><code>--sourceMapUrl</code></td>
@@ -1794,14 +1794,16 @@ primary PDB archival data from <a href="https://www.wwpdb.org/data/ccd">Chemical
 <span class="w">        </span><span class="o">[</span>--sourceMapUrl<span class="w"> </span>SOURCE<span class="w"> </span>PATH<span class="w"> </span>SOURCE_MAP_FORMAT<span class="o">]</span>
 </code></pre></div>
 <h3 id="production-use">Production Use</h3>
-<p>In production, it is required to use a service that will keep the server running, such as <a href="https://github.com/foreverjs/forever">forever.js</a>.</p>
+<p>In production, it is required to use a service that will keep the server running, such as
+<a href="https://github.com/foreverjs/forever">forever.js</a>.</p>
 <h3 id="memory-issues">Memory Issues</h3>
-<p>Sometimes nodejs might run into problems with memory. This is usually resolved by adding the <code>--max-old-space-size=8192</code> parameter.</p>
+<p>Sometimes nodejs might run into problems with memory. This is usually resolved by adding the <code>--max-old-space-size=8192</code>
+parameter.</p>
 <h3 id="preprocessor-example">Preprocessor Example</h3>
-<p>The preprocessor application allows addiing custom data to CIF files and/or 
-<a href="../convert-to-bcif/">convert CIF to BinaryCIF</a>.
+<p>The preprocessor application allows addiing custom data to CIF files and/or
+<a href="../convert-to-bcif/">convert CIF to BinaryCIF</a>.</p>
 <div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/preprocess
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="preprocessor-usage">Preprocessor Usage</h3>
 <table>
 <thead>
@@ -1845,31 +1847,31 @@ primary PDB archival data from <a href="https://www.wwpdb.org/data/ccd">Chemical
 </tr>
 </tbody>
 </table>
-<p>Example cfg.json:
-<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="w"> </span>
-<span class="w">    </span><span class="s2">"numProcesses"</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span>
-<span class="w">    </span><span class="s2">"customProperties"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">        </span><span class="s2">"sources"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"wwpdb"</span><span class="w"> </span><span class="p">],</span><span class="w"> </span>
-<span class="w">        </span><span class="s2">"params"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
-<span class="w">            </span><span class="s2">"wwPDB"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<p>Example cfg.json:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="s2">"numProcesses"</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">"customProperties"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">"sources"</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"wwpdb"</span><span class="w"> </span><span class="p">],</span>
+<span class="w">        </span><span class="s2">"params"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="s2">"wwPDB"</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="s2">"chemCompBondTablePath"</span><span class="o">:</span><span class="w"> </span><span class="s2">"./build/data/ccb.bcif"</span>
 <span class="w">            </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="local-mode">Local Mode</h3>
-<p>The server can be run in local/file based mode using
+<p>The server can be run in local/file based mode using</p>
 <div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/model/query
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="custom-properties">Custom Properties</h3>
 <p>This feature is still in development.</p>
-<p>It is possible to provide property descriptors that transform data to internal representation and define how it should 
-be exported into one or mode CIF categories. Examples of this are located in the <code>mol-model-props</code> module and are 
-linked to the server in the config and <code>servers/model/properties</code>.</p>
+<p>It is possible to provide property descriptors that transform data to internal representation and define how it should
+be exported into one or mode CIF categories. Examples of this are located in the <code>mol-model-props</code> module and are linked
+to the server in the config and <code>servers/model/properties</code>.</p>
 <h2 id="from-npm">From NPM</h2>
 <div class="highlight"><pre><span></span><code>npm install --production molstar
-cd ./model-server 
+cd ./model-server
 </code></pre></div>
 <p>(or <code>node node_modules\.bin\model-server</code> in Windows).</p>
 <p>The NPM package contains all the tools mentioned in the previous sections as "binaries":</p>

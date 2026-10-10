@@ -1808,10 +1808,10 @@
 
 <h1 id="volumeserver">VolumeServer</h1>
 <h2 id="what-is-volumeserver">What is VolumeServer</h2>
-<p>Provides near-instantaneous access to volumetric data including density maps (for instance, from X-ray crystallography 
+<p>Provides near-instantaneous access to volumetric data including density maps (for instance, from X-ray crystallography
 or cryo-electron microscopy experiments), spatial distribution data, output from electrostatic calculations. It works by
-utilizing adaptive downsampling (similar to how Google Earth works). </p>
-<p>It uses the text based CIF and BinaryCIF formats to deliver the data to the client. </p>
+utilizing adaptive downsampling (similar to how Google Earth works).</p>
+<p>It uses the text based CIF and BinaryCIF formats to deliver the data to the client.</p>
 <p>For quick info about the benefits of using the server, check out the <a href="examples/">examples</a>.</p>
 <h2 id="installing-and-running">Installing and Running</h2>
 <p>Requires nodejs 8+.</p>
@@ -1822,12 +1822,12 @@ npm install
 <p>Afterwards, build the project source:</p>
 <div class="highlight"><pre><span></span><code>npm run build:lib
 </code></pre></div>
-<p>and run the server by </p>
+<p>and run the server by</p>
 <div class="highlight"><pre><span></span><code>node lib/commonjs/servers/volume/server
 </code></pre></div>
 <h3 id="from-npm">From NPM</h3>
 <div class="highlight"><pre><span></span><code>npm install --production molstar
-./volume-server 
+./volume-server
 </code></pre></div>
 <p>(or <code>node node_modules\.bin\volume-server</code> in Windows).</p>
 <p>The NPM package contains all the tools mentioned here as "binaries":</p>
@@ -1837,25 +1837,33 @@ npm install
 <li><code>volume-server-query</code></li>
 </ul>
 <h4 id="production-use">Production use</h4>
-<p>In production it is required to use a service that will keep the server running, such as <a href="https://github.com/foreverjs/forever">forever.js</a>.</p>
+<p>In production it is required to use a service that will keep the server running, such as
+<a href="https://github.com/foreverjs/forever">forever.js</a>.</p>
 <h4 id="memory-issues">Memory issues</h4>
-<p>Sometimes nodejs might run into problems with memory. This is usually resolved by adding the <code>--max-old-space-size=8192</code> parameter.</p>
+<p>Sometimes nodejs might run into problems with memory. This is usually resolved by adding the <code>--max-old-space-size=8192</code>
+parameter.</p>
 <h3 id="preparing-the-data">Preparing the Data</h3>
-<p>For the server to work, CCP4/MAP (models 0, 1, 2 are supported) input data need to be converted into a custom block format. 
-To achieve this, use the <code>pack</code> application (<code>node lib/commonjs/servers/volume/pack</code> or <code>volume-server-pack</code> binary from the NPM package).</p>
+<p>For the server to work, CCP4/MAP (models 0, 1, 2 are supported) input data need to be converted into a custom block
+format. To achieve this, use the <code>pack</code> application (<code>node lib/commonjs/servers/volume/pack</code> or <code>volume-server-pack</code>
+binary from the NPM package).</p>
 <h3 id="local-mode">Local Mode</h3>
-<p>The program  <code>lib/commonjs/servers/volume/query</code> (<code>volume-server-query</code> in NPM package) can be used to query the data without running a http server.</p>
+<p>The program <code>lib/commonjs/servers/volume/query</code> (<code>volume-server-query</code> in NPM package) can be used to query the data
+without running a http server.</p>
 <h3 id="navigating-the-source-code">Navigating the Source Code</h3>
 <p>The source code is split into 2 mains parts: <code>pack</code> and <code>server</code>:</p>
 <ul>
 <li>The <code>pack</code> part provides the means of converting CCP4 files into the internal block format.</li>
-<li>The <code>server</code> includes</li>
+<li>The <code>server</code> includes<ul>
 <li><code>query</code>: the main part of the server that handles a query. <code>execute.ts</code> is the "entry point".</li>
-<li><code>algebra</code>: linear, "coordinate", and "box" algebra provides the means for calculations necessary to concent a user query into a menaningful response.</li>
+<li><code>algebra</code>: linear, "coordinate", and "box" algebra provides the means for calculations necessary to concent a user
+  query into a menaningful response.</li>
 <li>API wrapper that handles the requests.</li>
 </ul>
+</li>
+</ul>
 <h2 id="consuming-the-data">Consuming the Data</h2>
-<p>The data can be consumed in any (modern) browser using the <a href="https://github.com/molstar/ciftools">ciftools library</a> (or any other piece of code that can read text or binary CIF).</p>
+<p>The data can be consumed in any (modern) browser using the <a href="https://github.com/molstar/ciftools">ciftools library</a> (or
+any other piece of code that can read text or binary CIF).</p>
 <p>The <a href="response-data-format/">Data Format</a> document gives a detailed description of the server response format.</p>
 <p>As a reference/example of the server usage is available in Mol* <code>mol-plugin</code> module.</p>
 <h2 id="hosting-the-server">Hosting the server</h2>
@@ -1901,7 +1909,7 @@ To achieve this, use the <code>pack</code> application (<code>node lib/commonjs/
 </tr>
 <tr>
 <td><code>--idMap</code></td>
-<td>Map <code>id</code>s for a <code>type</code> to a file path. Example: <code>x-ray '../../data/mdb/xray/${id}-ccp4.mdb'</code> - JS expressions can be used inside <code>${}</code>, e.g. <code>${id.substr(1, 2)}/${id}.mdb</code> - Can be specified multiple times. - The <code>TYPE</code> variable (e.g. <code>x-ray</code>) is arbitrary and depends on how you plan to use the server. By default, Mol* Viewer uses <code>x-ray</code> and <code>em</code>, but any particular use case may vary. - If using URL, it can be http://, https://, gs:// or file:// protocol.</td>
+<td>Map <code>id</code>s for a <code>type</code> to a file path. Example: <code>x-ray '../../data/mdb/xray/${id}-ccp4.mdb'</code> - Inside <code>${}</code>, use <code>id</code> with optional chained calls to <code>toLowerCase()</code>, <code>toUpperCase()</code>, <code>substr(n, m)</code>, <code>substring(n[, m])</code>, or <code>slice(n[, m])</code>, e.g. <code>${id.substring(1, 3).toLowerCase()}/${id}.mdb</code>. Calls are applied in order; <code>substr</code> takes a start and length, while <code>substring</code> and <code>slice</code> take a start and optional exclusive end index. - Can be specified multiple times. - The <code>TYPE</code> variable (e.g. <code>x-ray</code>) is arbitrary and depends on how you plan to use the server. By default, Mol* Viewer uses <code>x-ray</code> and <code>em</code>, but any particular use case may vary. - If using URL, it can be http://, https://, gs:// or file:// protocol.</td>
 </tr>
 <tr>
 <td><code>--maxRequestBlockCount</code></td>
@@ -1919,14 +1927,14 @@ To achieve this, use the <code>pack</code> application (<code>node lib/commonjs/
 </table>
 <div class="highlight"><pre><span></span><code>node<span class="w"> </span>lib/commonjs/servers/volume/server<span class="w"> </span><span class="o">[</span>-h<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--cfg<span class="w"> </span>CFG<span class="o">]</span>
-<span class="w">        </span><span class="o">[</span>--printCfg<span class="o">]</span><span class="w"> </span>
+<span class="w">        </span><span class="o">[</span>--printCfg<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--cfgTemplate<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--apiPrefix<span class="w"> </span>PREFIX<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--defaultPort<span class="w"> </span>PORT<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--shutdownTimeoutMinutes<span class="w"> </span>TIME<span class="o">]</span>
-<span class="w">        </span><span class="o">[</span>--shutdownTimeoutVarianceMinutes<span class="w"> </span>VARIANCE<span class="o">]</span><span class="w"> </span>
+<span class="w">        </span><span class="o">[</span>--shutdownTimeoutVarianceMinutes<span class="w"> </span>VARIANCE<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--idMap<span class="w"> </span>TYPE<span class="w"> </span>PATH<span class="o">]</span>
-<span class="w">        </span><span class="o">[</span>--maxRequestBlockCount<span class="w"> </span>COUNT<span class="o">]</span><span class="w"> </span>
+<span class="w">        </span><span class="o">[</span>--maxRequestBlockCount<span class="w"> </span>COUNT<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--maxFractionalBoxVolume<span class="w"> </span>VOLUME<span class="o">]</span>
 <span class="w">        </span><span class="o">[</span>--maxOutputSizeInVoxelCountByPrecisionLevel<span class="w"> </span>LEVEL<span class="w"> </span><span class="o">[</span>LEVEL<span class="w"> </span>...<span class="o">]]</span>
 </code></pre></div>

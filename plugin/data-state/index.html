@@ -1457,11 +1457,12 @@
 <span class="p">}</span>
 </code></pre></div>
 <p>When defining the state object, all components are optional, i.e., it is possible to define just the <code>data</code> component.</p>
-<p>Example state is available <a href="../example-state.json">here</a>. In the plugin, it is possible to create and load these objects using <code>Download JSON</code> 
-and <code>Open JSON</code> buttons in the <code>State Snapshots</code> section.</p>
+<p>Example state is available <a href="../example-state.json">here</a>. In the plugin, it is possible to create and load these objects
+using <code>Download JSON</code> and <code>Open JSON</code> buttons in the <code>State Snapshots</code> section.</p>
 <h1 id="state-tree">State Tree</h1>
-<p>The data and behavior of the plugin is stored in a tree data structure implemented in the <code>mol-state</code> module. This data structure 
-strictly separates the definition of the state with its actual instantiation, similar to the relation of HTML and DOM in web browsers.</p>
+<p>The data and behavior of the plugin is stored in a tree data structure implemented in the <code>mol-state</code> module. This data
+structure strictly separates the definition of the state with its actual instantiation, similar to the relation of HTML
+and DOM in web browsers.</p>
 <p>The snapshot itself is a JS Object with these components</p>
 <div class="highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">State</span><span class="p">.</span><span class="nx">Snapshot</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">tree</span><span class="o">:</span><span class="w"> </span><span class="kt">StateTree.Serialized</span>
@@ -1497,7 +1498,8 @@ strictly separates the definition of the state with its actual instantiation, si
 <span class="w">    </span><span class="nx">isBinding?</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>"Built-in" data state transforms and description of their parameters are defined in <code>mol-plugin/state/transforms</code>. Behavior transforms are defined in <code>mol-plugin/behavior</code>.</p>
+<p>"Built-in" data state transforms and description of their parameters are defined in <code>mol-plugin/state/transforms</code>.
+Behavior transforms are defined in <code>mol-plugin/behavior</code>.</p>
 <h1 id="animation-state">Animation State</h1>
 <p>Defined by <code>CameraSnapshotManager.StateSnapshot</code> in <code>mol-plugin/state/animation/manager.ts</code>.</p>
 <h1 id="canvas3d-state">Canvas3D State</h1>

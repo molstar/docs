@@ -1641,17 +1641,20 @@
 
 
 <h1 id="markdown-extension-manager">Markdown Extension Manager</h1>
-<p>The <code>markdownExtensions</code> manager in <code>PluginContext.manager</code> allows customizing
-the <code>Markdown</code> React component to enable executing commands and rendering custom content.</p>
+<p>The <code>markdownExtensions</code> manager in <code>PluginContext.manager</code> allows customizing the <code>Markdown</code> React component to enable
+executing commands and rendering custom content.</p>
 <p>The main use case of this is enriching <a href="https://molstar.org/mol-view-spec">MolViewSpec</a> support.</p>
 <h2 id="api">API</h2>
 <ul>
-<li><code>PluginContext.manager.markdownExtensions.register*</code> functions can be used to register extensions and state/data resolvers to make the the manager work with plugin extension</li>
+<li><code>PluginContext.manager.markdownExtensions.register*</code> functions can be used to register extensions and state/data
+  resolvers to make the the manager work with plugin extension</li>
 <li><code>PluginContext.manager.markdownExtensions.remove*</code> can be used to dynamically remove the above</li>
 </ul>
 <h2 id="commands">Commands</h2>
-<p>Extends Markdown Hyperlink syntax to support expressions of the form <code>[title](!c1=v1&amp;c2=v2&amp;...)</code> into an executable command. The command can be executed either on click, mouse enter, or mouse leave.</p>
-<p>Generally, the command should be URL encoded, e.g., <code>a b</code> =&gt; <code>a%20b</code> (in JS, <code>encodeURIComponent</code>, in Python <code>urllib.parse.quote_plus/urlencode</code>).</p>
+<p>Extends Markdown Hyperlink syntax to support expressions of the form <code>[title](!c1=v1&amp;c2=v2&amp;...)</code> into an executable
+command. The command can be executed either on click, mouse enter, or mouse leave.</p>
+<p>Generally, the command should be URL encoded, e.g., <code>a b</code> =&gt; <code>a%20b</code> (in JS, <code>encodeURIComponent</code>, in Python
+<code>urllib.parse.quote_plus/urlencode</code>).</p>
 <h3 id="built-in-commands">Built-in Commands</h3>
 <ul>
 <li><code>center-camera</code> - Centers the camera</li>
@@ -1667,18 +1670,21 @@ the <code>Markdown</code> React component to enable executing commands and rende
 <li>(optional) <code>lang</code> is one of <code>mol-script</code> (default), <code>pymol</code>, <code>vmd</code>, <code>jmol</code></li>
 <li>(optional) <code>action</code> is an array of <code>highlight</code> (default), <code>focus</code> (multiple actions can be specified)</li>
 <li>(optional) <code>focus-radius</code> is extra distance applied when focusing the selection (default is <code>3</code>)</li>
-<li>Example: <code>[HEM](!query=resn%20HEM%26lang=pymol&amp;action=highlight,focus)</code> highlights or focuses the HEM residue (the query must be URL encoded because it contains spaces and possibly other special characters)</li>
+<li>Example: <code>[HEM](!query=resn%20HEM%26lang=pymol&amp;action=highlight,focus)</code> highlights or focuses the HEM residue (the
+  query must be URL encoded because it contains spaces and possibly other special characters)</li>
 </ul>
 </li>
 <li><code>play-audio=src</code>, <code>toggle-audio[=src]</code>, <code>stop-audio</code>, <code>pause-audio</code>, <code>dispose-audio</code> - Audio playback support</li>
 </ul>
 <h2 id="custom-content">Custom Content</h2>
-<p>Extends Markdown Image syntax to support expressions of the form <code>![alt](!c1=v1&amp;c2=v2&amp;...)</code> to render custom elements instead.</p>
+<p>Extends Markdown Image syntax to support expressions of the form <code>![alt](!c1=v1&amp;c2=v2&amp;...)</code> to render custom elements
+instead.</p>
 <h3 id="built-in-custom-content">Built-in Custom Content</h3>
 <ul>
 <li><code>color-swatch=color</code> - Renders a box with the provided color</li>
 <li>Color palettes:<ul>
-<li><code>color-palette-name=name</code> - Renders a gradient with the provided named color palette (see <code>mol-util/color/lists.ts</code> for supported color schemes)</li>
+<li><code>color-palette-name=name</code> - Renders a gradient with the provided named color palette (see
+  <code>mol-util/color/lists.ts</code> for supported color schemes)</li>
 <li><code>color-palette-colors=color1,color2</code> - Renders a gradient with the provided colors</li>
 <li><code>color-palette-width=CCS-value</code> - Specifies the width of the element, defaults to <code>150px</code></li>
 <li><code>color-palette-height=CCS-value</code> - Specified the height of the element, defaults to <code>0.5em</code></li>

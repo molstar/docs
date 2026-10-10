@@ -1527,9 +1527,11 @@
 
 
 <h1 id="wwpdb-structconn-extension">wwPDB StructConn extension</h1>
-<p>The STRUCT_CONN category in the mmCIF file format contains details about the connections between portions of the structure. These can be hydrogen bonds, salt bridges, disulfide bridges and so on (see more at <a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v40.dic/Categories/struct_conn.html">https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v40.dic/Categories/struct_conn.html</a>).</p>
+<p>The STRUCT_CONN category in the mmCIF file format contains details about the connections between portions of the
+structure. These can be hydrogen bonds, salt bridges, disulfide bridges and so on (see more at
+<a href="https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v40.dic/Categories/struct_conn.html">https://mmcif.wwpdb.org/dictionaries/mmcif_pdbx_v40.dic/Categories/struct_conn.html</a>).</p>
 <p><strong>wwPDB StructConn extension</strong> in Mol* provides functionality to retrieve and visualize these connections.</p>
-<p>The extension exposes three functions, located in <code>src/extensions/wwpdb/struct-conn/index.ts</code>. </p>
+<p>The extension exposes three functions, located in <code>src/extensions/wwpdb/struct-conn/index.ts</code>.</p>
 <ul>
 <li><code>getStructConns</code> - to retrieve struct_conn records from a loaded structure</li>
 <li><code>inspectStructConn</code> - to visualize a struct_conn</li>
@@ -1571,10 +1573,14 @@
     <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>The PDB ID (<code>'5elb'</code>) can be replaced be <code>undefined</code>, in which case the functions will apply to the first loaded structure.</p>
+<p>The PDB ID (<code>'5elb'</code>) can be replaced be <code>undefined</code>, in which case the functions will apply to the first loaded
+structure.</p>
 <h2 id="example-2">Example 2</h2>
-<p>This is a more elaborated example, which automatically loads <code>5elb</code> (or any PDB entry given in the URL after <code>?pdb=</code>), retrieves the list of struct_conns, and creates a button for each struct_conn. </p>
-<p>Be aware that some of the struct_conns may be present in the deposited model but not in the preferred assembly (default view). The presented example will raise a dialog window with error message in such cases, e.g. <code>disulf6</code> in entry <code>5elb</code>.</p>
+<p>This is a more elaborated example, which automatically loads <code>5elb</code> (or any PDB entry given in the URL after <code>?pdb=</code>),
+retrieves the list of struct_conns, and creates a button for each struct_conn.</p>
+<p>Be aware that some of the struct_conns may be present in the deposited model but not in the preferred assembly (default
+view). The presented example will raise a dialog window with error message in such cases, e.g. <code>disulf6</code> in entry
+<code>5elb</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>

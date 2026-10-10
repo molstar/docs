@@ -1829,25 +1829,35 @@
 <h1 id="selections">Selections</h1>
 <h2 id="basic-concepts">Basic Concepts</h2>
 <h3 id="location">Location</h3>
-<p>The selection model in Mol* is based on a generic concept called <em>location</em>. A location is a pointer to a selectable element within a scene. For example:</p>
+<p>The selection model in Mol* is based on a generic concept called <em>location</em>. A location is a pointer to a selectable
+element within a scene. For example:</p>
 <ul>
-<li>A structure element location (an atom or a coarse element) is an object composed of <code>{ structure: Structure, unit: Unit, element: UnitIndex }</code> (you can think of a <code>Unit</code> as a generalized chain)</li>
+<li>A structure element location (an atom or a coarse element) is an object composed of
+  <code>{ structure: Structure, unit: Unit, element: UnitIndex }</code> (you can think of a <code>Unit</code> as a generalized chain)</li>
 <li>A bond location is very similar to structure element, requiring pointers to two units and elements</li>
 <li>A "shape" (generally a mesh) location consists of pointer to the parent shape and a group of triangles</li>
 </ul>
 <h3 id="loci">Loci</h3>
-<p>Structures and other renderable elements generally consist of many locations and simply using a list of locations would be 
-prohibitively expensive (e.g., large selections in structures with hundreds of thousands of atoms).</p>
-<p>This is why Mol* introduces
-the concept of <code>Loci</code> &mdash; a compressed representation of multiple locations. Instead of having a list of structure element locations (<code>{ structure: Structure, unit: Unit, element: UnitIndex }[]</code>), the representation becomes (simplified) <code>{ structure: Structure, unit: Unit, elements: OrderedSet&lt;UnitIndex&gt; }</code>. The ordered set can be further compressed for continuous ranges, keeping only the index of the 1st and last element.</p>
+<p>Structures and other renderable elements generally consist of many locations and simply using a list of locations would
+be prohibitively expensive (e.g., large selections in structures with hundreds of thousands of atoms).</p>
+<p>This is why Mol* introduces the concept of <code>Loci</code> &mdash; a compressed representation of multiple locations. Instead of
+having a list of structure element locations (<code>{ structure: Structure, unit: Unit, element: UnitIndex }[]</code>), the
+representation becomes (simplified) <code>{ structure: Structure, unit: Unit, elements: OrderedSet&lt;UnitIndex&gt; }</code>. The ordered
+set can be further compressed for continuous ranges, keeping only the index of the 1st and last element.</p>
 <h3 id="bundle">Bundle</h3>
-<p>Locations and loci point to the raw JavaScript data structures representing the underlying molecules, making them not serializable in JSON. A <em>bundle</em> is a serializable version of the loci.</p>
+<p>Locations and loci point to the raw JavaScript data structures representing the underlying molecules, making them not
+serializable in JSON. A <em>bundle</em> is a serializable version of the loci.</p>
 <h3 id="structure-queries">Structure Queries</h3>
-<p>Defining selections directly using the loci would be very cumbersome. For this reason, Mol* includes the <a href="https://molql.org">MolQl query language</a> to help define selections.</p>
+<p>Defining selections directly using the loci would be very cumbersome. For this reason, Mol* includes the
+<a href="https://molql.org">MolQl query language</a> to help define selections.</p>
 <h2 id="selection-methods">Selection Methods</h2>
-<p>Assuming you have a model already loaded into the plugin (see <a href="../instance/">Creating Plugin Instance</a>), these are some of the methods you can use to create selections.</p>
+<p>Assuming you have a model already loaded into the plugin (see <a href="../instance/">Creating Plugin Instance</a>), these are some
+of the methods you can use to create selections.</p>
 <h3 id="molql-mol-script-language">MolQL (<code>mol-script</code>) language</h3>
-<p><a href="https://molql.org">MolQL</a> (<code>mol-script</code>) is a language for addressing crystallographic structures and is a part of the Mol* library found at <code>https://github.com/molstar/molstar/tree/master/src/mol-script</code>. It can be used against the Molstar plugin as a query language and transpiled against multiple external molecular visualization libraries(see <a href="https://github.com/molstar/molstar/tree/master/src/mol-script/transpilers">here</a>).</p>
+<p><a href="https://molql.org">MolQL</a> (<code>mol-script</code>) is a language for addressing crystallographic structures and is a part of the
+Mol* library found at <code>https://github.com/molstar/molstar/tree/master/src/mol-script</code>. It can be used against the
+Molstar plugin as a query language and transpiled against multiple external molecular visualization libraries(see
+<a href="https://github.com/molstar/molstar/tree/master/src/mol-script/transpilers">here</a>).</p>
 <p><strong>Example:</strong> Querying a structure for a specific chain and residue range</p>
 <p>Select residues with <code>12&lt;res_id&lt;200 of chain with auth_asym_id=A</code></p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">compileIdListSelection</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-script/util/id-list'</span>
@@ -1856,8 +1866,10 @@ the concept of <code>Loci</code> &mdash; a compressed representation of multiple
 <span class="nb">window</span><span class="p">.</span><span class="nx">molstar</span><span class="o">?</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">selection</span><span class="p">.</span><span class="nx">fromCompiledQuery</span><span class="p">(</span><span class="s1">'add'</span><span class="p">,</span><span class="nx">query</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="selection-queries">Selection Queries</h3>
-<p>Another way to create a selection is via a <code>SelectionQuery</code> object. This is a more programmatic way to create a selection. The following example shows how to select a chain and a residue range using a <code>SelectionQuery</code> object.
-This relies on the concept of <code>Expression</code> which is basically a intermediate representation between a Molscript statement and a selection query. </p>
+<p>Another way to create a selection is via a <code>SelectionQuery</code> object. This is a more programmatic way to create a
+selection. The following example shows how to select a chain and a residue range using a <code>SelectionQuery</code> object. This
+relies on the concept of <code>Expression</code> which is basically a intermediate representation between a Molscript statement and
+a selection query.</p>
 <p><strong>Example:</strong> Select residues 10-15 of chains A and F in a structure using a <code>SelectionQuery</code> object</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">MolScriptBuilder</span><span class="w"> </span><span class="kr">as</span><span class="w"> </span><span class="nx">MS</span><span class="p">,</span><span class="w"> </span><span class="nx">MolScriptBuilder</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-script/language/builder'</span><span class="p">;</span>
 <span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Expression</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'molstar/lib/mol-script/language/expression'</span><span class="p">;</span>
@@ -1878,9 +1890,13 @@ This relies on the concept of <code>Expression</code> which is basically a inter
 <span class="w"> </span><span class="nx">mstar</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">structure</span><span class="p">.</span><span class="nx">selection</span><span class="p">.</span><span class="nx">fromSelectionQuery</span><span class="p">(</span><span class="s1">'set'</span><span class="p">,</span><span class="w"> </span><span class="nx">sq</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Complex queries can be constructed by combining primitive queries at the level of [<code>chain-test</code>, <code>residue-test</code>, <code>entity-test</code>, etc] (https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-script/language/symbol-table/structure-query.ts#L88C4-L94C112) by combining them via logical connectives provided in the <code>MolscriptBuilder.core.rel</code> as above.</p>
-<p>Inspect these examples to get a better feeling for this syntax: <code>https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-state/helpers/structure-selection-query.ts#L88-L580</code></p>
-<p>Furthermore, a query made this way can be converted to a <code>Loci</code> object which is important in many parts of the libary:
+<p>Complex queries can be constructed by combining primitive queries at the level of [<code>chain-test</code>, <code>residue-test</code>,
+<code>entity-test</code>, etc]
+(https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-script/language/symbol-table/structure-query.ts#L88C4-L94C112)
+by combining them via logical connectives provided in the <code>MolscriptBuilder.core.rel</code> as above.</p>
+<p>Inspect these examples to get a better feeling for this syntax:
+<code>https://github.com/molstar/molstar/blob/6edbae80db340134341631f669eec86543a0f1a8/src/mol-plugin-state/helpers/structure-selection-query.ts#L88-L580</code></p>
+<p>Furthermore, a query made this way can be converted to a <code>Loci</code> object which is important in many parts of the libary:</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// Select residue 124 of chain A and convert to Loci</span>
 <span class="kd">const</span><span class="w"> </span><span class="nx">Q</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">MolScriptBuilder</span><span class="p">;</span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">sel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Script</span><span class="p">.</span><span class="nx">getStructureSelection</span><span class="p">(</span><span class="nx">Q</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Q</span><span class="p">.</span><span class="nx">struct</span><span class="p">.</span><span class="nx">generator</span><span class="p">.</span><span class="nx">atomGroups</span><span class="p">({</span>
@@ -1889,7 +1905,7 @@ This relies on the concept of <code>Expression</code> which is basically a inter
 <span class="p">}),</span><span class="w"> </span><span class="nx">objdata</span><span class="p">)</span>
 
 <span class="kd">let</span><span class="w"> </span><span class="nx">loci</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">StructureSelection</span><span class="p">.</span><span class="nx">toLociWithSourceUnits</span><span class="p">(</span><span class="nx">sel</span><span class="p">);</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="query-functions">Query Functions</h3>
 <p>Instead of building expressions, query functions can be created directly, e.g.:</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">atoms</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'mol-model/structure/query/queries/generators'</span><span class="p">;</span>
@@ -1905,9 +1921,10 @@ This relies on the concept of <code>Expression</code> which is basically a inter
 <span class="c1">// ...</span>
 </code></pre></div>
 <h3 id="selection-schema">Selection Schema</h3>
-<p>For simple selections, the <code>StructureElement.Schema</code> can be used to reference elements within a protein structure using mmCIF <code>atom_site</code> field names, e.g.:</p>
+<p>For simple selections, the <code>StructureElement.Schema</code> can be used to reference elements within a protein structure using
+mmCIF <code>atom_site</code> field names, e.g.:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">ala121</span><span class="o">:</span><span class="w"> </span><span class="kt">StructureElement.Schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">label_asym_id</span><span class="o">:</span><span class="w"> </span><span class="s1">'A'</span><span class="p">,</span><span class="w"> </span><span class="nx">label_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">121</span><span class="w"> </span><span class="p">};</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">residues</span><span class="o">:</span><span class="w"> </span><span class="kt">StructureElement.Schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">residues</span><span class="o">:</span><span class="w"> </span><span class="kt">StructureElement.Schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">auth_asym_id</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="w"> </span><span class="s1">'B'</span><span class="p">],</span>
 <span class="w">    </span><span class="nx">auth_seq_id</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">11</span><span class="p">],</span>
@@ -1928,8 +1945,9 @@ This relies on the concept of <code>Expression</code> which is basically a inter
 <span class="nx">plugin</span><span class="p">.</span><span class="nx">managers</span><span class="p">.</span><span class="nx">interactivity</span><span class="p">.</span><span class="nx">lociSelects</span><span class="p">.</span><span class="nx">select</span><span class="p">({</span><span class="w"> </span><span class="nx">loci</span><span class="o">:</span><span class="w"> </span><span class="kt">ligandLoci</span><span class="w"> </span><span class="p">});</span>
 </code></pre></div>
 <h2 id="selection-events">Selection Events</h2>
-<p>If you want to subscribe to selection events (e.g. to change external state in your application based on a user selection), you can use: <code>plugin.behaviors.interaction.click.subscribe</code></p>
-<p>Here's an example of passing in a React "set" function to update selected residue positions.
+<p>If you want to subscribe to selection events (e.g. to change external state in your application based on a user
+selection), you can use: <code>plugin.behaviors.interaction.click.subscribe</code></p>
+<p>Here's an example of passing in a React "set" function to update selected residue positions.</p>
 <div class="highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">Structure</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">StructureProperties</span><span class="p">,</span>
@@ -1955,11 +1973,13 @@ This relies on the concept of <code>Expression</code> which is basically a inter
 <span class="w">    </span><span class="nx">setSelected</span><span class="p">(</span><span class="nx">localSelected</span><span class="p">);</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="helper-functions">Helper Functions</h2>
-<p>Given an <code>Expression</code>, <code>QueryFn</code>, or <code>StructureElement.Schema</code> it is possible to use <code>fromExpression/Query/Schema</code> functions on <code>StructureElement.Loci</code> and <code>StructureElement.Bundle</code>.</p>
+<p>Given an <code>Expression</code>, <code>QueryFn</code>, or <code>StructureElement.Schema</code> it is possible to use <code>fromExpression/Query/Schema</code>
+functions on <code>StructureElement.Loci</code> and <code>StructureElement.Bundle</code>.</p>
 <h3 id="viewer-app"><code>Viewer</code> app</h3>
-<p>The <code>Viewer</code> app provides the <code>structureInteractivity</code> function which allows easy selection/highlighting of the loaded structure. For example:</p>
+<p>The <code>Viewer</code> app provides the <code>structureInteractivity</code> function which allows easy selection/highlighting of the loaded
+structure. For example:</p>
 <div class="highlight"><pre><span></span><code><span class="nx">viewer</span><span class="p">.</span><span class="nx">structureInteractivity</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">elements</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">beg_auth_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">10</span><span class="p">,</span><span class="w"> </span><span class="nx">end_auth_seq_id</span><span class="o">:</span><span class="w"> </span><span class="kt">50</span><span class="w"> </span><span class="p">},</span>
 <span class="w">    </span><span class="nx">action</span><span class="o">:</span><span class="w"> </span><span class="s1">'select'</span><span class="p">,</span>
