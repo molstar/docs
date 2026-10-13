@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-jd32r3ub"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Interesting PDB Entries | Mol* Documentation</title><link rel="canonical" href="https://molstar.org/docs/v5/misc/interesting-pdb-entries/"/><link rel="sitemap" href="/docs/sitemap-index.xml"/><link rel="shortcut icon" href="/docs/favicon.ico" type="image/x-icon"/><meta name="generator" content="Astro v7.3.8"/><meta name="generator" content="Starlight v0.42.6"/><meta property="og:title" content="Interesting PDB Entries"/><meta property="og:type" content="article"/><meta property="og:url" content="https://molstar.org/docs/v5/misc/interesting-pdb-entries/"/><meta property="og:locale" content="en"/><meta property="og:description" content="Documentation of Mol*, a library and set of apps for molecular structures and volumes."/><meta property="og:site_name" content="Mol* Documentation"/><meta name="twitter:card" content="summary_large_image"/><meta name="description" content="Documentation of Mol*, a library and set of apps for molecular structures and volumes."/><script>
+	window.StarlightThemeProvider = (() => {
+		const storedTheme =
+			typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme');
+		const theme =
+			storedTheme ||
+			(window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+		document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark';
+		return {
+			updatePickers(theme = storedTheme || 'auto') {
+				document.querySelectorAll('starlight-theme-select').forEach((picker) => {
+					const select = picker.querySelector('select');
+					if (select) select.value = theme;
+					/** @type {HTMLTemplateElement | null} */
+					const tmpl = document.querySelector(`#theme-icons`);
+					const newIcon = tmpl && tmpl.content.querySelector('.' + theme);
+					if (newIcon) {
+						const oldIcon = picker.querySelector('svg.label-icon');
+						if (oldIcon) {
+							oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes);
+						}
+					}
+				});
+			},
+		};
+	})();
+</script><template id="theme-icons"><svg aria-hidden="true" class="light astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"/></svg><svg aria-hidden="true" class="dark astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.64 13a1 1 0 0 0-1.05-.14 8.049 8.049 0 0 1-3.37.73 8.15 8.15 0 0 1-8.14-8.1 8.59 8.59 0 0 1 .25-2A1 1 0 0 0 8 2.36a10.14 10.14 0 1 0 14 11.69 1 1 0 0 0-.36-1.05Zm-9.5 6.69A8.14 8.14 0 0 1 7.08 5.22v.27a10.15 10.15 0 0 0 10.14 10.14 9.784 9.784 0 0 0 2.1-.22 8.11 8.11 0 0 1-7.18 4.32v-.04Z"/></svg><svg aria-hidden="true" class="auto astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg></template><link rel="stylesheet" href="/docs/_astro/print.ehPL0gv-.css" media="print"><link rel="stylesheet" href="/docs/_astro/common.B51S7aYT.css"><style>@layer starlight.components{svg:where(.astro-yargr3kz){color:var(--sl-icon-color);font-size:var(--sl-icon-size,1em);width:1em;height:1em;overflow:visible}}
+</style><script type="module" src="/docs/_astro/page.cNngjUgL.js"></script></head><body class="astro-jd32r3ub"><a class="sl-skip-link astro-dnil4x6h" href="#_top">Skip to content</a><div class="page sl-flex astro-27wyawao"><header class="header astro-27wyawao"><div class="header astro-pzzeay67"><div class="title-wrapper sl-flex astro-pzzeay67"><a href="/docs/" class="site-title sl-flex astro-wl6r47rn"><span class="astro-wl6r47rn" translate="no">Mol* Documentation</span></a></div><div class="sl-flex print:hidden astro-pzzeay67"><site-search class="astro-pzzeay67 astro-5z5xslhp" data-translations="{&quot;placeholder&quot;:&quot;Search&quot;}"><button data-open-modal disabled aria-label="Search" aria-keyshortcuts="Control+K" class="astro-5z5xslhp"><svg aria-hidden="true" class="astro-5z5xslhp astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg><span class="sl-hidden md:sl-block astro-5z5xslhp" aria-hidden="true">Search</span><kbd class="sl-hidden md:sl-flex astro-5z5xslhp" style="display: none;"><kbd class="astro-5z5xslhp">Ctrl</kbd><kbd class="astro-5z5xslhp">K</kbd></kbd></button><dialog style="padding:0" aria-label="Search" class="astro-5z5xslhp"><div class="dialog-frame sl-flex astro-5z5xslhp"><button data-close-modal class="sl-flex md:sl-hidden astro-5z5xslhp">Cancel</button><div class="search-container astro-5z5xslhp"><div id="starlight__search" class="astro-5z5xslhp"></div></div></div></dialog></site-search><script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script><script type="module" src="/docs/_astro/Search.astro_astro_type_script_index_0_lang.BhvQlLS9.js"></script></div><div class="sl-hidden md:sl-flex print:hidden right-group astro-pzzeay67"><div class="sl-flex social-icons astro-pzzeay67"><a href="https://github.com/molstar/molstar" rel="me" class="sl-flex astro-6jau6yhf"><span class="sr-only astro-6jau6yhf">GitHub</span><svg aria-hidden="true" class="astro-6jau6yhf astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><label class="version-select astro-jcjov46q"><span class="sr-only astro-jcjov46q">Documentation version</span><select aria-label="Documentation version" class="astro-jcjov46q"><option value="/docs/v6/" class="astro-jcjov46q">v6 (preview)</option><option value="/docs/v5/misc/interesting-pdb-entries/" selected class="astro-jcjov46q">v5 (latest)</option><option value="/docs/versions/" class="astro-jcjov46q">All versions…</option></select></label><script type="module">for(let e of document.querySelectorAll(`.version-select select`))e.addEventListener(`change`,()=>{window.location.assign(e.value)});</script><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-4rnl4dwy"><span class="sr-only astro-4rnl4dwy">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-4rnl4dwy astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-4rnl4dwy"><option value="dark" class="astro-4rnl4dwy">Dark</option><option value="light" class="astro-4rnl4dwy">Light</option><option value="auto" selected class="astro-4rnl4dwy">Auto</option></select><svg aria-hidden="true" class="icon caret astro-4rnl4dwy astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script><script type="module">var e=`starlight-theme`,t=e=>e===`auto`||e===`dark`||e===`light`?e:`auto`,n=()=>t(typeof localStorage<`u`&&localStorage.getItem(e));function r(t){typeof localStorage<`u`&&localStorage.setItem(e,t===`light`||t===`dark`?t:``)}var i=()=>matchMedia(`(prefers-color-scheme: light)`).matches?`light`:`dark`;function a(e){StarlightThemeProvider.updatePickers(e),document.documentElement.dataset.theme=e===`auto`?i():e,r(e)}matchMedia(`(prefers-color-scheme: light)`).addEventListener(`change`,()=>{n()===`auto`&&a(`auto`)});var o=class extends HTMLElement{constructor(){super(),a(n()),this.querySelector(`select`)?.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&a(t(e.currentTarget.value))})}};customElements.define(`starlight-theme-select`,o);</script><script type="module">var e=class extends HTMLElement{constructor(){super();let e=this.querySelector(`select`);e&&(e.addEventListener(`change`,e=>{e.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=e.currentTarget.value)}),window.addEventListener(`pageshow`,t=>{if(!t.persisted)return;let n=e.querySelector(`option[selected]`)?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}};customElements.define(`starlight-lang-select`,e);</script></div></div></header><nav class="sidebar print:hidden astro-27wyawao" aria-label="Main"><button popovertarget="starlight__sidebar" class="sl-menu-button sl-flex md:sl-hidden print:hidden astro-pooutbh2"><svg aria-hidden="true" class="open-menu astro-pooutbh2 astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg><svg aria-hidden="true" class="close-menu astro-pooutbh2 astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg><span class="sr-only astro-pooutbh2">Menu</span></button><script type="module">var e=class extends HTMLElement{constructor(){super();let e=matchMedia(`(min-width: 50em)`),t=()=>{this.popover=e.matches?null:`auto`};t(),e.addEventListener(`change`,()=>t()),this.addEventListener(`toggle`,({newState:e})=>this.trapFocus(e===`open`))}trapFocus(e){document.querySelectorAll(`.main-frame, .sl-skip-link`).forEach(t=>{t.toggleAttribute(`inert`,e)})}};customElements.define(`sl-sidebar-pane`,e);</script><sl-sidebar-pane popover id="starlight__sidebar" class="sidebar-pane astro-27wyawao"><div class="sidebar-content sl-flex astro-27wyawao"><sl-sidebar-state-persist data-hash="1np52hi" class="astro-t6kllv7f"><script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script><ul class="top-level astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/" class="large astro-wsri6idq"><span class="astro-wsri6idq">Installation</span></a></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">Plugin</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="0"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/plugin/instance/" class="astro-wsri6idq"><span class="astro-wsri6idq">Creating Instance</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/examples/" class="astro-wsri6idq"><span class="astro-wsri6idq">Examples</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/custom-library/" class="astro-wsri6idq"><span class="astro-wsri6idq">Custom Library</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/selections/" class="astro-wsri6idq"><span class="astro-wsri6idq">Selections</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/superposition/" class="astro-wsri6idq"><span class="astro-wsri6idq">Superposition</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/viewer-state/" class="astro-wsri6idq"><span class="astro-wsri6idq">Viewer State</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/data-state/" class="astro-wsri6idq"><span class="astro-wsri6idq">Data State</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/file-formats/" class="astro-wsri6idq"><span class="astro-wsri6idq">File Formats</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/cif-schemas/" class="astro-wsri6idq"><span class="astro-wsri6idq">CIF Schemas</span></a></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">Managers</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="1"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/plugin/managers/markdown-extensions/" class="astro-wsri6idq"><span class="astro-wsri6idq">Markdown Extensions</span></a></li></ul></details></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">State Transforms</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="2"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/plugin/transforms/custom-trajectory/" class="astro-wsri6idq"><span class="astro-wsri6idq">Custom Trajectory</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/plugin/transforms/custom-conformation/" class="astro-wsri6idq"><span class="astro-wsri6idq">Custom Conformation</span></a></li></ul></details></li></ul></details></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">Data Access Tools</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="3"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/model-server/" class="astro-wsri6idq"><span class="astro-wsri6idq">Model Server</span></a></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">Volume Server</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="4"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/volume-server/" class="astro-wsri6idq"><span class="astro-wsri6idq">Overview</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/volume-server/examples/" class="astro-wsri6idq"><span class="astro-wsri6idq">Examples</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/volume-server/how-it-works/" class="astro-wsri6idq"><span class="astro-wsri6idq">How it Works</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/volume-server/response-data-format/" class="astro-wsri6idq"><span class="astro-wsri6idq">Data Format</span></a></li></ul></details></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/plugin-state-server/" class="astro-wsri6idq"><span class="astro-wsri6idq">Plugin State Server</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/convert-to-bcif/" class="astro-wsri6idq"><span class="astro-wsri6idq">Convert CIF to BinaryCIF</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/create-ccd-table/" class="astro-wsri6idq"><span class="astro-wsri6idq">Create Table from CCD</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/data-access-tools/extract-ccd-ions/" class="astro-wsri6idq"><span class="astro-wsri6idq">Extract Ions from CCD</span></a></li></ul></details></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">Extensions</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="5"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/extensions/mvs/" class="astro-wsri6idq"><span class="astro-wsri6idq">MolViewSpec</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/extensions/struct-conn/" class="astro-wsri6idq"><span class="astro-wsri6idq">wwPDB StructConn</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/extensions/tunnels/" class="astro-wsri6idq"><span class="astro-wsri6idq">Tunnels</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/extensions/interactions/" class="astro-wsri6idq"><span class="astro-wsri6idq">Interactions</span></a></li></ul></details></li><li class="astro-wsri6idq"><details open class="astro-wsri6idq"><summary class="astro-wsri6idq"><span class="group-label astro-wsri6idq"><span class="large astro-wsri6idq">Misc</span></span><svg aria-hidden="true" class="caret astro-wsri6idq astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></summary><sl-sidebar-restore data-index="6"></sl-sidebar-restore><ul class="astro-wsri6idq"><li class="astro-wsri6idq"><a href="/docs/v5/misc/interesting-pdb-entries/" aria-current="page" class="astro-wsri6idq"><span class="astro-wsri6idq">Interesting PDB entries</span></a></li><li class="astro-wsri6idq"><a href="/docs/v5/misc/exporting-components/" class="astro-wsri6idq"><span class="astro-wsri6idq">Exporting component data</span></a></li></ul></details></li></ul><script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script></sl-sidebar-state-persist><div class="md:sl-hidden"><div class="mobile-preferences sl-flex astro-v2jkgw2i"><div class="social-icons astro-v2jkgw2i"><a href="https://github.com/molstar/molstar" rel="me" class="sl-flex astro-6jau6yhf"><span class="sr-only astro-6jau6yhf">GitHub</span><svg aria-hidden="true" class="astro-6jau6yhf astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a></div><label class="version-select astro-jcjov46q"><span class="sr-only astro-jcjov46q">Documentation version</span><select aria-label="Documentation version" class="astro-jcjov46q"><option value="/docs/v6/" class="astro-jcjov46q">v6 (preview)</option><option value="/docs/v5/misc/interesting-pdb-entries/" selected class="astro-jcjov46q">v5 (latest)</option><option value="/docs/versions/" class="astro-jcjov46q">All versions…</option></select></label><starlight-theme-select><label style="--sl-select-width: 6.25em" class="astro-4rnl4dwy"><span class="sr-only astro-4rnl4dwy">Select theme</span><svg aria-hidden="true" class="icon label-icon astro-4rnl4dwy astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21 14h-1V7a3 3 0 0 0-3-3H7a3 3 0 0 0-3 3v7H3a1 1 0 0 0-1 1v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a1 1 0 0 0-1-1ZM6 7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v7H6V7Zm14 10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-1h16v1Z"/></svg><select autocomplete="off" class="astro-4rnl4dwy"><option value="dark" class="astro-4rnl4dwy">Dark</option><option value="light" class="astro-4rnl4dwy">Light</option><option value="auto" selected class="astro-4rnl4dwy">Auto</option></select><svg aria-hidden="true" class="icon caret astro-4rnl4dwy astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M17 9.17a1 1 0 0 0-1.41 0L12 12.71 8.46 9.17a1 1 0 1 0-1.41 1.42l4.24 4.24a1.002 1.002 0 0 0 1.42 0L17 10.59a1.002 1.002 0 0 0 0-1.42Z"/></svg></label></starlight-theme-select><script>
+	StarlightThemeProvider.updatePickers();
+</script></div></div></div></sl-sidebar-pane></nav><div class="main-frame astro-27wyawao"><script type="module">var e=document.getElementById(`starlight__sidebar`),t=e?.querySelector(`sl-sidebar-state-persist`),n=`sl-sidebar-state`,r=()=>{let r=[],i=t?.dataset.hash||``;try{let e=sessionStorage.getItem(n),t=JSON.parse(e||`{}`);Array.isArray(t.open)&&t.hash===i&&(r=t.open)}catch{}return{hash:i,open:r,scroll:e?.scrollTop||0}},i=e=>{try{sessionStorage.setItem(n,JSON.stringify(e))}catch{}},a=()=>i(r()),o=(e,t)=>{let n=r();n.open[t]=e,i(n)};t?.addEventListener(`click`,e=>{if(!(e.target instanceof Element))return;let t=e.target.closest(`summary`)?.closest(`details`);if(!t)return;let n=t.querySelector(`sl-sidebar-restore`),r=parseInt(n?.dataset.index||``);isNaN(r)||o(!t.open,r)}),addEventListener(`visibilitychange`,()=>{document.visibilityState===`hidden`&&a()});</script><div class="lg:sl-flex astro-vrmjtoeb"><aside class="right-sidebar-container print:hidden astro-vrmjtoeb"><div class="right-sidebar astro-vrmjtoeb"><div class="lg:sl-hidden astro-lx4utzg2"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-atuu3wzu"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-atuu3wzu"><details id="starlight__mobile-toc" class="astro-atuu3wzu"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-atuu3wzu"><span class="toggle sl-flex astro-atuu3wzu">On this page<svg aria-hidden="true" class="caret astro-atuu3wzu astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-atuu3wzu"></span></summary><div class="dropdown astro-atuu3wzu"><ul class="isMobile astro-f25nrphx" style="--depth: 0;"><li style="--depth: 0;" class="astro-f25nrphx"><a href="#_top" style="--depth: 0;" class="astro-f25nrphx"><span style="--depth: 0;" class="astro-f25nrphx">Overview</span></a></li></ul></div></details></nav></mobile-starlight-toc><script type="module" src="/docs/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.C3fM4Kra.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-lx4utzg2"><div class="sl-container astro-lx4utzg2"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">On this page</h2><ul class="astro-f25nrphx" style="--depth: 0;"><li style="--depth: 0;" class="astro-f25nrphx"><a href="#_top" style="--depth: 0;" class="astro-f25nrphx"><span style="--depth: 0;" class="astro-f25nrphx">Overview</span></a></li></ul></nav></starlight-toc><script type="module" src="/docs/_astro/TableOfContents.astro_astro_type_script_index_0_lang.BpJaGz7G.js"></script></div></div></div></aside><div class="main-pane astro-vrmjtoeb"><main data-pagefind-body class="astro-jd32r3ub" lang="en" dir="ltr"><div class="content-panel astro-rve5pxk4"><div class="sl-container astro-rve5pxk4"><h1 id="_top" class="astro-ilta7ro4">Interesting PDB Entries</h1></div></div><div class="content-panel astro-rve5pxk4"><div class="sl-container astro-rve5pxk4"><div class="sl-markdown-content"><ul>
+<li>Cyclic polymers (1sfi, 6dny, 1HVZ)</li>
+<li>B-DNA (1bna)</li>
+<li>Missing carbonyl oxygen (1gfl)</li>
+<li>Mono-saccharides with alt locs (1B5F)</li>
+<li>Microheterogeneity
+<ul>
+<li>Protein (1EJG, 3NIR)</li>
+<li>DNA (3VOK)</li>
+</ul>
+</li>
+<li>PNA: peptide nucleic acid (5eme, 1xj9)</li>
+<li>Peptide derived residues
+<ul>
+<li>GFP chromophores (5Z6Y)</li>
+</ul>
+</li>
+<li>Nucleotides that don’t have a parent base set, i.e. detect purine/pyrimidine from geometry (THX in 1AUL, OMC in e.g.
+5D3G)</li>
+<li>Bases with modified ring atoms
+<ul>
+<li>DZ has C1 instead of N1 (e.g. 6I4N)</li>
+<li>DP has N5 instead of C5 and C7 instead of N7 (e.g. 6I4N)</li>
+</ul>
+</li>
+<li>Beta &#x26; Gamma peptides (e.g. 1GAC, 6PQF)</li>
+<li>Helices of D-amino acids (e.g. 7QDI)</li>
+<li>Mixed (heterogeneous) all-atom/trace-only RNA model (1JGQ)</li>
+<li>Polymers with residues with missing trace atoms (e.g. 2QFJ)</li>
+<li>Modified RNA bases (1y26, 5L4O)</li>
+<li>Discontinuous chains, i.e. gaps in the sequence (3sn6)</li>
+<li>Lots of sheets (1cbs)</li>
+<li>DNA (2np2, 1d66)</li>
+<li>C-alpha only (2RCJ, 6ZIG, 5AJ2)</li>
+<li>Not cyclic, but termini are backbone-only and within distance but seqIds are not compatible (6SW3)</li>
+<li>Close backbone atoms but not linked (e.g. 4HIV)</li>
+<li>Non-standard residues
+<ul>
+<li>Protein (1BRR, 5Z6Y)</li>
+<li>DNA (5D3G)</li>
+<li>Collagen (6JEC)</li>
+</ul>
+</li>
+<li>Multiple models with different sets of ligands or missing ligands (1J6T, 1VRC, 2ICY, 1O2F)</li>
+<li>Long linear sugar chain (4HG6)</li>
+<li>Anisotropic B-factors/Ellipsoids (1EJG)</li>
+<li>NOS bridges (LYS-CSO in 7B0L, 6ZWJ, 6ZWH)</li>
+<li>Non-polymer components in polymer entities
+<ul>
+<li>PN2 in 1F80</li>
+<li>ACE (many, e.g. 5AGU, 1E1X)</li>
+<li>ACY in 7ABY</li>
+<li>NH2 (many, e.g. 6Y13)</li>
+</ul>
+</li>
+<li>Ligands with many rings
+<ul>
+<li>STU (e.g. 1U59) - many fused rings</li>
+<li>HT (e.g. 127D) - rings connected by a single bond</li>
+<li>J2C (e.g. 7EFJ) - rings connected by a single atom</li>
+<li>RBF (e.g. 7QF2) - three linearly fused rings</li>
+<li>TA1 (e.g. 1JFF) - many fused rings (incl. a 8-member rings)</li>
+<li>BPA (e.g. 1JDG) - many fused rings</li>
+<li>CLR (e.g. 3GKI) - four fused rings</li>
+</ul>
+</li>
+<li>Assembly symmetries
+<ul>
+<li>5M30 (Assembly 1, C3 local and pseudo)</li>
+<li>1RB8 (Assembly 1, I global)</li>
+</ul>
+</li>
+<li>Deuterium atoms
+<ul>
+<li>3CWH (XUL with D and DOD)</li>
+<li>8TT8 (HOH and other with D)</li>
+</ul>
+</li>
+<li>Monosaccharides of all possible SNFG shapes
+<ul>
+<li>3d11 - FilledSphere (MAN, BMA), FilledCube (NAG)</li>
+<li>5hwa - CrossedCube (GCS)</li>
+<li>9k1g - FilledCone (FUC)</li>
+<li>4y9v - DevidedCone (49T)</li>
+<li>1mfd - FlatBox (ABE)</li>
+<li>6rv7 - FilledStar (XYP)</li>
+<li>9q5e - FilledDiamond (SIA)</li>
+<li>1hv6 - DividedDiamond (GCU, MAV)</li>
+<li>FlatDiamond - no examples in PDB as it has no CCD codes mapped to it</li>
+<li>3k8d - FlatHexagon (KDO)</li>
+<li>8jq5 - Pentagon (PSV)</li>
+<li>9k1g - no SNFG symbol assigned -> white FlatHexagon (X6Y)</li>
+</ul>
+</li>
+</ul></div><footer class="sl-flex astro-a5bf5dp2"><div class="meta sl-flex astro-a5bf5dp2"></div><div class="pagination-links print:hidden astro-3cjdp2dn" dir="ltr"><a href="/docs/v5/extensions/interactions/" rel="prev" class="astro-3cjdp2dn"><svg aria-hidden="true" class="astro-3cjdp2dn astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17 11H9.41l3.3-3.29a1.004 1.004 0 1 0-1.42-1.42l-5 5a1 1 0 0 0-.21.33 1 1 0 0 0 0 .76 1 1 0 0 0 .21.33l5 5a1.002 1.002 0 0 0 1.639-.325 1 1 0 0 0-.219-1.095L9.41 13H17a1 1 0 0 0 0-2Z"/></svg><span class="astro-3cjdp2dn">Previous<br class="astro-3cjdp2dn"><span class="link-title astro-3cjdp2dn">Interactions</span></span></a><a href="/docs/v5/misc/exporting-components/" rel="next" class="astro-3cjdp2dn"><svg aria-hidden="true" class="astro-3cjdp2dn astro-yargr3kz" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.5rem;"><path d="M17.92 11.62a1.001 1.001 0 0 0-.21-.33l-5-5a1.003 1.003 0 1 0-1.42 1.42l3.3 3.29H7a1 1 0 0 0 0 2h7.59l-3.3 3.29a1.002 1.002 0 0 0 .325 1.639 1 1 0 0 0 1.095-.219l5-5a1 1 0 0 0 .21-.33 1 1 0 0 0 0-.76Z"/></svg><span class="astro-3cjdp2dn">Next<br class="astro-3cjdp2dn"><span class="link-title astro-3cjdp2dn">Exporting component data</span></span></a></div></footer></div></div></main></div></div></div></div></body></html>
